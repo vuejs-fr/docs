@@ -86,7 +86,7 @@ test.before('Init Nuxt.js', async t => {
   nuxt.listen(4000, 'localhost')
 })
 
-// Exemple de test uniquement sur le HTML générés
+// Exemple de test uniquement sur le HTML généré
 test('Route / exits and render HTML', async t => {
   let context = {}
   const { html } = await nuxt.renderRoute('/', context)
