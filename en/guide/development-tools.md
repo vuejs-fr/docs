@@ -5,9 +5,9 @@ description: Nuxt.js vous aide à rendre votre développement web agréable.
 
 > Le test de votre application fait partie du développement web. Nuxt.js vous aide à le rendre aussi facile que possible.
 
-## Tests point par point (End-to-End)
+## Tests de bout en bout
 
-[AVA](https://github.com/avajs/ava) est un framework JavaScript de test puissant, mixé avec [jsdom](https://github.com/tmpvar/jsdom), nous pouvons les utiliser pour écrire des tests point par point facilement.
+[AVA](https://github.com/avajs/ava) est un framework JavaScript de test puissant, mixé avec [jsdom](https://github.com/tmpvar/jsdom), nous pouvons les utiliser pour écrire des tests de bout en bout facilement.
 
 Tout d'abord, nous devons ajouter AVA et jsdom en tant que dépendances de développement :
 
