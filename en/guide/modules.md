@@ -9,19 +9,19 @@ description: Les modules sont des extensions de Nuxt.js qui augmentent ses fonct
 
 Pendant votre phase d'amélioration du passage du développement à la production avec Nuxt, vous allez découvrir que les fonctionnalités offertes par celui-ci ne sont pas complètes. Faire la configuration et ajouter les plugins de chaque projet est répétitif, ennuyant et prend du temps. Ajouter chaque nouvelle fonctionnalité dans Nuxt serait impossible sans rendre le framework lourd.
 
-C'est pourquoi Nuxt introduit un système modulaire d'ordre supérieur pour facilement étendre ses fonctionnalités de base. Les modules sont en fait des **fonctions** qui sont appelées de manière séquentielle lors de la phase de démarrage de Nuxt. Le cœur va attendre que chacun d'entre eux soient chargés avant de continuer son travail. Ainsi vous avez la possibilité de personnaliser le moindre aspect de Nuxt. Grâce à sa conception modulaire ainsi que webpack [Tapable](https://github.com/webpack/tapable), il peut également abonner des points d'ancrage (« hooks ») pour certaines étapes comme l'initialisation de la phase de build.
+C'est pourquoi Nuxt introduit un système modulaire d'ordre supérieur pour facilement étendre ses fonctionnalités de base. Les modules sont en fait des **fonctions** qui sont appelées de manière séquentielle lors de la phase de démarrage de Nuxt. Le cœur va attendre que chacun d'entre eux soit chargé avant de continuer son travail. Ainsi vous avez la possibilité de personnaliser le moindre aspect de Nuxt. Grâce à sa conception modulaire ainsi que webpack [Tapable](https://github.com/webpack/tapable), il peut également abonner des points d'ancrage (« hooks ») pour certaines étapes comme l'initialisation de la phase de build.
 
 Un autre point à propos des modules est qu'ils peuvent être refactorisés et packagés en dehors du projet de manière à être versionnés en tant que packages npm. Ainsi vous pouvez partager et utiliser des intégrations et solutions de qualité auprès de la communauté Nuxt sans effort ! Vous pourriez être intéressé par les modules si :
 
 - vous êtes un membre d'une **équipe agile** qui souhaite mettre en place son projet instantanément et éviter de **réinventer** la roue pour les tâches habituelles comme des mécanismes Google Analytics pour vos nouveaux projets,
 - vous êtes une **société** qui accorde de l'importance à la **qualité** et la **réutilisabilité** de ses projets,
 - Vous êtes un membre super enthousiaste de la communauté *Open Source* et que vous souhaitez *partager* avec la communauté d'une façon simple.
-- Vous êtes un développeur flaimard et vous n'aimez pas vous encombrer avec des détails comme le paramétrage de chaque nouvelle bibliothèque ou intégration (quelqu'un l'aura surement déjà fait pour vous, ou vous pourriez demander à quelqu'un de la communauté de le faire).
-- Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continue et vous souhaiter **simplement des choses fonctionnelles**.
+- Vous êtes un développeur occupé et vous n'aimez pas vous encombrer avec des détails comme le paramétrage de chaque nouvelle bibliothèque ou intégration (quelqu'un l'aura surement déjà fait pour vous, ou vous pourriez demander à quelqu'un de la communauté de le faire).
+- Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continu et vous souhaiter **simplement des choses fonctionnelles**.
 
 ## Écrire un module basique
 
-Comme précédemment mentionné, les modules sont juste de simples fonctions. Ils peuvent être packagés en tant que modules npm ou directement inclus dans le code source du projet.
+Comme précédemment mentionnés, les modules sont juste de simples fonctions. Ils peuvent être packagés en tant que modules npm ou directement inclus dans le code source du projet.
 
 **modules/simple.js**
 
@@ -40,7 +40,7 @@ Ceci est un objet passé en utilisant le tableau `modules` par les utilisateurs 
 
 **`this.options`**
 
-Vous pouvez accéder directement aux options de Nuxt en utilisant cette référence. C'est la configuration `nuxt.config.js` avec ses options par défaut assignées qui peut être utilisées en tant qu'options partagées à travers les modules.
+Vous pouvez accéder directement aux options de Nuxt en utilisant cette référence. C'est la configuration `nuxt.config.js` avec ses options par défaut assignées qui peuvent être utilisées en tant qu'options partagées à travers les modules.
 
 **`this.nuxt`**
 
@@ -76,7 +76,7 @@ Tous les modules ne font pas tout de manière synchrone. Par exemple vous pouvez
 
 ### Utilisation de async / await
 
-<p class="Alert Alert--orange">Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support de version antérieur vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.</p>
+<p class="Alert Alert--orange">Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.</p>
 
 ```js
 const fse = require('fs-extra')
@@ -120,7 +120,7 @@ module.exports = function asyncModule(callback) {
 
 ### Options de haut niveau
 
-Parfois il est plus simple d'utiliser des options de hauts niveaux lors de l'abonnement de modules à `nuxt.config.js`. Donc nous pouvons combiner les options de sources multiples.
+Parfois il est plus simple d'utiliser des options de haut niveau lors de l'abonnement de modules à `nuxt.config.js`. Donc nous pouvons combiner les options de sources multiples.
 
 **nuxt.config.js**
 
@@ -149,7 +149,7 @@ module.exports = function (moduleOptions) {
 
 ### Fournir des plugins
 
-Il est courant que les modules fournissent un ou plusieurs plugins quand ils sont ajoutés. Par exemple le module [bootstrap-vue](https://bootstrap-vue.js.org) nécessite d'être enregistrer lui-même dans Vue. Pour cela, nous pouvons utiliser la fonction utilitaire `this.addPlugin`.
+Il est courant que les modules fournissent un ou plusieurs plugins quand ils sont ajoutés. Par exemple le module [bootstrap-vue](https://bootstrap-vue.js.org) nécessite d'être abonné lui-même dans Vue. Pour cela, nous pouvons utiliser la fonction utilitaire `this.addPlugin`.
 
 **plugin.js**
 
@@ -261,7 +261,7 @@ module.exports = function (moduleOptions) {
         use: [...]
       })
 
-      // Personnalisation des loaders existant
+      // Personnalisation des loaders existants
       // Consultez le code source des mécanismes de Nuxt :
       // https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/webpack/base.config.js
       const barLoader = config.module.rules.find(rule => rule.loader === 'bar-loader')
