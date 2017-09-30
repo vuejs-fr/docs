@@ -1,27 +1,27 @@
 ---
 title: Modules
-description: Les modules sont des extensions de Nuxt.js qui augmente ses fonctionnalités et permet de l'intégration continue.
+description: Les modules sont des extensions de Nuxt.js qui augmentent ses fonctionnalités et permettent de l'intégration continue.
 ---
 
-> Les modules sont des extensions de Nuxt.js qui augmente ses fonctionnalités et permet de l'intégration continue.
+> Les modules sont des extensions de Nuxt.js qui augmentent ses fonctionnalités et permettent de l'intégration continue.
 
 ## Introduction
 
-Pendant votre phase de préparation du développement pour la production avec Nuxt, vous allez découvrir que les fonctionnalités offertes par Nuxt ne sont pas suffisantes et que faire la configuration et ajouter les plugins de chaque projet est répétitif, ennuyant et prend du temps. Ajouter chaque nouvelle fonctionnalité dans Nuxt est également impossible sans rendre le framework lourd.
+Pendant votre phase d'amélioration du passage du développement à la production avec Nuxt, vous allez découvrir que les fonctionnalités offertes par celui-ci ne sont pas complètes. Faire la configuration et ajouter les plugins de chaque projet est répétitif, ennuyant et prend du temps. Ajouter chaque nouvelle fonctionnalité dans Nuxt serait impossible sans rendre le framework lourd.
 
-C'est pourquoi Nuxt introduit un système modulaire d'ordre supérieur pour facilement étendre ses fonctionnalités de base. Les modules sont en fait des **fonctions** qui sont appelées de manière séquentielle lors de la phase de démarrage de Nuxt. Le cœur va attendre que chaqun d'entre eux soit chargé avant de continuer son travail. Ainsi vous avez la possibilité de personnaliser le moindre aspet de Nuxt et grâce à sa conception modulaire ainsi que webpack [Tapable](https://github.com/webpack/tapable) il peut également abonner des points d'ancrage (« hooks ») pour certaines étapes comme l'initialisation de la phase se build.
+C'est pourquoi Nuxt introduit un système modulaire d'ordre supérieur pour facilement étendre ses fonctionnalités de base. Les modules sont en fait des **fonctions** qui sont appelées de manière séquentielle lors de la phase de démarrage de Nuxt. Le cœur va attendre que chacun d'entre eux soient chargés avant de continuer son travail. Ainsi vous avez la possibilité de personnaliser le moindre aspect de Nuxt. Grâce à sa conception modulaire ainsi que webpack [Tapable](https://github.com/webpack/tapable), il peut également abonner des points d'ancrage (« hooks ») pour certaines étapes comme l'initialisation de la phase de build.
 
-Un autre point à propos des modules est qu'ils peuvent être refactorisés et packagés en dehors du projet de manière à être versionné en tant que packages npm. Ainsi vous pouvez partager et utiliser des intégrations et solutions de qualités auprès de la communauté Nuxt sans effort ! Vous pourriez être intéressé par les modules si :
+Un autre point à propos des modules est qu'ils peuvent être refactorisés et packagés en dehors du projet de manière à être versionnés en tant que packages npm. Ainsi vous pouvez partager et utiliser des intégrations et solutions de qualité auprès de la communauté Nuxt sans effort ! Vous pourriez être intéressé par les modules si :
 
-- Êtes un membre d'une **équipe agile** qui souhaite mettre en place son projet instantanément et éviter de **réinventer** la roue pour les tâches habituelles comme des mécanismes Google Analytics pour vos nouveaux projets.
-- Êtes une **société** qui accorde de l'importance à la **qualité** et la **réutilisabilité** de ses projets.
+- vous êtes un membre d'une **équipe agile** qui souhaite mettre en place son projet instantanément et éviter de **réinventer** la roue pour les tâches habituelles comme des mécanismes Google Analytics pour vos nouveaux projets,
+- vous êtes une **société** qui accorde de l'importance à la **qualité** et la **réutilisabilité** de ses projets,
 - Vous êtes un membre super enthousiaste de la communauté *Open Source* et que vous souhaitez *partager* avec la communauté d'une façon simple.
-- Vous êtes un développeur flaimard et vous n'aimez pas vous encombrer avec des détails comme le paramètrage de chaque nouvelle bibliothèque ou intégration (Quelqu'un l'aura surement déjà fait pour vous, ou vous pourriez demander à quelqu'un de la communauté de le faire).
+- Vous êtes un développeur flaimard et vous n'aimez pas vous encombrer avec des détails comme le paramétrage de chaque nouvelle bibliothèque ou intégration (quelqu'un l'aura surement déjà fait pour vous, ou vous pourriez demander à quelqu'un de la communauté de le faire).
 - Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continue et vous souhaiter **simplement des choses fonctionnelles**.
 
 ## Écrire un module basique
 
-Comme précédemment mentionné, les modules sont juste de simples fonctions. Ils peuvent être packagé en tant que modules npm ou directement inclus dans le code source du projet.
+Comme précédemment mentionné, les modules sont juste de simples fonctions. Ils peuvent être packagés en tant que modules npm ou directement inclus dans le code source du projet.
 
 **modules/simple.js**
 
@@ -36,11 +36,11 @@ module.exports = function SimpleModule (moduleOptions) {
 
 **`moduleOptions`**
 
-Ceci est un objet passé en utilisant le tableau `modules` par les utilisateurs qui souhaite personnaliser son comportement.
+Ceci est un objet passé en utilisant le tableau `modules` par les utilisateurs qui souhaitent personnaliser son comportement.
 
 **`this.options`**
 
-Vous pouvez accéder directement aux options de Nuxt en utilisant cette référence. C'est la configuration _nuxt.config.js_ avec ses options par défaut assignés qui peut être utilisé en tant qu'options partagées à travers les modules.
+Vous pouvez accéder directement aux options de Nuxt en utilisant cette référence. C'est la configuration `nuxt.config.js` avec ses options par défaut assignées qui peut être utilisées en tant qu'options partagées à travers les modules.
 
 **`this.nuxt`**
 
@@ -72,17 +72,17 @@ Nous pouvons dire à Nuxt de charger des modules spécifiques pour un projet ave
 
 ## Modules asynchrones
 
-Tous les modules ne font pas tout de manière synchrone. Par exemple vous pouvez développer un module qui a besoin d'aller récupérer des informations depuis une API ou qui fait des échanges asynchrones. Nuxt permet le support de modules asynchrone grâce à l'utilisation d'une promesse ou d'une fonction de rappel.
+Tous les modules ne font pas tout de manière synchrone. Par exemple vous pouvez développer un module qui a besoin d'aller récupérer des informations depuis une API ou qui fait des échanges asynchrones. Nuxt permet le support de modules asynchrones grâce à l'utilisation d'une promesse ou d'une fonction de rappel.
 
 ### Utilisation de async / await
 
-<p class="Alert Alert--orange">Faites attention avec async et await, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stable ou avec un support de version antérieur vous pouvez utiliser un paquageur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.</p>
+<p class="Alert Alert--orange">Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support de version antérieur vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.</p>
 
 ```js
 const fse = require('fs-extra')
 
 module.exports = async function asyncModule() {
-  // Vous pouvez développer de manière asynchrone ici en utilisant async / await
+  // Vous pouvez développer de manière asynchrone ici en utilisant `async` / `await`
   let pages = await fse.readJson('./pages.json')
 }
 ```
@@ -96,7 +96,7 @@ module.exports = function asyncModule() {
   return axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res => res.data.map(user => '/users/' + user.username))
     .then(routes => {
-      // Faites quelque chose en étandant les routes de Nuxt
+      // Faites quelque chose en étendant les routes de Nuxt
     })
 }
 ```
@@ -116,11 +116,11 @@ module.exports = function asyncModule(callback) {
 ```
 
 
-## Exemples communs
+## Exemples courants
 
 ### Options de haut niveau
 
-Parfois il est plus simple d'utiliser des options de haut niveaux lors de l'abonnement de modules à `nuxt.config.js`. Donc nous pouvons combiner les options de sources multiples.
+Parfois il est plus simple d'utiliser des options de hauts niveaux lors de l'abonnement de modules à `nuxt.config.js`. Donc nous pouvons combiner les options de sources multiples.
 
 **nuxt.config.js**
 
@@ -199,7 +199,7 @@ module.exports = function nuxtBootstrapVue (moduleOptions) {
       // Nuxt va remplacer `options.ua` par `123` quand il va copier le plugin au projet.
       ua: 123,
 
-      // les parties conditionnelles vont être retiré du code du pligen pour les builds de production
+      // les parties conditionnelles vont être retirées du code du plugin pour les builds de production
       debug: this.options.dev
     }
   })
@@ -248,7 +248,7 @@ module.exports = function (moduleOptions) {
 
 ### Abonner des loaders personnalisés
 
-Nous pouvons faire la même chose que  `build.extend` dans `nuxt.config.js` en utilisant `this.extendBuild`.
+Nous pouvons faire la même chose que `build.extend` dans `nuxt.config.js` en utilisant `this.extendBuild`.
 
 **module.js**
 
@@ -271,7 +271,7 @@ module.exports = function (moduleOptions) {
 
 ## Lancer des tâches sur des points d'ancrage spécifiques
 
-Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques. Nuxt va les attendres si les points d'ancrage retournent une promesse ou sont définis comme `async`.
+Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques. Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
 
 ```js
 module.exports = function () {
