@@ -291,7 +291,7 @@ module.exports = function () {
 
     // On peut également enregistrer des points d'ancrage interne ici
     builder.plugin('compile', ({compiler}) => {
-        // Ceci va être lancé juste avant que le compilateur de webpack démarre
+        // Ceci sera lancé juste avant que le compilateur de webpack démarre
     })
   })
 
@@ -302,4 +302,4 @@ module.exports = function () {
 }
 ```
 
-<p class="Alert">Il y a encore bien de points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.</p>
+<p class="Alert">Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.</p>
