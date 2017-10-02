@@ -7,7 +7,7 @@ description: Les modules sont des extensions de Nuxt.js qui augmentent ses fonct
 
 ## Introduction
 
-Pendant votre phase d'amélioration du passage du développement à la production avec Nuxt, vous allez découvrir que les fonctionnalités offertes par celui-ci ne sont pas complètes. Faire la configuration et ajouter les plugins de chaque projet est répétitif, ennuyant et prend du temps. Ajouter chaque nouvelle fonctionnalité dans Nuxt serait impossible sans rendre le framework lourd.
+Pendant la phase d'amélioration de votre application pour la production, vous allez découvrir que les fonctionnalités offertes par celui-ci ne sont pas complètes. Faire la configuration et ajouter les plugins de chaque projet est répétitif, ennuyant et prend du temps. Ajouter chaque nouvelle fonctionnalité dans Nuxt serait impossible sans rendre le framework lourd.
 
 C'est pourquoi Nuxt introduit un système modulaire d'ordre supérieur pour facilement étendre ses fonctionnalités de base. Les modules sont en fait des **fonctions** qui sont appelées de manière séquentielle lors de la phase de démarrage de Nuxt. Le cœur va attendre que chacun d'entre eux soit chargé avant de continuer son travail. Ainsi vous avez la possibilité de personnaliser le moindre aspect de Nuxt. Grâce à sa conception modulaire ainsi que webpack [Tapable](https://github.com/webpack/tapable), il peut également abonner des points d'ancrage (« hooks ») pour certaines étapes comme l'initialisation de la phase de build.
 
@@ -196,7 +196,7 @@ module.exports = function nuxtBootstrapVue (moduleOptions) {
   this.addPlugin({
     src: path.resolve(__dirname, 'plugin.js'),
     options: {
-      // Nuxt va remplacer `options.ua` par `123` quand il va copier le plugin au projet.
+      // Nuxt remplacera `options.ua` par `123` quand il copiera le plugin au projet.
       ua: 123,
 
       // les parties conditionnelles vont être retirées du code du plugin pour les builds de production
@@ -215,7 +215,7 @@ Il est recommandé de vérifier si un utilisateur ne fournit pas déjà la même
 ```js
 module.exports = function (moduleOptions) {
   if (moduleOptions.fontAwesome !== false) {
-    // Ajouter Font Awesome
+    // Ajout de Font Awesome
     this.options.css.push('font-awesome/css/font-awesome.css')
   }
 }
@@ -236,7 +236,7 @@ module.exports = function (moduleOptions) {
       compiler.plugin('emit', (compilation, cb) => {
 
         // Cela va générer `.nuxt/dist/info.txt' avec les contenus des variables d'information.
-        // La source peut être mise en tampon aussi
+        // La source peut être aussi mise en tampon
         compilation.assets['info.txt'] = { source: () => info, size: () => info.length }
 
         cb()
@@ -275,17 +275,17 @@ Votre module peut avoir besoin de choses seulement sous certaines conditions et 
 
 ```js
 module.exports = function () {
-  // Ajouter un point d'ancrage au module
+  // Ajoute un point d'ancrage au module
   this.nuxt.plugin('module', moduleContainer => {
     // Ceci va être appelé quand tous les modules auront fini d'être chargés
   })
 
-  // Ajouter un point d'ancrage au moteur de rendu
+  // Ajoute un point d'ancrage au moteur de rendu
   this.nuxt.plugin('renderer', renderer => {
     // Ceci va être appelé quand le moteur de rendu aura été créé
   })
 
-  // Ajouter un point d'ancrage au build
+  // Ajoute un point d'ancrage au build
   this.nuxt.plugin('build', async builder => {
     // Ceci va être appelé une fois le build fait
 
@@ -295,7 +295,7 @@ module.exports = function () {
     })
   })
 
-  // Ajouter un point d'ancrage à la génération
+  // Ajoute un point d'ancrage à la génération
   this.nuxt.plugin('generate', async generator => {
     // Ceci va être appelé quand la génération de Nuxt va commencer
   })
