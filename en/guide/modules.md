@@ -277,17 +277,17 @@ Votre module peut avoir besoin de choses seulement sous certaines conditions et 
 module.exports = function () {
   // Ajoute un point d'ancrage au module
   this.nuxt.plugin('module', moduleContainer => {
-    // Ceci va être appelé quand tous les modules auront fini d'être chargés
+    // Ceci sera appelé quand tous les modules auront fini d'être chargés
   })
 
   // Ajoute un point d'ancrage au moteur de rendu
   this.nuxt.plugin('renderer', renderer => {
-    // Ceci va être appelé quand le moteur de rendu aura été créé
+    // Ceci sera appelé quand le moteur de rendu aura été créé
   })
 
   // Ajoute un point d'ancrage au build
   this.nuxt.plugin('build', async builder => {
-    // Ceci va être appelé une fois le build fait
+    // Ceci sera appelé une fois le build fait
 
     // On peut également enregistrer des points d'ancrage interne ici
     builder.plugin('compile', ({compiler}) => {
@@ -297,7 +297,7 @@ module.exports = function () {
 
   // Ajoute un point d'ancrage à la génération
   this.nuxt.plugin('generate', async generator => {
-    // Ceci va être appelé quand la génération de Nuxt va commencer
+    // Ceci sera appelé quand la génération de Nuxt va commencer
   })
 }
 ```
