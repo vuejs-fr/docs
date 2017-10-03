@@ -69,7 +69,7 @@ app.listen(3000)
 console.log('Server is listening on http://localhost:3000')
 ```
 
-Et nous modifions nos script dans `package.json` :
+Et nous modifions nos scripts dans `package.json` :
 
 ```json
 // ...
@@ -120,7 +120,7 @@ export default store
 ```
 
 1. Nous importons `Vue` et `Vuex` (inclus dans Nuxt.js) et nous indiquons à Vue d'utiliser Vuex afin de pouvoir utiliser `$store` dans nos composants.
-2. Nous utilisons `require('whatwg-fetch')` afin de d'obtenur un polyfill pour la méthode `fetch()` pour tous les navigateurs (consultez le [dépôt fetch](https://github.com/github/fetch)).
+2. Nous utilisons `require('whatwg-fetch')` afin d'obtenir un polyfill pour la méthode `fetch()` pour tous les navigateurs (consultez le [dépôt fetch](https://github.com/github/fetch)).
 3. Nous créons notre mutation `SET_USER` qui va instancier `state.authUser` avec l'utilisateur connecté.
 4. Nous exportons notre instance du *store* vers Nuxt.js afin qu'il puisse l'injecter dans notre application principale.
 
@@ -143,7 +143,7 @@ Pour rendre la méthode de données asynchrone, Nuxt.js vous offre différents m
 1. Retourner une `Promise`, Nuxt.js attendra la résolution de la promesse avant d'afficher le composant.
 2. En utilisant [`async` / `await`](https://github.com/lukehoban/ecmascript-asyncawait) ([en savoir plus](https://zeit.co/blog/async-and-await)).
 
-### L'ation login()
+### L'action login()
 
 Nous ajoutons une action `login` qui sera appelée à partir de nos composants de pages pour connecter l'utilisateur :
 
