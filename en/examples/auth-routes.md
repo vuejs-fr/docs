@@ -8,7 +8,7 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 # Documentation
 
-> Nuxt.js peut être utilisé pour créer des routes authentifiées facilement.
+> Nuxt.js peut être utilisé pour créer facilement des routes authentifiées.
 
 ## Utilisation de Express et des sessions
 
@@ -20,7 +20,7 @@ Premièrement, nous installons les dépendances :
 yarn add express express-session body-parser whatwg-fetch
 ```
 
-*Nous parlerons de `whatwg-fetch` dans un instant.*
+*Nous parlerons de `whatwg-fetch` plus loin.*
 
 Puis nous créons notre `server.js` :
 
@@ -41,7 +41,7 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }))
 
-// Accès à `/api/login` en POST pour authentifier l'utilisateur et l'ajouter à `req.session.authUser`
+// Accès à `/api/login` en POST pour connecter l'utilisateur et l'ajouter à `req.session.authUser`
 app.post('/api/login', function (req, res) {
   if (req.body.username === 'demo' && req.body.password === 'demo') {
     req.session.authUser = { username: 'demo' }
@@ -50,7 +50,7 @@ app.post('/api/login', function (req, res) {
   res.status(401).json({ error: 'Bad credentials' })
 })
 
-// Accès à `/api/logout` en POST pour désauthentifier l'utilisateur et le retirer de `req.session`
+// Accès à `/api/logout` en POST pour déconnecter l'utilisateur et le retirer de `req.session`
 app.post('/api/logout', function (req, res) {
   delete req.session.authUser
   res.json({ ok: true })
@@ -85,7 +85,7 @@ Note : vous devrez exécuter `npm install --save-dev cross-env` afin de faire fo
 
 ## Utilisation du store
 
-Nous avons besoin d'un état global pour informer notre application si l'utilisateur est **connecté sur les pages**.
+Nous avons besoin d'un état global pour informer notre application si l'utilisateur reste **connecté entre les pages**.
 
 Pour laisser Nuxt.js utiliser Vuex, nous créons un fichier `store/index.js`:
 
@@ -126,7 +126,7 @@ export default store
 
 ### Fonction nuxtServerInit()
 
-Nuxt.js appelle une action spécifique nommée `nuxtServerInit` avec le contexte comme argument. Ainsi, lorsque l'application sera chargée, le store sera déjà rempli avec certaines données que nous pouvons obtenir du serveur.
+Nuxt.js appellera une action spécifique nommée `nuxtServerInit` avec le contexte comme argument. Ainsi, lorsque l'application sera chargée, le store sera déjà rempli avec certaines données que nous pouvons obtenir du serveur.
 
 Dans notre `store/index.js`, nous pouvons ajouter l'action `nuxtServerInit` :
 
@@ -150,7 +150,7 @@ Nous ajoutons une action `login` qui sera appelée à partir de nos composants d
 ```js
 login ({ commit }, { username, password }) {
   return fetch('/api/login', {
-    // Envoyer les cookies client au serveur
+    // Envoie les cookies client au serveur
     credentials: 'same-origin',
     method: 'POST',
     headers: {
@@ -179,7 +179,7 @@ login ({ commit }, { username, password }) {
 ```js
 logout ({ commit }) {
   return fetch('/api/logout', {
-    // Envoyer les cookies au serveur
+    // Envoie les cookies au serveur
     credentials: 'same-origin',
     method: 'POST'
   })
