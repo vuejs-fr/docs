@@ -27,7 +27,7 @@
       { "name": "Authentification de routes", "to": "/auth-routes" },
       { "name": "Store Vuex", "to": "/vuex-store" },
       { "name": "i18n", "to": "/i18n" },
-      { "name": "Test", "to": "/testing" }
+      { "name": "Tests", "to": "/testing" }
     ]
   }
 ]
