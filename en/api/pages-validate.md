@@ -29,7 +29,7 @@ export default {
 }
 ```
 
-Vous pouvez également utiliser des données de votre [store](/guide/vuex-store) pour la validation comme par exemple remplie par l'action [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action) :
+Vous pouvez vérifier aussi vérifier des données de votre [store](/guide/vuex-store) (remplies au préalable avec l'action [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action)) :
 
 ```js
 export default {

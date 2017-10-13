@@ -37,4 +37,4 @@ export default function ({ store, redirect }) {
 }
 ```
 
-Pour en savoir plus sur les middleware, voir le [guide middleware](/guide/routing#middleware).
+Pour en savoir plus sur les middlewares, voir le [guide middleware](/guide/routing#middleware).

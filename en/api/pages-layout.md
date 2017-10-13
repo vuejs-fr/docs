@@ -5,7 +5,7 @@ description: Chaque fichier (premier niveau) dans le répertoire `layouts` crée
 
 # La propriété layout
 
-> Chaque fichier (premier niveau) dans le répertoire `layouts` créera une mise en page personnalisé accessible avec la propriété `layout` dans le composant de page.
+> Chaque fichier (premier niveau) dans le répertoire `layouts` créera une mise en page personnalisée accessible avec la propriété `layout` dans le composant de page.
 
 - **Type :** `String` ou `Function` (défaut : `'default'`)
 
@@ -21,7 +21,7 @@ export default {
 }
 ```
 
-Dans cet exemple, Nuxt.js incluera le fichier `layouts/blog.vue` comme mise en page pour ce composant de page.
+Dans cet exemple, Nuxt.js inclura le fichier `layouts/blog.vue` comme mise en page pour ce composant de page.
 
 Voyez cela en action dans [cette vidéo de démonstration](https://www.youtube.com/watch?v=YOKnSTp7d38).
 
