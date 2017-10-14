@@ -7,7 +7,7 @@ description: Chaque fichier (premier niveau) dans le répertoire `layouts` crée
 
 > Chaque fichier (premier niveau) dans le répertoire `layouts` créera une mise en page personnalisée accessible avec la propriété `layout` dans le composant de page.
 
-- **Type :** `String` ou `Function` (défaut : `'default'`)
+- **Type :** `String` ou `Function` (par défaut : `'default'`)
 
 Utilisez la clé `layout` dans vos composants de page pour définir la mise en page à utiliser :
 

@@ -29,7 +29,7 @@ export default {
 }
 ```
 
-Vous pouvez vérifier aussi vérifier des données de votre [store](/guide/vuex-store) (remplies au préalable avec l'action [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action)) :
+Vous pouvez aussi vérifier les données dans votre [store](/guide/vuex-store) (remplies au préalable avec l'action [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action)) :
 
 ```js
 export default {

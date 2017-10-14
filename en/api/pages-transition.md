@@ -9,7 +9,7 @@ description: Nuxt.js utilise le composant de `<transition>` afin de créer des t
 
 - **Type :** `String` ou `Object` ou `Function`
 
-Pour définir une transition personnalisée pour une route spécifique, ajouter la propriété `transition` au composant de page.
+Pour définir une transition personnalisée pour une route spécifique, ajoutez la propriété `transition` au composant de page.
 
 ```js
 export default {
@@ -24,7 +24,7 @@ export default {
 
 ## Chaine de caractères
 
-Si la propriété `transition` est défini en tant que chaine de caractère, il sera utilisé comme `transition.name`.
+Si la propriété `transition` est définie en tant que chaine de caractère, elle sera utilisée comme `transition.name`.
 
 ```js
 export default {
@@ -63,7 +63,7 @@ L'objet `transition` peut avoir les propriétés suivantes :
 |--------------------|-----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`             | `String`  | `"page"`   | Le nom de la transition appliqué aux transitions de route.                                                                                                                                                                                         |
 | `mode`             | `String`  | `"out-in"` | Le mode de la transition appliqué aux routes. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Les-modes-de-transition).                                                                                              |
-| `css`              | `Boolean` | `true`     | Défini s'il faut utiliser les transitions de classes CSS. Par défaut à `true`. Si mis à `false`, ne déclenchera que les points d'ancrage JavaScript abonnés via les évènements de composant.                                                       |
+| `css`              | `Boolean` | `true`     | Défini s'il faut utiliser les transitions de classes CSS. Par défaut à `true`. Si mis à `false`, cela ne déclenchera que les points d'ancrage JavaScript abonnés via les évènements de composant.                                                       |
 | `duration`         | `Integer` | aucune     | La durée (en millisecondes) appliquée a une transition, voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Durees-de-transition-explicites).                                                                             |
 | `type`             | `String`  | aucune     | Spécifie le type d'évènement de transition attendu pour déterminer le moment de fin de transition. Les valeurs disponibles sont `"transition"` et `"animation"`. Par défaut, cela sera automatiquement déterminé s'il n'y a pas de durée précisée. |
 | `enterClass`       | `String`  | aucune     | L'état de départ de la classe de transition. Voir la [documentation Vue.js](https://fr.vuejs.org/v2/guide/transitions.html#Classes-de-transition-personnalisees).                                                                                  |

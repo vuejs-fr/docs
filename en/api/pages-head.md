@@ -1,11 +1,11 @@
 ---
 title: "API : la méthode head"
-description: Nuxt.js utilise vue-meta pour mettre à jours les entêtes et les attributs HTML de votre application.
+description: Nuxt.js utilise vue-meta pour mettre à jour les entêtes et les attributs HTML de votre application.
 ---
 
 # La méthode head
 
-> Nuxt.js utilise [vue-meta](https://github.com/declandewet/vue-meta) pour mettre à jours les entêtes et les attributs HTML de votre application.
+> Nuxt.js utilise [vue-meta](https://github.com/declandewet/vue-meta) pour mettre à jour les entêtes et les attributs HTML de votre application.
 
 - **Type :** `Object` ou `Function`
 

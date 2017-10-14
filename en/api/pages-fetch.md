@@ -32,7 +32,7 @@ export default {
 </script>
 ```
 
-Vous pouvez également utiliser `async` / `await` pour rendre votre code plus propre:
+Vous pouvez également utiliser `async` / `await` pour rendre votre code plus propre :
 
 ```html
 <template>
