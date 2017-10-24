@@ -22,7 +22,7 @@ const app = require('express')()
 const isProd = (process.env.NODE_ENV === 'production')
 const port = process.env.PORT || 3000
 
-// Nous instantion Nuxt.js avec les options
+// Nous instancions Nuxt.js avec les options
 const config = require('./nuxt.config.js')
 config.dev = !isProd
 const nuxt = new Nuxt(config)
@@ -50,4 +50,4 @@ function listen() {
 }
 ```
 
-<p class="Alert">Il est recommandé d'appeler `nuxt.render` à la fin de votre middlewares ainsi il ferra le rendu de votre application web et n'appelera pas `next()`.</p>
+<p class="Alert">Il est recommandé d'appeler `nuxt.render` à la fin de votre middlewares ainsi il fera le rendu de votre application web et n'appellera pas `next()`.</p>

@@ -16,7 +16,7 @@ description: Faire le rendu d'une route spécifique avec un contexte donné.
 
 > Faire le rendu d'une route spécifique avec un contexte donné.
 
-Cette méthode devrait être utilisé en particulier pour les [tests](guide/development-tools#tests-de-bout-en-bout) aussi bien que [`nuxt.renderAndGetWindow`](/api/nuxt-render-and-get-window).
+Cette méthode devrait être utilisée en particulier pour les [tests](guide/development-tools#tests-de-bout-en-bout) aussi bien que [`nuxt.renderAndGetWindow`](/api/nuxt-render-and-get-window).
 
 <p class="Alert Alert--info">`nuxt.renderRoute` devrait être exécuté après le processus de build en mode production (`dev: false`).</p>
 
@@ -34,7 +34,7 @@ new Builder(nuxt)
 .build()
 .then(() => nuxt.renderRoute('/'))
 .then(({ html, error, redirected }) => {
-  // `html` sera toujour une chaine de caractères
+  // `html` sera toujours une chaine de caractères
 
   // `error` sera non `null` quand le layout d'erreur est affiché, le format d'erreur est :
   // { statusCode: 500, message: 'Mon message d'erreur' }
