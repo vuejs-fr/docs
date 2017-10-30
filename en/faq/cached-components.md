@@ -1,5 +1,5 @@
 ---
-title: Composants avec cache
+title: Mettre en cache les composants
 description: Comment mettre en cache des composants ?
 ---
 
@@ -13,7 +13,7 @@ Ce module utilise `vue-server-renderer` pour ajouter le support d'un cache [LRU]
 ## Utilisation
 
 - Ajoutez la dépendance `@nuxtjs/component-cache` en utilisant Yarn ou npm pour votre projet.
-- Ajoutez `@nuxtjs/component-cache` to `modules` section of `nuxt.config.js`.
+- Ajoutez `@nuxtjs/component-cache` à la section `modules` de `nuxt.config.js`.
 
 ```js
 {
@@ -36,5 +36,5 @@ Voir [la mise en cache au niveau composant](http://ssr.vuejs.org/en/caching.html
 
 - Les composants à mettre en cache **doivent définir une option `name` unique**.
 - Vous **NE** devez ***PAS*** mettre en cache un composant si
-  - ses composants enfants sont liés à ur état global ou si
+  - ses composants enfants sont liés à l'état global ou si
   - ses composants enfants produisent des effets de bord sur le rendu de `context`.
