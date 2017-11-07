@@ -19,7 +19,7 @@ nuxt.plugin('ready', async nuxt => {
 })
 ```
 
-Plugin   | Arguments              | When
+Plugin   | Arguments              | Quand
 ---------|------------------------|-----------------------------------------------------------------------------------------
 `ready`  | nuxt                   | Après l'initialisation de tous les modules et avant l'initialisation du moteur de rendu
 `error`  | error args             | Une erreur non gérée par un des modules Nuxt attrapée
