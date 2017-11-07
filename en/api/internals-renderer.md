@@ -7,7 +7,7 @@ description: La classe `Renderer` de Nuxt
 
 - Source : **[core/renderer.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/renderer.js)**
 
-Cette classe exporte un middleware exportée qui gère et sert tous les rendus côté serveur et les requêtes de ressources.
+Cette classe exporte un middleware qui gère et sert tous les rendus côté serveur et les requêtes de ressources.
 
 ## Plugins Tapable
 

@@ -13,7 +13,7 @@ Cette section va vous aider à vous familiariser avec les mécanismes de Nuxt et
 
 ### Le cœur
 
-Ces classes sont les pilliers de Nuxt et devrait exister à l'exécution ou pour le build.
+Ces classes sont les piliers de Nuxt et devraient exister à l'exécution ou pour le build.
 
 #### Nuxt
 

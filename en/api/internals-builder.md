@@ -26,6 +26,6 @@ Plugin         | Arguments                               | When
 `built`        | builder                                 | À la fin du premier build
 `extendRoutes` | {routes, templateVars, r}               | À la génération des routes
 `generate`     | {builder, templatesFiles, templateVars} | À la génération des fichiers template `.nuxt`
-`done`         | {builder, stats}                        | Quand les build webpack sont fini
+`done`         | {builder, stats}                        | Quand les builds webpack sont finis
 `compile`      | {builder, compiler}                     | Avant la compilation webpack (le compilateur est une instance `MultiCompiler`)
 `compiled`     | builder                                 | À la fin du build webpack

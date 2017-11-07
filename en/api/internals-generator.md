@@ -22,5 +22,5 @@ nuxt.plugin('generator', generator => {
 
 Plugin           | Arguments                   | When
 -----------------|-----------------------------|-------------------------------------------------------------------------------------------------
-`generateRoutes` | {generator, generateRoutes} | Après la résolution des routes pour généreration afin de faire des changements personnalisés
+`generateRoutes` | {generator, generateRoutes} | Après la résolution des routes pour génération afin de faire des changements personnalisés
 `generate`       | {generator, routes}         | Avant le démarrage de la génération des routes. Les routes sont décorées avec des charges utiles

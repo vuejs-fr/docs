@@ -24,4 +24,4 @@ Plugin   | Arguments              | When
 `ready`  | nuxt                   | Après l'initialisation de tous les modules et avant l'initialisation du moteur de rendu
 `error`  | error args             | Une erreur non gérée par un des modules Nuxt attrapée
 `close`  | -                      | L'instance de Nuxt est gracieusement fermée
-`listen` | ({server, host, port}) | Les **mécanismes** serveur de Nuxt commence à écouter. (Avec `nuxt start` ou `nuxt dev`)
+`listen` | ({server, host, port}) | Les **mécanismes** serveur de Nuxt commencent à écouter. (Avec `nuxt start` ou `nuxt dev`)

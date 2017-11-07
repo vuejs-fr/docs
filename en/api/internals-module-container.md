@@ -15,7 +15,7 @@ Nous pouvons enregistrer des points d'ancrage sur certains évènements du cycle
 
 ```js
 nuxt.moduleContainer.plugin('ready', async moduleContainer => {
-    // Faire ceci après que tous les modules soient prèts
+    // Faire ceci après que tous les modules soient prêts
 })
 ```
 
@@ -23,7 +23,7 @@ Dans le contexte des [modules](/guide/modules) nous pouvons utiliser ceci à la 
 
 ```js
 this.plugin('ready', async moduleContainer => {
-    // Faire ceci après que tous les modules soient prèts
+    // Faire ceci après que tous les modules soient prêts
 })
 ```
 
@@ -45,7 +45,7 @@ Ajouter à `options.build.vendor` et appliquer un filtre unique.
     - `options`
     - `fileName`
 
-Le rendu des templates sont fait dans le projet `buildDir` (`.nuxt`) en utilisant [lodash template](https://lodash.com/docs/4.17.4#template).
+Le rendu des templates sont faits dans le projet `buildDir` (`.nuxt`) en utilisant [lodash template](https://lodash.com/docs/4.17.4#template).
 
 Si  n'est pas fourni ou que `template` est une chaine de caractères, le fichier ciblé par défaut sera `[dirName].[fileName].[pathHash].[ext]`.
 
@@ -71,7 +71,7 @@ Permet d'étendre facilement les routes en chainant la fonction [options.build.e
 
 ### addModule (moduleOpts, requireOnce)
 
-Enregistre le module. `moduleOpts` peut être une chaine de caractères ou `[src, options]`. Si `requireOnce` est `true`, les modules résolues `meta` préviennent l'enregitrement du même module plus d'une fois.
+Enregistre le module. `moduleOpts` peut être une chaine de caractères ou `[src, options]`. Si `requireOnce` est `true`, les modules résolus `meta` préviennent l'enregistrement du même module plus d'une fois.
 
 ### requireModule (moduleOpts)
 
