@@ -1,5 +1,5 @@
 ---
-title: "API : La classe Builder"
+title: "API : la classe Builder"
 description: La classe `Builder` de Nuxt
 ---
 
@@ -20,7 +20,7 @@ nuxt.plugin('build', builder => {
 })
 ```
 
-Plugin         | Arguments                               | When
+Plugin         | Arguments                               | Quand
 ---------------|-----------------------------------------|-------------------------------------------------------------------------------
 `build`        | builder                                 | Au démarrage du premier build
 `built`        | builder                                 | À la fin du premier build

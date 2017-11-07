@@ -1,5 +1,5 @@
 ---
-title: "API : La classe ModuleContainer"
+title: "API : la classe ModuleContainer"
 description: La classe `ModuleContainer` de Nuxt
 ---
 
@@ -7,7 +7,7 @@ description: La classe `ModuleContainer` de Nuxt
 
 - Source : **[core/module.js](https://github.com/nuxt/nuxt.js/blob/dev/lib/core/module.js)**
 
-Tous les [modules](/guide/modules) seront appelé dans le contexte de l'instance de `ModuleContainer`.
+Tous les [modules](/guide/modules) seront appelés dans le contexte de l'instance de `ModuleContainer`.
 
 ## Plugins Tapable
 
@@ -27,7 +27,7 @@ this.plugin('ready', async moduleContainer => {
 })
 ```
 
-Plugin  | Arguments       | When
+Plugin  | Arguments       | Quand
 --------|-----------------|-----------------------------------------------------------
 `ready` | moduleContainer | Tous les modules dans `nuxt.config.js` ont été initialisés
 
@@ -36,7 +36,7 @@ Plugin  | Arguments       | When
 
 ### addVendor (vendor)
 
-Ajouter à `options.build.vendor` et appliquer un filtre unique.
+Ajoute à `options.build.vendor` et applique un filtre unique.
 
 ### addTemplate (template)
 
@@ -47,13 +47,13 @@ Ajouter à `options.build.vendor` et appliquer un filtre unique.
 
 Le rendu des templates sont faits dans le projet `buildDir` (`.nuxt`) en utilisant [lodash template](https://lodash.com/docs/4.17.4#template).
 
-Si  n'est pas fourni ou que `template` est une chaine de caractères, le fichier ciblé par défaut sera `[dirName].[fileName].[pathHash].[ext]`.
+Si `fileName` n'est pas fourni ou que `template` est une chaine de caractères, le fichier ciblé par défaut sera `[dirName].[fileName].[pathHash].[ext]`.
 
-Cette méthode retourne un objet final  `{ dist, src, options }`.
+Cette méthode retourne un objet final `{ dist, src, options }`.
 
 ### addPlugin (template)
 
-Enregistrer un plugin en utilisant `addTemplate` et l'ajouter en premier à la liste des options de `plugins[]`.
+Enregistre un plugin en utilisant `addTemplate` et l'ajoute en premier à la liste des options de `plugins[]`.
 
 Vous pouvez utiliser `template.ssr: false` pour désactiver les plugins inclus dans le paquetage SSR.
 

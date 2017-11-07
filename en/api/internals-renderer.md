@@ -1,5 +1,5 @@
 ---
-title: "API : La classe Renderer"
+title: "API : la classe Renderer"
 description: La classe `Renderer` de Nuxt
 ---
 
@@ -21,7 +21,7 @@ nuxt.plugin('renderer', renderer => {
 })
 ```
 
-Plugin            | Arguments              | When
+Plugin            | Arguments              | Quand
 ------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------
 `ready`           | renderer               | Le rendu serveur du middleware et toutes les ressources sont prêtes
 `setupMiddleware` | connect instance (app) | Avant que Nuxt ajoute sa pile de middleware. Nous pouvons l'utiliser pour enregistrer des middlewares côté serveur personnalisés

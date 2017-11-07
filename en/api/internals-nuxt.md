@@ -1,5 +1,5 @@
 ---
-title: "API : La classe Nuxt"
+title: "API : la classe Nuxt"
 description: La classe cœur Nuxt
 ---
 

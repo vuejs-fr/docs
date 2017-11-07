@@ -1,5 +1,5 @@
 ---
-title: "API : Introduction aux modules Nuxt"
+title: "API : introduction aux modules Nuxt"
 description: Mieux comprendre les mécanismes de Nuxt
 ---
 
@@ -9,7 +9,7 @@ Nuxt.js a une architecture intégralement modulable permettant au développeur d
 
 Consultez le [guide sur les modules](/guide/modules) pour des informations plus détaillées si vous souhaitez développer votre propre module.
 
-Cette section va vous aider à vous familiariser avec les mécanismes de Nuxt et vous servira de référence pour mieux comprendre comment écrire votre propre module.
+Cette section vous aidera à vous familiariser avec les mécanismes de Nuxt et vous servira de référence pour mieux comprendre comment écrire votre propre module.
 
 ### Le cœur
 
