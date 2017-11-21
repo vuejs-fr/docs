@@ -78,8 +78,8 @@ Voir [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware)
 
 `extend` est appelé deux fois, une fois pour le paquetage serveur et une fois pour le paquetage client. Les arguments de la méthode sont :
 
-1. un objet de configuration webpack,
-2. un object avec les propriétés suivantes (toutes booléennes): `dev`, `isClient`, `isServer`.
+1. l'objet de configuration webpack,
+2. un objet avec les propriétés suivantes (toutes booléennes): `dev`, `isClient`, `isServer`.
 
 Exemple (`nuxt.config.js`) :
 
