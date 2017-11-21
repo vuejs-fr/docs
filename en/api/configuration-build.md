@@ -60,7 +60,7 @@ module.exports = {
 ## cssSourceMap
 
 - Type : `boolean`
-- Par défault : `true` en développement et `false` en production.
+- Par défaut : `true` en développement et `false` en production.
 
 > Active le support Source Map du CSS
 
@@ -78,8 +78,8 @@ Voir [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware)
 
 `extend` est appelé deux fois, une fois pour le paquetage serveur et une fois pour le paquetage client. Les arguments de la méthode sont :
 
-1. l'objet de configuration webpack,
-2. un object avec les propriétés suivantes (toutes booléenes): `dev`, `isClient`, `isServer`.
+1. un objet de configuration webpack,
+2. un object avec les propriétés suivantes (toutes booléennes): `dev`, `isClient`, `isServer`.
 
 Exemple (`nuxt.config.js`) :
 
@@ -105,14 +105,14 @@ Si vous voulez en savoir plus à propos de notre configuration webpack par défa
 - Type : `Boolean`
 - Par défaut : `false`
 
-Utiliser `extract-text-webpack-plugin` pour extraire le CSS du fragment principale dans un fichier CSS séparé (injection automatique avec template), permet au fichier d'être mis en cache de manière individuel. Cela est recommandé quand il y a beaucoup de fichier CSS partagés. Les fichiers CSS à l'intérieur des composants asynchrones vont restés en place en tant que chaines de caractères JavaScript et prise en charge par `vue-style-loader`.
+Utiliser `extract-text-webpack-plugin` pour extraire le CSS du fragment principal dans un fichier CSS séparé (injection automatique avec template), permet au fichier d'être mis en cache de manière individuel. Cela est recommandé quand il y a beaucoup de fichiers CSS partagés. Les fichiers CSS à l'intérieur des composants asynchrones vont rester en place en tant que chaines de caractères JavaScript et prise en charge par `vue-style-loader`.
 
 ## filenames
 
 > Personnaliser les noms des paquetages.
 
 - Type : `Object`
-- Par défault :
+- Par défaut :
 
   ```js
   {
@@ -173,7 +173,7 @@ module.exports = {
 
 - Type: `Array`, `Object` (recommandé), `Function` ou `Boolean`
 
-  **Note :** alors que l'usage par défaut est OK et assez flexible pour des cas d'utilisations normaux, l'utilisation recommandée par [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) est d'uitiliser un fichier `postcss.config.js` dans votre projet. En créant ce fichier, il sera automatiquement détecté et les options seront ignorées.
+  **Note :** alors que l'usage par défaut est OK et assez flexible pour des cas d'utilisations normaux, l'utilisation recommandée par [`vue-loader`](https://vue-loader.vuejs.org/en/options.html#postcss) est d'utiliser un fichier `postcss.config.js` dans votre projet. En créant ce fichier, il sera automatiquement détecté et les options seront ignorées.
 
 - Par défaut :
 
@@ -240,11 +240,11 @@ Quand vous lancerez `nuxt build`, le contenu sera directement chargé sur le ré
 - Type : `Boolean`
 - Par défaut : `true` for universal mode and `false` for spa mode
 
-Cette option est automatiquement créer en se basant sur la valeur de  `mode` si elle n'est pas fournie.
+Cette option est automatiquement créée en se basant sur la valeur de  `mode` si elle n'est pas fournie.
 
 ## templates
 
-> Nuxt.js vous permet de fournir vos propres templates qui seront rendu en ce basant sur la configuration de Nuxt. Cette fonctionnalité est particulièrement utile quand utilisé avec [modules](/guide/modules).
+> Nuxt.js vous permet de fournir vos propres templates qui seront rendus en se basant sur la configuration de Nuxt. Cette fonctionnalité est particulièrement utile quand utilisée avec [modules](/guide/modules).
 
 - Type : `Array<Object>`
 
@@ -266,7 +266,7 @@ module.exports = {
 }
 ```
 
-Les templates sont rendu en utilisant [`lodash.template`](https://lodash.com/docs/#template). Vous pouvez en apprendre plus à propos de leur utilisation [ici](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
+Les templates sont rendus en utilisant [`lodash.template`](https://lodash.com/docs/#template). Vous pouvez en apprendre plus à propos de leur utilisation [ici](https://github.com/learn-co-students/javascript-lodash-templates-v-000).
 
 ## vendor
 
