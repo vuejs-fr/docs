@@ -72,7 +72,7 @@ Voir [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware)
 
 ## extend
 
-> Extend the webpack configuration manually for the client & server bundles.
+> Étendre la configuration webpack manuellement pour les paquetages client et serveur.
 
 - Type : `Function`
 
@@ -194,7 +194,7 @@ module.exports = {
   build: {
     postcss: {
       plugins: {
-        // Désactiver `postcss-url`
+      // Désactiver `postcss-url`
       'postcss-url': false
 
       // Personnaliser les options par défaut de `postcss-cssnext`
