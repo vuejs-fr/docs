@@ -23,7 +23,7 @@ Nom du répertoire créé par `nuxt generate`.
 - Type : `Number`
 - Par défaut : `0`
 
-Interval entre 2 rendus pour éviter pour éviter d'inonder les appels d'API effectués par une API potentielle de l'application web.
+Interval entre 2 rendus pour éviter d'inonder les appels d'API effectués par une API potentielle de l'application web.
 
 ## minify
 
@@ -156,7 +156,7 @@ module.exports = {
 
 ### Augmenter la vitesse de génération d'une route dynamique avec `payload`
 
-Dans l'exemple ci-dessus, nous avons utilisé `user.id` depuis le serveur pour générer les routes mais jeter le reste des données. Typiquement, nous avons besoin de les récupérer de nouveau depuis `/utilisateurs/_id.vue`. Pendant que nous faisons cela, nous allons probablement avoir besoin de définir `generate.interval` avec quelque chose comme `100` pour ne pas inonder le serveur avec des appels. Parce que cela va augmenter le temps de génération du script, il serait préférable de passer avec l'objet `user` le contexte dans `_id.vue`. Nous pouvons faire cela en modifiant le code ci-dessus pour celui ci :
+Dans l'exemple ci-dessus, nous avons utilisé `user.id` depuis le serveur pour générer les routes mais jeter le reste des données. Typiquement, nous avons besoin de les récupérer de nouveau depuis `/utilisateurs/_id.vue`. Pendant que nous faisons cela, nous allons probablement avoir besoin de définir `generate.interval` avec quelque chose comme `100` pour ne pas inonder le serveur avec des appels. Parce que cela va augmenter le temps de génération du script, il serait préférable de passer avec l'objet `user` le contexte dans `_id.vue`. Nous pouvons faire cela en modifiant le code ci-dessus pour celui-ci :
 
 `nuxt.config.js`
 
