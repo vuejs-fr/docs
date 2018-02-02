@@ -1,15 +1,15 @@
 ---
-title: "API: The <no-ssr> Component"
-description: Skip component rendering on server side(rendering), and display placeholder text.
+title: "API: le componsant <no-ssr>"
+description: Passe le rendu de composant du côté serveur et affiche un texte à la place.
 ---
 
-# The &lt;no-ssr&gt; Component
+# Le composant &lt;no-ssr&gt;
 
-> This component is used to purposely remove the component from the subject of server side rendering.
+> Ce composant est utilisé pour retirer la génération des composants côté serveur.
 
 **Props**:
-- placeholder: `String`
-  - This prop will be used as a content of inner `div` and displayed as text only on server side rendering.
+- placeholder : `string`
+  - Cette propriété peut être utilisée pour le contenu de la `div` et affiche du texte comme rendu pour la partie générée côté serveur.
 
 ```html
 <template>
@@ -22,5 +22,4 @@ description: Skip component rendering on server side(rendering), and display pla
 </template>
 ```
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr).
-Thanks [@egoist](https://github.com/egoist)!</p>
+Ce composant est un clone de [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Merci [@egoist](https://github.com/egoist) !
