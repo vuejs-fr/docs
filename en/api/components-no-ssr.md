@@ -1,5 +1,5 @@
 ---
-title: "API: le componsant <no-ssr>"
+title: "API: le composant <no-ssr>"
 description: Passe le rendu de composant du côté serveur et affiche un texte à la place.
 ---
 
