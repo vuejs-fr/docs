@@ -5,9 +5,9 @@ description: Nuxt.js vous permet de définir le fichier, la bibliothèque ou le 
 
 # La propriété css
 
-> Nuxt.js vous permet de définir le fichier, la bibliothèque ou le module CSS que vous souhaiter définir globalement (inclue sur toutes les pages).
+> Nuxt.js vous permet de définir le fichier, la bibliothèque ou le module CSS que vous souhaitez définir globalement (inclue sur toutes les pages).
 
-Dans le cas où vous souhaiteriez utiliser ```sass```, assurez-vous d'avoir installer les packages ```node-sass``` et ```sass-loader```. Si non, utilisez cette commande :
+Dans le cas où vous souhaiteriez utiliser ```sass```, assurez-vous d'avoir installé les packages ```node-sass``` et ```sass-loader```. Si non, utilisez cette commande :
 
 ```sh
 npm install --save-dev node-sass sass-loader
