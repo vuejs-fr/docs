@@ -66,4 +66,4 @@ Puis dans votre `package.json` :
 }
 ```
 
-Note : vous devez lancer `npm install --save-dev cross-env` pour faire fonctionner l'exemple ci-dessus. Si vous **ne** developpez **pas** sur Windows vous pouvez retirer `cross-env` de vos scripts `start` et directement définir `NODE_ENV`.
+Note : vous devez lancer `npm install --save-dev cross-env` pour faire fonctionner l'exemple ci-dessus. Si vous **ne** développez **pas** sur Windows vous pouvez retirer `cross-env` de vos scripts `start` et directement définir `NODE_ENV`.
