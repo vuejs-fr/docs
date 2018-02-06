@@ -7,7 +7,7 @@ description: Passe le rendu de composant du côté serveur et affiche un texte �
 
 > Ce composant est utilisé pour retirer la génération des composants côté serveur.
 
-**Props**:
+**Props** :
 - placeholder : `string`
   - Cette propriété peut être utilisée pour le contenu de la `div` et affiche du texte comme rendu pour la partie générée côté serveur.
 
