@@ -1,33 +1,36 @@
 ---
-title: Auth External API (JWT)
-description: Authentication with external API service (jsonwebtoken) example with Nuxt.js
+title: API d'authentification externe (JWT)
+description: Exemple d'authentification avec le service d'API externe (jsonwebtoken) avec Nuxt.js
 github: auth-jwt
 code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 ---
 
 # Documentation
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>In auth-routes example both api and nuxt start together and use one node server. However, sometimes we should work with external api with jsonWebToken. In this example it will be explained in a simple way.</p>
+Dans l'exemple auth-routes l'API et le site Nuxt se lance ensemble et utilise la même instance serveur Node.js. Cependant, il est parfois mieux de travailler avec une API externe avec jsonWebToken. Dans cet exemple il sera expliqué comment faire cela simplement.
 
-## Structure:
+## Structure
 
-Since the nuxt.js provides both server and client rendering and the cookie of browser is different from cookie of the node server, we should push token data to somestorage that can be accessible in both sides.
+Puisque Nuxt.js fournit le rendu client et serveur ainsi qu'un cookie différent entre le navigateur et le serveur Node.js, nous devons fournir un jeton de donnée qui puisse être accessible par les deux parties.
 
-### For server rendering:
-We should save the token in browser cookie after login, then it can be accessed through `req.headers.cookie` in middleware files, nuxtServerInit function or  wherever you can access the `req`.
-### For client rendering:
-We directly commit token in the store, as long as the page is not closed or reloaded, we have the token.
+### Pour le rendu serveur
 
-First, we install the dependencies:
+Nous devons sauvegarder le jeton dans un cookie de session après connexion qui puisse être récupérer via `req.headers.cookie` par les fichiers middlewares, la fonction `nuxtServerInit` ou tout ce qui a accès à `req`.
+
+### Pour le rendu client
+
+Nous actons directement le jeton dans le store, aussi longtemps que la page n'est pas fermée ou rechargée, nous avons le jeton.
+
+Tout d'abord, installons les dépendances :
 
 ```bash
 npm install js-cookie --save
 npm install cookieparser --save
 ```
 
-## Login Page
+## Page de connexion
 
-Then inside  page directory make `login.vue` , and inside the script section:
+À l'intérieur du dossier des page créez un fichier `login.vue` et dans ce fichier, dans la partie script, ajoutez :
 
 ```js
 import Cookie from 'js-cookie'
@@ -40,23 +43,26 @@ export default {
         const auth = {
           accessToken: 'someStringGotFromApiServiceWithAjax'
         }
-        this.$store.commit('update', auth) //mutating to store for client rendering
-        Cookie.set('auth', auth) //saving token in cookie for server rendering
+        this.$store.commit('update', auth) // acter dans le store pour le rendu client
+        Cookie.set('auth', auth) // sauver le jetondans un cookie pour le rendu serveur
         this.$router.push('/')
       }, 1000)
     }
   }
 }
 ```
-> Note: We simulate the async request with timeout.
 
-## Using the store
+> Note : nous simulerons la requête asynchrone avec un délai.
 
-After that make `index.js` in `store` directory like below :
+## Utiliser le store
+
+Après cela mettez `index.js` dans le dossier `store` comme ci-dessous :
 
 ```javascript
 import Vuex from 'vuex'
+
 var cookieparser = require('cookieparser')
+
 const createStore = () => {
   return new Vuex.Store({
     state: {
@@ -79,33 +85,34 @@ const createStore = () => {
     }
   })
 }
+
 export default createStore
 ```
-> Note: The `nuxtServerInit` function only runs in every server side rendering. So we use it to mutate the browser cookie in the store. we can get the browser cookie by req.headers.cookie and parse it using `cookieparser`
 
+> Note : la fonction `nuxtServerInit` s'execute seulement dans chaque rendu côté serveur. Nous devons l'utiliser pour muter le cookie de session du navigateur dans le store. Nous pouvons récupérer le cookie de session du navigateur avec `req.headers.cookie` et l'analyser en utilisant `cookieparser`.
 
-## checking auth middlewares
-we can check the store for havin the accessToken in every page we need to limit access.
-in middleware directory we make `authenticated.js` file:
+## Authentification vérifiée via middlewares
+
+Nous pouvons vérifier le store pour obtenir un accès au jeton sur tout les pages qui demandent un accès limitée. Dans le dossier des middlewares nous créons un fichier `authenticated.js` :
 
 ```javascript
 export default function ({ store, redirect }) {
-  // If the user is not authenticated
+  // Si l'utilisateur n'est pas authentifié
   if (!store.state.auth) {
     return redirect('/login')
   }
 }
 ```
 
-and in middleware directory make `notAuthenticated.js` file for login page:
+et dans le dossier des middlewares créez un fichier `notAuthenticated.js` pour la page de connexion :
 
 ```javascript
 export default function ({ store, redirect }) {
-  // If the user is authenticated redirect to home page
+  // Si l'utilisateur est authentifié, aller à la page d'accueil
   if (store.state.auth) {
     return redirect('/')
   }
 }
 ```
-> Note: use `authenticated` for pages which need authentication and use `notAuthenticated` middleware inside the login/register pages.
 
+> Note : utilisez le middleware `authenticated.js` pour les pages qui ont besoin d'une authentification et le middleware `notAuthenticated.js` à l'intérieur des pages de type connexion / inscriptions, etc.
