@@ -1,5 +1,5 @@
 ---
-title: "API: La propriété env"
+title: "API : La propriété env"
 description: Partager les variables d'environnement entre client et serveur.
 ---
 
@@ -7,7 +7,7 @@ description: Partager les variables d'environnement entre client et serveur.
 
 - Type : `Object`
 
-> Nuxt.js vous laisse créer les variables d'environnement qui seront partagées entre le côté client et serveur.
+> Nuxt.js vous laisse créer des variables d'environnement qui seront partagées entre le côté client et serveur.
 
 Exemple (`nuxt.config.js`) :
 
@@ -19,7 +19,7 @@ module.exports = {
 }
 ```
 
-Cela vous laisse créer une propriété `baseUrl` qui sera égale à la variable d'environnement `BASE_URL` si définie, sinon, sera égale à `'http://localhost:3000'`.
+Ça vous permet de créer une propriété `baseUrl` qui sera égale à la variable d'environnement `BASE_URL` si définie, sinon, sera égale à `'http://localhost:3000'`.
 
 Puis, je peux accéder à ma variable `baseUrl` de deux manières :
 

@@ -7,7 +7,7 @@ code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 
 # Documentation
 
-Dans l'exemple auth-routes l'API et le site Nuxt se lance ensemble et utilise la même instance serveur Node.js. Cependant, il est parfois mieux de travailler avec une API externe avec jsonWebToken. Dans cet exemple il sera expliqué comment faire cela simplement.
+Dans l'exemple auth-routes l'API et le site Nuxt se lance ensemble et utilisent la même instance serveur Node.js. Cependant, il est parfois mieux de travailler avec une API externe avec jsonWebToken. Dans cet exemple il sera expliqué comment faire cela simplement.
 
 ## Structure
 
@@ -30,7 +30,7 @@ npm install cookieparser --save
 
 ## Page de connexion
 
-À l'intérieur du dossier des page créez un fichier `login.vue` et dans ce fichier, dans la partie script, ajoutez :
+À l'intérieur du dossier des pages créez un fichier `login.vue` et dans ce fichier, dans la partie script, ajoutez :
 
 ```js
 import Cookie from 'js-cookie'
@@ -44,7 +44,7 @@ export default {
           accessToken: 'someStringGotFromApiServiceWithAjax'
         }
         this.$store.commit('update', auth) // acter dans le store pour le rendu client
-        Cookie.set('auth', auth) // sauver le jetondans un cookie pour le rendu serveur
+        Cookie.set('auth', auth) // sauver le jeton dans un cookie pour le rendu serveur
         this.$router.push('/')
       }, 1000)
     }
