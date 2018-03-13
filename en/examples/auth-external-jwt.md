@@ -11,11 +11,11 @@ Dans l'exemple auth-routes l'API et le site Nuxt se lance ensemble et utilisent 
 
 ## Structure
 
-Puisque Nuxt.js fournit le rendu client et serveur ainsi qu'un cookie différent entre le navigateur et le serveur Node.js, nous devons fournir un jeton de donnée qui puisse être accessible par les deux parties.
+Puisque Nuxt.js fournit à la fois le rendu client et serveur ainsi qu'un cookie différent entre le navigateur et le serveur Node.js, nous devons fournir un jeton de donnée qui puisse être accessible par les deux parties.
 
 ### Pour le rendu serveur
 
-Nous devons sauvegarder le jeton dans un cookie de session après connexion qui puisse être récupérer via `req.headers.cookie` par les fichiers middlewares, la fonction `nuxtServerInit` ou tout ce qui a accès à `req`.
+Nous devons sauvegarder le jeton dans un cookie de session après connexion qui puisse être récupéré via `req.headers.cookie` par les fichiers middlewares, la fonction `nuxtServerInit` ou tout ce qui a accès à `req`.
 
 ### Pour le rendu client
 
@@ -89,11 +89,11 @@ const createStore = () => {
 export default createStore
 ```
 
-> Note : la fonction `nuxtServerInit` s'execute seulement dans chaque rendu côté serveur. Nous devons l'utiliser pour muter le cookie de session du navigateur dans le store. Nous pouvons récupérer le cookie de session du navigateur avec `req.headers.cookie` et l'analyser en utilisant `cookieparser`.
+> Note : la fonction `nuxtServerInit` s'exécute seulement dans chaque rendu côté serveur. Nous devons l'utiliser pour muter le cookie de session du navigateur dans le store. Nous pouvons récupérer le cookie de session du navigateur avec `req.headers.cookie` et l'analyser en utilisant `cookieparser`.
 
 ## Authentification vérifiée via middlewares
 
-Nous pouvons vérifier le store pour obtenir un accès au jeton sur tout les pages qui demandent un accès limitée. Dans le dossier des middlewares nous créons un fichier `authenticated.js` :
+Nous pouvons vérifier le store pour obtenir un accès au jeton sur toutes les pages qui demandent un accès limité. Dans le dossier des middlewares nous créons un fichier `authenticated.js` :
 
 ```javascript
 export default function ({ store, redirect }) {
