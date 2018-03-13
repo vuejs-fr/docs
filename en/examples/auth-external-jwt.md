@@ -15,7 +15,7 @@ Puisque Nuxt.js fournit à la fois le rendu client et serveur ainsi qu'un cookie
 
 ### Pour le rendu serveur
 
-Nous devons sauvegarder le jeton dans un cookie de session après connexion qui puisse être récupéré via `req.headers.cookie` par les fichiers middlewares, la fonction `nuxtServerInit` ou tout ce qui a accès à `req`.
+Nous devons sauvegarder le jeton dans un cookie de session après connexion pour qu'il puisse être récupéré via `req.headers.cookie` par les fichiers middlewares, la fonction `nuxtServerInit` ou tout ce qui a accès à `req`.
 
 ### Pour le rendu client
 
@@ -43,7 +43,7 @@ export default {
         const auth = {
           accessToken: 'someStringGotFromApiServiceWithAjax'
         }
-        this.$store.commit('update', auth) // acter dans le store pour le rendu client
+        this.$store.commit('update', auth) // muter `auth` dans le store pour le rendu client
         Cookie.set('auth', auth) // sauver le jeton dans un cookie pour le rendu serveur
         this.$router.push('/')
       }, 1000)
@@ -56,7 +56,7 @@ export default {
 
 ## Utiliser le store
 
-Après cela mettez `index.js` dans le dossier `store` comme ci-dessous :
+Après cela modifiez `index.js` dans le dossier `store` comme ci-dessous :
 
 ```javascript
 import Vuex from 'vuex'
@@ -89,7 +89,7 @@ const createStore = () => {
 export default createStore
 ```
 
-> Note : la fonction `nuxtServerInit` s'exécute seulement dans chaque rendu côté serveur. Nous devons l'utiliser pour muter le cookie de session du navigateur dans le store. Nous pouvons récupérer le cookie de session du navigateur avec `req.headers.cookie` et l'analyser en utilisant `cookieparser`.
+> Note : la fonction `nuxtServerInit` s'exécute seulement dans chaque rendu côté serveur. Nous l'utilisons pour muter le cookie de session du navigateur dans le store. Nous pouvons récupérer le cookie de session du navigateur avec `req.headers.cookie` et l'analyser en utilisant `cookieparser`.
 
 ## Authentification vérifiée via middlewares
 
