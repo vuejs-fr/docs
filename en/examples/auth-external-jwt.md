@@ -7,7 +7,7 @@ code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 
 # Documentation
 
-Dans l'exemple auth-routes l'API et le site Nuxt se lance ensemble et utilisent la même instance serveur Node.js. Cependant, il est parfois mieux de travailler avec une API externe avec jsonWebToken. Dans cet exemple il sera expliqué comment faire cela simplement.
+Dans l'exemple auth-routes l'API et le site Nuxt se lancent ensemble et utilisent la même instance serveur Node.js. Cependant, il est parfois mieux de travailler avec une API externe avec jsonWebToken. Cela sera expliqué simplement à travers cet exemple.
 
 ## Structure
 
