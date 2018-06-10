@@ -26,8 +26,8 @@ description: Passe le rendu de composant du côté serveur et affiche un texte �
 **Slots**:
 
 - placeholder:
-  - Utilise un texte comme valeur par défaut jusqu'à ce qu'un `<no-ssr />` soit monté sur côté client.
-
+  - Use a slot as placeholder until <no-ssr /> is mounted on client-side.
+ 
  ```html
 <template>
   <div>
@@ -43,6 +43,6 @@ description: Passe le rendu de composant du côté serveur et affiche un texte �
 </template>
 ```
 
-> Notez que `<no-ssr />` ne peut contenir qu'UN élément / composant enfant.
+> Note that <no-ssr /> can only contain at most ONE child component/element.
 
 Ce composant est un clone de [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Merci [@egoist](https://github.com/egoist) !
