@@ -26,23 +26,23 @@ description: Passe le rendu de composant du côté serveur et affiche un texte �
 **Slots**:
 
 - placeholder:
-  - Use a slot as placeholder until <no-ssr /> is mounted on client-side.
- 
+  - Utilise un texte comme valeur par défaut jusqu'à ce qu'un `<no-ssr />` soit monté sur côté client.
+
  ```html
 <template>
   <div>
     <sidebar />
     <no-ssr>
-      <!-- this component will only be rendered on client-side -->
+      <!-- ce composant sera uniquement rendu côté client -->
       <comments />
-  
-      <!-- loading indicator -->
+
+      <!-- indicateur de chargement -->
       <comments-placeholder slot="placeholder" />
     </no-ssr>
   </div>
 </template>
 ```
 
-> Note that <no-ssr /> can only contain at most ONE child component/element.
+> Notez que `<no-ssr />` ne peut contenir qu'UN élément / composant enfant.
 
 Ce composant est un clone de [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Merci [@egoist](https://github.com/egoist) !

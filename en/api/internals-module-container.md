@@ -39,7 +39,7 @@ Ajoute à `options.build.vendor` et applique un filtre unique.
 
 ### addTemplate (template)
 
-- **template**: `String` or `Object`
+- **template**: `String` ou `Object`
     - `src`
     - `options`
     - `fileName`
