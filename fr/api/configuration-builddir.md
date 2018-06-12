@@ -1,6 +1,6 @@
 ---
 title: "API: La propriété buildDir"
-description: Définissez le dossier dist de votre application nuxt.js
+description: Définissez le dossier dist de votre application Nuxt.js
 ---
 
 # The buildDir Property (EN)
@@ -9,9 +9,7 @@ description: Définissez le dossier dist de votre application nuxt.js
 - Type: `String`
 - Par défaut: `.nuxt`
 
-> Définissez le répertoire dist de votre application nuxt.js
-
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example (`nuxt.config.js`):</p>
+> Définissez le répertoire dist de votre application Nuxt.js
 
 ```js
 module.exports = {
