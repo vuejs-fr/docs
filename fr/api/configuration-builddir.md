@@ -1,14 +1,14 @@
 ---
-title: "API: The buildDir Property"
-description: Define the dist directory for your nuxt.js application
+title: "API: La propriété buildDir"
+description: Définissez le dossier dist de votre application Nuxt.js
 ---
 
-# The buildDir Property (EN)
+# La propriété buildDir
 
 - Type: `String`
-- Default: `.nuxt`
+- Par défaut: `.nuxt`
 
-> Define the dist directory for your nuxt.js application
+> Définissez le répertoire dist de votre application Nuxt.js
 
 ```js
 module.exports = {
@@ -16,4 +16,4 @@ module.exports = {
 }
 ```
 
-By default, many tools assumes that `.nuxt` is hidden directory, because it's name starts with dot. You can use this option to make dist folder not hidden.
+Par défaut, de nombreux outils supposent que `.nuxt` est un répertoire caché, car son nom commence par un point. Vous pouvez utiliser cette option pour rendre le dossier dist non masqué.
