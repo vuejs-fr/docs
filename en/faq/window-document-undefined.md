@@ -14,11 +14,3 @@ if (process.browser) {
   require('external_library')
 }
 ```
-
-N'oubliez pas d'ajouter la librairie dans votre [paquetage vendor](/api/configuration-build#build-vendor) dans `nuxt.config.js` :
-
-```js
-  build: {
-    vendor: ['external_library']
-  }
-```

@@ -36,18 +36,6 @@ export default {
 </script>
 ```
 
-Mais il y a **un problème**, si nous importons axios dans une autre page, il sera à nouveau inclus dans le paquetage de la page. Nous voulons inclure `axios` une seule fois dans notre application, pour cela, nous utilisons la clé `build.vendor` dans notre `nuxt.config.js` :
-
-```js
-module.exports = {
-  build: {
-    vendor: ['axios']
-  }
-}
-```
-
-Je peux ensuite importer `axios` partout sans avoir à m'inquiéter de l'importer plusieurs fois et de rendre le paquetage plus lourd.
-
 ## Plugins Vue
 
 Si nous voulons utiliser [vue-notifications](https://github.com/se-panfilov/vue-notifications) pour afficher des notifications dans notre application, nous devons configurer le plugin avant de lancer l'application.
@@ -64,59 +52,147 @@ Vue.use(VueNotifications)
 Puis nous ajoutons le fichier dans l'attribut `plugins` de `nuxt.config.js` :
 
 ```js
-module.exports = {
-  plugins: ['~plugins/vue-notifications']
+export default {
+  plugins: ['~/plugins/vue-notifications']
 }
 ```
 
 Pour en savoir plus sur l'attribut `plugins`, consultez [La propriété `plugins`](/api/configuration-plugins) de l'API.
 
-Acutellement, `vue-notifications` sera inclus dans le paquetage de l'application. Mais comme il s'agit d'une bibliothèque, nous voulons l'inclure dans le paquetage `vendor` pour une meilleure mise en cache.
+## Inject in $root & context
 
-Nous pouvons mettre à jour `nuxt.config.js` pour ajouter `vue-notifications` dans le bundle `vendor` :
+Sometimes you want to make functions or values available across the app.
+You can inject those variables into Vue instances (client side), the context (server side) and even in the Vuex store.
+It is a convention to prefix those functions with a `$`.
 
-```js
-module.exports = {
-  build: {
-    vendor: ['vue-notifications']
-  },
-  plugins: ['~/plugins/vue-notifications']
-}
-```
+### Inject into Vue instances
 
-## Injection dans $root et context
+Injecting content into Vue instances works similar to when doing this in standard Vue apps.
 
-Plusieurs plugins ont besoin d'être injectés à la racine de l'application pour être utilisés, comme [vue-18n](https://github.com/kazupon/vue-i18n). Avec Nuxt.js, vous pouvez utilisez `app` qui est disponible dans le `context` quand vous exportez une méthode :
-
-`plugins/i18n.js`:
+`plugins/vue-inject.js`:
 
 ```js
 import Vue from 'vue'
-import VueI18n from 'vue-i18n'
 
-Vue.use(VueI18n)
+Vue.prototype.$myInjectedFunction = (string) => console.log("This is an example", string)
+```
 
-export default ({ store }, inject) => {
-  // Mettre l'instance `i18n` dans `app`
-  // De cette manière nous pouvons l'utiliser comme middleware et `asyncData` / `fetch` pour les pages
-  app.i18n = new VueI18n({
-    /* `VueI18n` options... */
-  })
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/vue-inject.js']
+}
+```
+
+You can now use the function in all your Vue components.
+
+`example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('test')
+  }
+}
+```
+
+
+### Inject into context
+
+Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+
+`plugins/ctx-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  // Set the function directly on the context.app object
+  app.myInjectedFunction = (string) => console.log('Okay, another function', string)
 }
 ```
 
 `nuxt.config.js`:
 
 ```js
-module.exports = {
-  build: {
-    vendor: ['vue-i18n']
-  },
-  plugins: ['~/plugins/i18n.js']
+export default {
+  plugins: ['~/plugins/ctx-inject.js']
 }
 ```
 
-Pour voir comment utiliser ce plugin, consultez cet [exemple i18n](/examples/i18n).
+The function is now available whenever you have access to the `context` (for example in `asyncData` and `fetch`).
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  asyncData(context){
+    context.app.myInjectedFunction('ctx!')
+  }
+}
+```
+
+### Combined inject
+
+If you need the function in the `context`, Vue instances and maybe even in the Vuex store, you can use the `inject` function, which is the second parameter of the plugins exported function.
+
+Injecting content into Vue instances works similar to when doing this in standard Vue apps. The `$` will be prepended automatically to the function.
+
+`plugins/combined-inject.js`:
+
+```js
+export default ({ app }, inject) => {
+  inject('myInjectedFunction', (string) => console.log('That was easy!', string))
+}
+```
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: ['~/plugins/combined-inject.js']
+}
+```
+
+Now the function can be used from `context`, via `this` in Vue instances and via `this` in store `actions`/`mutations`.
+
+`ctx-example-component.vue`:
+
+```js
+export default {
+  mounted(){
+    this.$myInjectedFunction('works in mounted')
+  },
+  asyncData(context){
+    context.app.$myInjectedFunction('works with context')
+  }
+}
+```
+
+`store/index.js`:
+
+```js
+export const state = () => ({
+  someValue: ''
+})
+
+export const mutations = {
+  changeSomeValue(state, newValue) {
+    this.$myInjectedFunction('accessible in mutations')
+    state.someValue = newValue
+  }
+}
+
+export const actions = {
+  setSomeValueToWhatever ({ commit }) {
+    this.$myInjectedFunction('accessible in actions')
+    const newValue = "whatever"
+    commit('changeSomeValue', newValue)
+  }
+}
+
+```
+
+
 
 ## Côté client uniquement
 
@@ -127,7 +203,7 @@ Exemple :
 `nuxt.config.js`:
 
 ```js
-module.exports = {
+export default {
   plugins: [
     { src: '~/plugins/vue-notifications', ssr: false }
   ]

@@ -8,12 +8,17 @@ description: Comment utiliser des plugins PostCSS ?
 Dans votre fichier `nuxt.config.js` :
 
 ```js
-module.exports = {
+
+import postcssNested from 'postcss-nested',
+import postcssResponsiveType from 'postcss-responsive-type',
+import postcssHexrgba from 'postcss-hexrgba',
+
+export default {
   build: {
     postcss: [
-      require('postcss-nested')(),
-      require('postcss-responsive-type')(),
-      require('postcss-hexrgba')(),
+      postcssNested()
+      postcssResponsiveType()
+      postcssHexrgba()
     ]
   }
 }

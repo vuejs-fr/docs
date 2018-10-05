@@ -17,7 +17,7 @@ description: Use vue.js plugins with the plugins option of Nuxt.js.
 
 Example (`nuxt.config.js`):
 ```js
-module.exports = {
+export default {
   plugins: ['~/plugins/vue-notifications']
 }
 ```

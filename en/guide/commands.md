@@ -50,7 +50,7 @@ npm run dev
 
 ## Déploiement en production
 
-Nuxt.js permet de choisir entre trois modes de déploiement pour votre application : rendu côté serveur, application monopage ou généré de manière statique.
+Nuxt.js vous permet de choisir entre trois modes de déploiement pour votre application : rendu côté serveur, application monopage ou généré de manière statique.
 
 ### Déploiement pour un rendu côté serveur (universelle)
 
@@ -60,6 +60,8 @@ Pour déployer, au lieu d'exécuter `nuxt`, vous voulez probablement faire d'abo
 nuxt build
 nuxt start
 ```
+
+You can also set `server.https` in `nuxt.config.js` with the same set of options passed to [`https.createServer`](https://nodejs.org/api/https.html), should you choose to serve Nuxt in HTTPS mode. Unix sockets are also available if you set the `server.socket` option in `nuxt.config.js` (or `-n` in the [CLI](https://nuxtjs.org/guide/commands#list-of-commands)). When using [Unix sockets](https://en.wikipedia.org/wiki/Berkeley_sockets), make sure not to set the `host` and `port` parameters otherwise the `socket` parameter is ignored.
 
 Le fichier `package.json` suivant est recommandé :
 

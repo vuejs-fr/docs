@@ -9,7 +9,7 @@ description: La configuration par défaut de Nuxt.js couvre la plupart des cas d
 
 ### build
 
-Cette option vous permet d'ajouter des modules à l'intérieur du fichier `vendor.bundle.js` généré pour réduire la taille du paquetage de l'application. Vraiment utile lors de l'utilisation de modules externes.
+This option lets you configure various settings for the `build` step, including `loaders`, `filenames`, the `webpack` config and `transpilation`.
 
 [Consultez la documentation à propos de `build`](/api/configuration-build)
 
@@ -55,6 +55,13 @@ Cette option vous permet d'ajouter des modules Nuxt a votre projet.
 
 [Consultez la documentation à propos de `modules`](/api/configuration-modules)
 
+### modulesDir
+
+This option lets you define the node_modules folder of your Nuxt.js Application.
+
+[Documentation about `modulesDir` integration](/api/configuration-modulesdir)
+
+
 ### plugins
 
 Cette option vous permet de définir des plugins JavaScript qui seront exécutés avant d'instancier la racine de l'application Vue.js.
@@ -66,6 +73,12 @@ Cette option vous permet de définir des plugins JavaScript qui seront exécuté
 Cette option vous permet de définir l'espace de travail de votre application Nuxt.js.
 
 [Consultez la documentation à propos de `rootDir`](/api/configuration-rootdir)
+
+### server
+
+This option lets you configure the connection variables for the server instance of your Nuxt.js Application.
+
+[Documentation about `server` integration](/api/configuration-server)
 
 ### router
 

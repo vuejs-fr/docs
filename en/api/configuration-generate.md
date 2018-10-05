@@ -34,33 +34,8 @@ Interval entre 2 rendus pour éviter d'inonder les appels d'API effectués par u
 
 ## minify
 
-- Type : `Object`
-- Par défaut :
-
-```js
-minify: {
-  collapseBooleanAttributes: true,
-  collapseWhitespace: false,
-  decodeEntities: true,
-  minifyCSS: true,
-  minifyJS: true,
-  processConditionalComments: true,
-  removeAttributeQuotes: false,
-  removeComments: false,
-  removeEmptyAttributes: true,
-  removeOptionalTags: true,
-  removeRedundantAttributes: true,
-  removeScriptTypeAttributes: false,
-  removeStyleLinkTypeAttributes: false,
-  removeTagWhitespace: false,
-  sortAttributes: true,
-  sortClassName: false,
-  trimCustomFragments: true,
-  useShortDoctype: true
-}
-```
-
-Vous pouvez changer la configuration par défaut de [html-minifier](https://github.com/kangax/html-minifier) utilisée par Nuxt.js pour minifier les fichiers HTML créés pendant le processus de génération.
+- **Deprecated!**
+- Use [build.html.minify](/api/configuration-build#html-minify) instead
 
 ## routes
 
@@ -84,7 +59,7 @@ Si vous voulez que Nuxt.js génère les routes avec des paramètres dynamiques, 
 Nous ajoutons les routes pour `/utilisateurs/:id` dans `nuxt.config.js` :
 
 ```js
-module.exports = {
+export default {
   generate: {
     routes: [
       '/utilisateurs/1',
@@ -122,9 +97,9 @@ Génial, mais que se passe t-il si nous avons des **paramètres dynamiques** ?
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://mon-api/utilisateurs')
@@ -143,14 +118,14 @@ module.exports = {
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function (callback) {
       axios.get('https://mon-api/utilisateurs')
       .then((res) => {
-        var routes = res.data.map((user) => {
+        const routes = res.data.map((user) => {
           return '/utilisateurs/' + user.id
         })
         callback(null, routes)
@@ -168,9 +143,9 @@ Dans l'exemple ci-dessus, nous avons utilisé `user.id` depuis le serveur pour g
 `nuxt.config.js`
 
 ```js
-const axios = require('axios')
+import axios from 'axios'
 
-module.exports = {
+export default {
   generate: {
     routes: function () {
       return axios.get('https://mon-api/utilisateurs')

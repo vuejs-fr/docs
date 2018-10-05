@@ -35,6 +35,8 @@ Plugin  | Arguments       | Quand
 
 ### addVendor (vendor)
 
+**Obsolète car `vendor` n'est plus utilisé**
+
 Ajoute à `options.build.vendor` et applique un filtre unique.
 
 ### addTemplate (template)
@@ -82,5 +84,6 @@ We can register hooks on certain life cycle events.
 
 Points d'ancrage          | Arguments                  | Quand
 --------------------------|----------------------------|-------------------------------------------------------------------------------------------------------
- `modules:before`         | (moduleContainer, options) | Appelé avant la création de la classe ModuleContainer, utile pour surcharger les méthodess et options.
+ `modules:before`         | (moduleContainer, options) | Appelé avant la création de la classe ModuleContainer, utile pour surcharger les méthodes et options.
  `modules:done`           | (moduleContainer)          | Appelé quand tous les modules ont été chargés.
+

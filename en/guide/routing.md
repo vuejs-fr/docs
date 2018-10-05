@@ -115,7 +115,7 @@ export default {
 }
 ```
 
-Si la méthode de validation ne renvoie pas `true`, Nuxt.js chargera automatiquement la page d'erreur 404.
+Si la méthode de validation ne renvoie pas `true` ou une `Promise` résolue à `true` ou génère une erreur, Nuxt.js chargera automatiquement la page d'erreur 404 ou la page d'erreur 500 en cas d'erreur.
 
 Pour plus d'informations à propos de la méthode de validation, consultez [la partie Pages de l'API pour La méthode `validate`](/api/pages-validate)
 
@@ -228,7 +228,7 @@ Vous pouvez activer l'alternative pour application monopage pour les routes dyna
 Nous pouvons activer cela dans notre fichier `nuxt.config.js` :
 
 ``` js
-module.exports = {
+export default {
   generate: {
     fallback: true, // si vous souhaitez utiliser un fichier '404.html'
     fallback: 'my-fallback/file.html' // si votre hébergement nécessite une localisation personnalisée
@@ -291,7 +291,7 @@ Notre CSS global dans `assets/main.css` :
 Nous ajoutons son chemin dans notre fichier de configuration `nuxt.config.js` :
 
 ```js
-module.exports = {
+export default {
   css: [
     'assets/main.css'
   ]
@@ -364,7 +364,7 @@ Puis, dans `nuxt.config.js`, pour une mise en page ou une page, utilisez le mot-
 `nuxt.config.js`
 
 ```js
-module.exports = {
+export default {
   router: {
     middleware: 'stats'
   }

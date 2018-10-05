@@ -49,6 +49,9 @@
           { "name": "extractCSS", "to": "#extractcss" },
           { "name": "filenames", "to": "#filenames" },
           { "name": "hotMiddleware", "to": "#hotmiddleware" },
+          { "name": "optimization", "to": "#optimization" },
+          { "name": "terser", "to": "#terser" },
+          { "name": "optimizeCSS", "to": "#optimize-css" },
           { "name": "plugins", "to": "#plugins" },
           { "name": "postcss", "to": "#postcss" },
           { "name": "publicPath", "to": "#publicpath" },
@@ -72,6 +75,7 @@
         ]
       },
       { "name": "head (En)", "to": "/configuration-head" },
+      { "name": "hooks (En)", "to": "/configuration-hooks" },
       { "name": "ignore (En)", "to": "/configuration-ignore" },
       {
         "name": "loading (En)", "to": "/configuration-loading",
@@ -84,6 +88,7 @@
       { "name": "loadingIndicator (En)", "to": "/configuration-loading-indicator" },
       { "name": "mode (En)", "to": "/configuration-mode" },
       { "name": "modules (En)", "to": "/configuration-modules" },
+      { "name": "modulesDir (En)", "to": "/configuration-modulesdir" },
       { "name": "plugins (En)", "to": "/configuration-plugins" },
       {
         "name": "render (En)", "to": "/configuration-render",
@@ -110,9 +115,11 @@
           { "name": "scrollBehavior (En)", "to": "#scrollbehavior" }
         ]
       },
+      { "name": "server (En)", "to": "/configuration-server" },
       { "name": "serverMiddleware (En)", "to": "/configuration-servermiddleware" },
       { "name": "srcDir (En)", "to": "/configuration-srcdir" },
       { "name": "transition (En)", "to": "/configuration-transition" },
+      { "name": "vue.config (En)", "to": "/configuration-vue-config" },
       { "name": "watch (En)", "to": "/configuration-watch" },
       {
         "name": "watchers (En)", "to": "/configuration-watchers",

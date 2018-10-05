@@ -41,9 +41,11 @@ Pour afficher le composant `child.vue`, nous avons dû insérer `<nuxt-child/>` 
 <template>
   <div>
     <h1>Je suis la vue parente</h1>
-    <nuxt-child/>
+    <nuxt-child :foobar="123" />
   </div>
 </template>
 ```
+
+> Child components can also receive properties like a regular Vue component.
 
 Pour voir un exemple, consultez l'[exemple de routes imbriquées](/examples/nested-routes).

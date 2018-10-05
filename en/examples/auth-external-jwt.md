@@ -33,17 +33,17 @@ npm install cookieparser --save
 À l'intérieur du dossier des pages, créez un fichier `login.vue` et dans ce fichier, dans la partie script, ajoutez :
 
 ```js
-import Cookie from 'js-cookie'
+const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   middleware: 'notAuthenticated',
   methods: {
-    postLogin () {
-      setTimeout(() => {
+    postLogin() {
+      setTimeout(() => { // we simulate the async request with timeout.
         const auth = {
           accessToken: 'someStringGotFromApiServiceWithAjax'
         }
-        this.$store.commit('update', auth) // muter `auth` dans le store pour le rendu client
+        this.$store.commit('setAuth', auth) // muter `auth` dans le store pour le rendu client
         Cookie.set('auth', auth) // sauver le jeton dans un cookie pour le rendu serveur
         this.$router.push('/')
       }, 1000)
@@ -61,26 +61,30 @@ Après cela modifiez `index.js` dans le dossier `store` comme ci-dessous :
 ```javascript
 import Vuex from 'vuex'
 
-var cookieparser = require('cookieparser')
+const cookieparser = process.server ? require('cookieparser') : undefined
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
+    state: () => ({
       auth: null
-    },
+    }),
     mutations: {
-      update (state, data) {
-        state.auth = data
+      setAuth(state, auth) {
+        state.auth = auth
       }
     },
     actions: {
-      nuxtServerInit ({ commit }, { req }) {
-        let accessToken = null
+      nuxtServerInit({ commit }, { req }) {
+        let auth = null
         if (req.headers.cookie) {
-          var parsed = cookieparser.parse(req.headers.cookie)
-          accessToken = JSON.parse(parsed.auth)
+          const parsed = cookieparser.parse(req.headers.cookie)
+          try {
+            auth = JSON.parse(parsed.auth)
+          } catch (err) {
+            // No valid cookie found
+          }
         }
-        commit('update', accessToken)
+        commit('setAuth', auth)
       }
     }
   })
@@ -115,4 +119,24 @@ export default function ({ store, redirect }) {
 }
 ```
 
-> Note : utilisez le middleware `authenticated` pour les pages qui ont besoin d'une authentification et le middleware `notAuthenticated` à l'intérieur des pages de type connexion / inscription, etc.
+> Note: use `authenticated` middleware for pages which need authentication and use `notAuthenticated` middleware inside the login/register and similar pages.
+
+## Logging out the User
+Finally to allow the user to logout of the system, we can remove the cookie: 
+
+```javascript
+const Cookie = process.client ? require('js-cookie') : undefined
+
+export default {
+  methods: {
+    logout() {
+      // Code will also be required to invalidate the JWT Cookie on external API
+      Cookie.remove('auth')
+      this.$store.commit('setAuth', null)
+    }
+  }
+}
+```
+
+> Note: refer to the method using @click="logout"
+

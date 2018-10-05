@@ -15,7 +15,7 @@ Exemple d'une `pages/index.vue` utilisant [Pug](https://github.com/pugjs/pug), [
 </template>
 
 <script lang="coffee">
-module.exports = data: ->
+export default data: ->
   { name: 'World' }
 </script>
 

@@ -10,13 +10,14 @@ description: L'utilisation d'un store pour gérer l'état est important pour tou
 Nuxt.js recherchera le répertoire `store`. S'il existe, il :
 
 1. importera Vuex,
-2. ajoutera le module `vuex` dans le paquetage vendors,
-3. ajoutera l'option `store` à l'instance racine de Vue.
+2. ajoutera l'option `store` à l'instance racine de Vue.
 
 Nuxt.js vous laisse le choix entre **2 modes de store**, choisissez celui qui vous convient le mieux :
 
 - **Classique :** `store/index.js` retourne une instance de store.
 - **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que [module avec son propre espace de nom](http://vuex.vuejs.org/fr/modules.html) (`index` étant le module racine)
+
+Regardless of the mode, your `state` value should **always be a `function`** to avoid unwanted *shared* state on the server side.
 
 ## Mode classique
 
@@ -27,9 +28,9 @@ import Vuex from 'vuex'
 
 const createStore = () => {
   return new Vuex.Store({
-    state: {
+    state: () => ({
       counter: 0
-    },
+    }),
     mutations: {
       increment (state) {
         state.counter++
@@ -96,17 +97,20 @@ Le store sera comme suit :
 
 ```js
 new Vuex.Store({
-  state: { counter: 0 },
+  state: () => ({
+    counter: 0
+  }),
   mutations: {
     increment (state) {
       state.counter++
     }
   },
   modules: {
+    namespaced: true,
     todos: {
-      state: {
+      state: () => ({
         list: []
-      },
+      }),
       mutations: {
         add (state, { text }) {
           state.list.push({
@@ -170,9 +174,9 @@ export default {
 Exemple pour l'état ; créer un fichier `store/state.js` et ajouter ceci
 
 ```js
-export default {
+export default () => ({
   counter: 0
-}
+})
 ```
 
 Et les mutations correspondantes peuvent être dans le fichier `store/mutations.js`
@@ -265,9 +269,9 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     strict: false,
-    state: {
+    state: () => ({
       counter: 0
-    },
+    }),
     mutations: {
       increment (state) {
         state.counter++
