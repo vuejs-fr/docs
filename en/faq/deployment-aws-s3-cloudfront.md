@@ -1,11 +1,11 @@
 ---
-title: "AWS: S3+Cloudfront Deployment"
+title: "AWS: S3+Cloudfront Deployment (En)"
 description: Static Hosting on AWS with S3 and Cloudfront
 ---
 
 # How to Deploy on AWS w/ S3 and Cloudfront
 
-AWS is Amazon Web Services.  
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>AWS is Amazon Web Services.</p>
 S3 is their static storage which can be configured for Static Site Hosting.
 Cloudfront is their CDN (content delivery network)
 

@@ -24,7 +24,7 @@ async validate({ params, query, store }) {
 }
 ```
 
-You can also return promises:
+You can also return promises (En):
 
 ```js
 validate({ params, query, store }) {
@@ -56,7 +56,7 @@ export default {
 }
 ```
 
-You can also throw expected or unexpected errors during validate function executation:
+You can also throw expected or unexpected errors during validate function executation (En):
 
 ```js
 export default {

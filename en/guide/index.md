@@ -7,7 +7,7 @@ description: "Nuxt.js is a Framework for creating Vue Applications, you can choo
 
 ## Nuxt.js, qu’est-ce que c’est ?
 
-Its main scope is **UI rendering** while abstracting away the client/server distribution.
+(En) Its main scope is **UI rendering** while abstracting away the client/server distribution.
 
 Notre but est de créer un framework suffisamment flexible afin que vous puissiez l'utiliser comme base dans un projet principal ou en tant que supplément pour votre projet actuel basé sur Node.js.
 
@@ -16,7 +16,7 @@ Nuxt.js prédéfinit toute la configuration nécessaire pour faire de votre dév
 En outre, nous fournissons également une autre option de déploiement appelée : *nuxt generate*. Elle permet de construire une application Vue.js **générée statiquement**.
 Nous croyons que cette option pourrait être la prochaine étape importante dans le développement d'applications web avec des microservices.
 
-Futhermore, you can also use Nuxt.js to create single page applications (`spa` mode) quickly, useful to keep Nuxt features while working on backoffice applications.
+(En) Futhermore, you can also use Nuxt.js to create single page applications (`spa` mode) quickly, useful to keep Nuxt features while working on backoffice applications.
 
 En tant que framework, Nuxt.js est doté de nombreuses fonctionnalités pour vous aider dans votre développement entre côté client et serveur tels que les données asynchrones, les *middlewares*, les *layouts*, etc.
 

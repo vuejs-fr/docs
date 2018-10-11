@@ -59,7 +59,7 @@ export default {
 
 Pour en savoir plus sur l'attribut `plugins`, consultez [La propriété `plugins`](/api/configuration-plugins) de l'API.
 
-## Inject in $root & context
+## Inject in $root & context (En)
 
 Sometimes you want to make functions or values available across the app.
 You can inject those variables into Vue instances (client side), the context (server side) and even in the Vuex store.
@@ -67,7 +67,7 @@ It is a convention to prefix those functions with a `$`.
 
 ### Inject into Vue instances
 
-Injecting content into Vue instances works similar to when doing this in standard Vue apps.
+(En) Injecting content into Vue instances works similar to when doing this in standard Vue apps.
 
 `plugins/vue-inject.js`:
 
@@ -85,7 +85,7 @@ export default {
 }
 ```
 
-You can now use the function in all your Vue components.
+(En) You can now use the function in all your Vue components.
 
 `example-component.vue`:
 
@@ -98,7 +98,7 @@ export default {
 ```
 
 
-### Inject into context
+### Inject into context (En)
 
 Injecting content into Vue instances works similar to when doing this in standard Vue apps.
 
@@ -131,7 +131,7 @@ export default {
 }
 ```
 
-### Combined inject
+### Combined inject (En)
 
 If you need the function in the `context`, Vue instances and maybe even in the Vuex store, you can use the `inject` function, which is the second parameter of the plugins exported function.
 

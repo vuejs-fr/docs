@@ -32,7 +32,7 @@ The path to the SPA fallback. This file can be used when doing deploys of genera
 
 Interval entre 2 rendus pour éviter d'inonder les appels d'API effectués par une API potentielle de l'application web.
 
-## minify
+## minify (En)
 
 - **Deprecated!**
 - Use [build.html.minify](/api/configuration-build#html-minify) instead

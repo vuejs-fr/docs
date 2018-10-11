@@ -7,7 +7,7 @@ description: La configuration par défaut de Nuxt.js couvre la plupart des cas d
 
 ## Options
 
-### build
+### build (En)
 
 This option lets you configure various settings for the `build` step, including `loaders`, `filenames`, the `webpack` config and `transpilation`.
 
@@ -55,7 +55,7 @@ Cette option vous permet d'ajouter des modules Nuxt a votre projet.
 
 [Consultez la documentation à propos de `modules`](/api/configuration-modules)
 
-### modulesDir
+### modulesDir (En)
 
 This option lets you define the node_modules folder of your Nuxt.js Application.
 
@@ -74,7 +74,7 @@ Cette option vous permet de définir l'espace de travail de votre application Nu
 
 [Consultez la documentation à propos de `rootDir`](/api/configuration-rootdir)
 
-### server
+### server (En)
 
 This option lets you configure the connection variables for the server instance of your Nuxt.js Application.
 

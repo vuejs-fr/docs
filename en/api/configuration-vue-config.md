@@ -1,5 +1,5 @@
 ---
-title: "API: The vue.config Property"
+title: "API: The vue.config Property (En)"
 description: A config object for Vue.config
 ---
 

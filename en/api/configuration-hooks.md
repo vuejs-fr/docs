@@ -1,15 +1,15 @@
 ---
-title: "API: The hooks Property"
+title: "API: The hooks Property (En)"
 description: Hooks are listeners to Nuxt events that are typically used in Nuxt modules, but are also available in `nuxt.config.js`.
 ---
 
-# The hooks Property
+# The hooks Property (En)
 
 - Type: `Object`
 
 > Hooks are [listeners to Nuxt events](/api/internals) that are typically used in Nuxt modules, but are also available in `nuxt.config.js`. [Learn More](/api/internals)
 
-Example (`nuxt.config.js`):
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Example (`nuxt.config.js`):</p>
 
 ```js
 import fs from 'fs'

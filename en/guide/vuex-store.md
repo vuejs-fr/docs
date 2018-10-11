@@ -17,7 +17,7 @@ Nuxt.js vous laisse le choix entre **2 modes de store**, choisissez celui qui vo
 - **Classique :** `store/index.js` retourne une instance de store.
 - **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que [module avec son propre espace de nom](http://vuex.vuejs.org/fr/modules.html) (`index` étant le module racine)
 
-Regardless of the mode, your `state` value should **always be a `function`** to avoid unwanted *shared* state on the server side.
+(En) Regardless of the mode, your `state` value should **always be a `function`** to avoid unwanted *shared* state on the server side.
 
 ## Mode classique
 
