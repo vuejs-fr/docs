@@ -1,13 +1,13 @@
 ---
 title: Introduction
-description: "Nuxt.js is a Framework for creating Vue Applications, you can choose between Universal, Static Generated or Single Page application."
+description: "Nuxt.js est un framework pour créer des applications Vue, vous pouvez choisir entre application Universelle, Générée Statiquement ou Monopage."
 ---
 
-> Nuxt.js is a framework for creating Vue.js applications, you can choose between Universal, Static Generated or Single Page application.
+> Nuxt.js est un framework pour créer des applications Vue, vous pouvez choisir entre application Universelle, Générée Statiquement ou Monopage.
 
 ## Nuxt.js, qu’est-ce que c’est ?
 
-(En) Its main scope is **UI rendering** while abstracting away the client/server distribution.
+Son principal objectif est **rendu de l'Interface Utilisateur** tout en faisant abstraction de la distribution client/serveur.
 
 Notre but est de créer un framework suffisamment flexible afin que vous puissiez l'utiliser comme base dans un projet principal ou en tant que supplément pour votre projet actuel basé sur Node.js.
 
@@ -16,7 +16,7 @@ Nuxt.js prédéfinit toute la configuration nécessaire pour faire de votre dév
 En outre, nous fournissons également une autre option de déploiement appelée : *nuxt generate*. Elle permet de construire une application Vue.js **générée statiquement**.
 Nous croyons que cette option pourrait être la prochaine étape importante dans le développement d'applications web avec des microservices.
 
-(En) Futhermore, you can also use Nuxt.js to create single page applications (`spa` mode) quickly, useful to keep Nuxt features while working on backoffice applications.
+De plus, vous pouvez également utiliser Nuxt.js pour créer rapidement des applications monopage (mode `spa`), utile pour conserver les fonctionnalités de Nuxt tout en travaillant sur les applications de backoffice.
 
 En tant que framework, Nuxt.js est doté de nombreuses fonctionnalités pour vous aider dans votre développement entre côté client et serveur tels que les données asynchrones, les *middlewares*, les *layouts*, etc.
 
@@ -29,9 +29,10 @@ Nuxt.js inclut les éléments suivants afin de créer une expérience de dévelo
 - [Vue 2](https://fr.vuejs.org/)
 - [Vue Router](https://router.vuejs.org/fr/)
 - [Vuex](https://ssr.vuejs.org/fr/) (inclut uniquement quand l'[option `store`](/guide/vuex-store) est activée)
+- [Vue Server Renderer](https://ssr.vuejs.org/fr/) (exclut quand le [`mode: 'spa'`](/api/configuration-mode) est utilisé)
 - [vue-meta](https://github.com/declandewet/vue-meta)
 
-Un total de seulement **57kB min+gzip** (53ko avec Vuex).
+Un total de seulement **57ko min+gzip** (60ko avec Vuex).
 
 Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec [vue-loader](https://github.com/vuejs/vue-loader) et [babel-loader](https://github.com/babel/babel-loader) pour empaqueter (« bundle »), scinder (« code-split ») et minifier votre code.
 
@@ -41,7 +42,7 @@ Sous le capot, nous utilisons [webpack](https://github.com/webpack/webpack) avec
 - Scission de code automatique
 - Rendu coté serveur (ou « SSR » pour « Server-Side Rendering »)
 - Routage puissant à l'aide de données asynchrones
-- Génération de fichiers statiques
+- Serveur de fichiers statiques
 - Transpilation ES6/ES7
 - Empaquetage et minification de vos fichiers JS et CSS
 - Gestion des éléments de balise d'en-tête `<head>` HTML (`<title>`, `<meta>`, etc.)
@@ -108,4 +109,8 @@ Et nous voilà avec une **application web générée statique** :)
 
 Nous pouvons aller plus loin en imaginant une application d'e-commerce créée avec `nuxt generate` et hébergée sur un CDN. Chaque fois qu'un produit est en rupture de stock ou de nouveau en stock nous régénérons l'application. Mais si l'utilisateur navigue sur l'application en même temps, il verra les informations à jour grâce aux appels d'API effectués sur l'API de l'e-commerce. Pas besoin d'avoir plusieurs instances d'un serveur d'un cache !
 
-<div class="Alert">Vous pouvez consulter [Comment déployer sur Netlify ?](/faq/netlify-deployment) pour plus d'informations sur un hébergement sur Netlify.</div>
+<div class="Alert">
+
+Vous pouvez consulter [Comment déployer sur Netlify ?](/faq/netlify-deployment) pour plus d'informations sur un hébergement sur Netlify.
+
+</div>

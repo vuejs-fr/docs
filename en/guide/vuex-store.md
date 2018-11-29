@@ -1,9 +1,9 @@
 ---
 title: Store Vuex
-description: L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante, c'est pourquoi Vuex est implémenté au cœur de Nuxt.js.
+description: L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante. C'est pourquoi Vuex est implémenté au cœur de Nuxt.js.
 ---
 
-> L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante, c'est pourquoi [Vuex](https://vuex.vuejs.org/fr/) est implémenté au cœur de Nuxt.js.
+> L'utilisation d'un store pour gérer l'état est important pour toutes les applications de taille importante. C'est pourquoi [Vuex](https://vuex.vuejs.org/fr/) est implémenté au cœur de Nuxt.js.
 
 ## Activer le store
 
@@ -17,7 +17,7 @@ Nuxt.js vous laisse le choix entre **2 modes de store**, choisissez celui qui vo
 - **Classique :** `store/index.js` retourne une instance de store.
 - **Modules :** chaque fichier `.js` dans le répertoire `store` est transformé en tant que [module avec son propre espace de nom](http://vuex.vuejs.org/fr/modules.html) (`index` étant le module racine)
 
-(En) Regardless of the mode, your `state` value should **always be a `function`** to avoid unwanted *shared* state on the server side.
+Quelque soit le mode utilisé, votre valeur `state` devrait **toujours être une `function`** afin d'éviter tout état *partagé* non désiré du côté serveur.
 
 ## Mode classique
 
@@ -70,7 +70,7 @@ export const mutations = {
 }
 ```
 
-Puis, vous pouvez avoir `store/todos.js` :
+Puis, vous pouvez avoir un fichier `store/todos.js` :
 
 ```js
 export const state = () => ({
@@ -189,11 +189,17 @@ export default {
 }
 ```
 
-<div class="Alert">Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.</div>
+<div class="Alert">
+
+Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.
+
+</div>
 
 ### Fichiers de module
 
 Vous pouvez optionnellement scinder un fichier de module en plusieurs fichiers séparés : `state.js`, `actions.js`, `mutations.js` et `getters.js`. Si vous maintenez un fichier `index.js` avec un état, des accesseurs et des mutations alors que les actions sont dans un fichier séparé, cela va également être proprement interprété.
+
+> Note : lorsque vous utilisez des modules en fichiers séparés, vous devez vous rappeler que, d'utiliser des fonction fléchées , ```this``` n'est disponible que de façon lexicale. La portée lexicale signifie simplement que le ```this``` fait toujours référence au propriétaire de la fonction fléchée. Si la fonction fléchée n'est pas contenue, alors ```this``` sera non défini. La solution est d'utiliser une fonction "normale" qui produirta son propre portée et qui dispose donc de ```this```.
 
 ### Plugins
 
