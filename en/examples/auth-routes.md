@@ -10,6 +10,10 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 > Nuxt.js peut être utilisé pour créer facilement des routes authentifiées.
 
+## Module officiel `auth-module`
+
+Si vous souhaitez implémenter un flux d'authentification complexe, par exemple OAuth2, nous suggérons d'utiliser le module officiel [`auth-module`](https://github.com/nuxt-community/auth-module)
+
 ## Utilisation de Express et des sessions
 
 Pour ajouter la fonctionnalité de sessions dans notre application, nous utiliserons `express` et `express-session`. Pour cela, nous devons utiliser Nuxt.js de manière programmatique.
@@ -35,7 +39,7 @@ app.use(bodyParser.json())
 
 // Mise en place de sessions pour y accéder via `req.session`
 app.use(session({
-  secret: 'super-secret-key',
+  secret: 'cle-super-secrete',
   resave: false,
   saveUninitialized: false,
   cookie: { maxAge: 60000 }
@@ -47,7 +51,7 @@ app.post('/api/login', function (req, res) {
     req.session.authUser = { username: 'demo' }
     return res.json({ username: 'demo' })
   }
-  res.status(401).json({ error: 'Bad credentials' })
+  res.status(401).json({ error: 'Mauvaise authentification' })
 })
 
 // Accès à `/api/logout` en POST pour déconnecter l'utilisateur et le retirer de `req.session`
@@ -66,7 +70,7 @@ if (!isProd) {
 }
 app.use(nuxt.render)
 app.listen(3000)
-console.log('Server is listening on http://localhost:3000')
+console.log('Le serveur écoute sur http://localhost:3000')
 ```
 
 Et nous modifions nos scripts dans `package.json` :
@@ -163,7 +167,7 @@ login ({ commit }, { username, password }) {
   })
   .then((res) => {
     if (res.status === 401) {
-      throw new Error('Bad credentials')
+      throw new Error('Mauvaise authentification')
     } else {
       return res.json()
     }
