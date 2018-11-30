@@ -131,7 +131,6 @@ npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader 
 ```
 
 Puis, configurez ESLint via un fichier `.eslintrc.js` à la racine de votre projet :
-
 ```js
 export default {
   root: true,
