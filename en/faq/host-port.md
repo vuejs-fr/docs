@@ -5,39 +5,40 @@ description: Comment changer le HOST et le PORT avec Nuxt.js ?
 
 # Comment changer le host et le port ?
 
-Vous pouvez configurer les variables de connexion de plusieurs façon différentes, listé **de la plus haute à la plus basse priorité** :
+Vous pouvez configurer les variables de connexion de plusieurs façon différentes, listé **de la plus haute à la plus basse priorité**.
 
+> **Note :** si `port` est renseigné par la chaine de caractère `'0'` (pas `0`, qui correspond à Faux), un port aléatoire sera assignée à votre application Nuxt.
 
-## As direct arguments (En)
+## Directement par les arguments
 
 ```sh
-nuxt --hostname myhost --port 3333
+nuxt --hostname monserveur --port 3333
 ```
-Or
+ou
 ```js
 "scripts": {
-  "dev": "nuxt --hostname myhost --port 3333"
+  "dev": "nuxt --hostname monserveur --port 3333"
 }
 ```
 
-## Configure in `nuxt.config.js` (En):
+## Configuré dans `nuxt.config.js` :
 
-Inside your `nuxt.config.js`:
+Dans votre `nuxt.config.js` :
 
 ```js
 export default {
   server: {
-    port: 8000, // default: 3000
-    host: '0.0.0.0', // default: localhost
+    port: 8000, // par défaut: 3000
+    host: '0.0.0.0', // par défaut: localhost
   },
-  // other configs
+  // autres configurations
 }
 ```
 
 
-## With NUXT_HOST and NUXT_PORT env variables (En)
+## Avec les variables d'environnement NUXT_HOST et NUXT_PORT
 
-Similar to HOST and PORT but more specific in case you need those for something else.
+Similaire à HOST et PORT mais plus spécialement dans le cas où vous en avez besoin pour autre chose.
 
 ```js
 "scripts": {
@@ -59,7 +60,7 @@ npm install --save-dev cross-env
 }
 ```
 
-## With HOST and PORT env variables (En)
+## Avec les variables d'environnement HOST et PORT
 
 ```js
 "scripts": {
@@ -68,9 +69,9 @@ npm install --save-dev cross-env
 ```
 
 
-## Via a `nuxt` config in the `package.json` (En):
+## Via une configuration de `nuxt` dans `package.json` :
 
-Inside your `package.json`:
+Dans votre `package.json` :
 
 ```json
 "config": {
