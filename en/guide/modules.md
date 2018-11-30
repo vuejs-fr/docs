@@ -297,33 +297,29 @@ export default function (moduleOptions) {
 
 ## Lancer des tâches sur des points d'ancrage spécifiques
 
-Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques. Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
+Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt.
+Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques.
+Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
+
+Voici quelques examples basiques :
 
 ```js
 export default function () {
-  // Ajoute un point d'ancrage au module
-  this.nuxt.hook('module', moduleContainer => {
+
+  this.nuxt.hook('modules:done', moduleContainer => {
     // Ceci sera appelé quand tous les modules auront fini d'être chargés
   })
 
-  // Ajoute un point d'ancrage au moteur de rendu
-  this.nuxt.hook('module', moduleContainer => {
-    // Ceci sera appelé quand le moteur de rendu aura été créé
+  this.nuxt.hook('render:before', renderer => {
+    // Ceci sera appelé après la création du moteur de rendu
   })
 
-  // Ajoute un point d'ancrage au build
-  this.nuxt.hook('build', async builder => {
-    // Ceci sera appelé une fois le build fait
-
-    // On peut également enregistrer des points d'ancrage interne ici
-    builder.hook('compile', ({compiler}) => {
-        // Ceci sera lancé juste avant que le compilateur de webpack démarre
-    })
+  this.nuxt.hook('build:compile', async ({name, compiler }) => {
+    // Ceci sera appelé avant le lancement du compilateur (par défaut : webpack)
   })
 
-  // Ajoute un point d'ancrage à la génération
-  this.nuxt.hook('generate', async generator => {
-    // Ceci sera appelé quand la génération de Nuxt va commencer
+  this.nuxt.hook('generate:before', async generator => {
+    // Ceci sera appelé avant que Nuxt génère vos pages
   })
 }
 ```

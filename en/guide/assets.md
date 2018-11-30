@@ -94,13 +94,6 @@ Sera transformé en :
 
 Si vous désirez modifier la configuration de ces loaders, merci d'utiliser [build.extend](/api/configuration-build#extend).
 
-<div class="Alert Alert--teal">
-
-**Information :** Ajout dynamique des ressources (`~assets/${imgName}.jpg`)
-
-</div>
-
-<!-- TODO: Dynamic assets -->
 
 ## Avec des fichiers statiques
 

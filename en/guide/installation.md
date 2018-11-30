@@ -91,7 +91,6 @@ Le projet a besoin d'un fichier `package.json` avec un script permettant de lanc
 
 `scripts` lancera Nuxt.js via `npm run dev`.
 
-
 ### Installation de `nuxt`
 
 Une fois que le `package.json` est créé, ajoutez `nuxt` au projet via npm :
