@@ -40,7 +40,7 @@ server {
 Si vous avez un site web très important avec du contenu changeant régulièrement, vous voudriez bénéficier des capacités de génération de Nuxt et de [nginx caching](https://www.nginx.com/blog/nginx-caching-guide).
 
 Vous trouverez ci-dessous un exemple de configuration. Gardez à l'esprit que :
-- le répertoire cracine doit être le même que celui définit par [la configuration du répertoire de génération](/api/configuration-generate#dir)
+- le répertoire racine doit être le même que celui définit par [la configuration du répertoire de génération](/api/configuration-generate#dir)
 - les entêtes d'expiration définis par Nuxt sont supprimés (en raison du cache)
 - Nuxt comme nginx peuvent ajouter des entêtes supplémentaires, il est conseillé d'en choisir un (dans le doute, choisissez nginx)
 - si votre site est principalement statique, augmentez les nombres `proxy_cache_path inactive` et `proxy_cache_valid`
