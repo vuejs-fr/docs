@@ -21,8 +21,8 @@ les modules peuvent facilement abonner des points d'ancrage (« hooks ») pour c
 Les modules peuvent également remplacer les templates, configurer les chargeurs de webpack, ajouter des bibliothèques CSS et effectuer un grand nombre de tâches utiles.
 
 Le meilleur de tout ça, les modules de Nuxt peuvent être intégrés dans des packages NPM.
-Celà les rends facilement réutilisables à travers de projets et partageables avec la communauté de Nuxt,
-Aidant ainsi à créer un éco-système d'add-on Nuxt de grandes qualités.
+Cela les rend facilement réutilisables à travers de projets et partageables avec la communauté de Nuxt,
+aidant ainsi à créer un éco-système d'add-on Nuxt de grande qualité.
 
 Les modules sont bien si :
 
@@ -30,7 +30,7 @@ Les modules sont bien si :
 - vous êtes fatigué de **réinventer** la roue pour les tâches habituelles comme des mécanismes Google Analytics.
 - Vous êtes un membre super enthousiaste de la communauté *Open Source* et que vous souhaitez *partager* votre travail avec la communauté d'une façon simple.
 - vous êtes membre d'une **société** qui accorde de l'importance à la **qualité** et la **réutilisabilité**.
-- Vous êtes souvent confronté à des échéances serrées et vous n'avez pas le le temps de vous encombrer avec les détails de toutes les nouvelles librairies ou leurs intégrations.
+- Vous êtes souvent confronté à des échéances serrées et vous n'avez pas le temps de vous encombrer avec les détails de toutes les nouvelles librairies ou leurs intégrations.
 - Vous êtes fatigué de faire face aux changements des API bas niveau et vous souhaiter **simplement que les choses fonctionnent**.
 
 ## Écrire un module basique
@@ -140,7 +140,7 @@ export default function asyncModule(callback) {
 ### Options de haut niveau
 
 Parfois il est plus simple d'utiliser des options de haut niveau lors de l'abonnement de modules à `nuxt.config.js`.
-Celà nous permet de combiner les options de sources multiples.
+Cela nous permet de combiner les options de sources multiples.
 
 **nuxt.config.js**
 
@@ -301,7 +301,7 @@ Votre module peut avoir besoin de choses seulement sous certaines conditions et 
 Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques.
 Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
 
-Voici quelques examples basiques :
+Voici quelques exemples basiques :
 
 ```js
 export default function () {

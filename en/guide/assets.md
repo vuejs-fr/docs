@@ -47,8 +47,8 @@ Puisque que les fichiers `.png` ne sont pas des fichiers JavaScript, Nuxt.js con
 
 Les avantages de ces chargeurs sont :
 
-- `file-loader` vous laisse définir où copier et placer les ressources, et comment les nommer en utilisant des hashs de version pour un meilleur cache. En production, vous bénécierez par défaut de la mise en cache à long terme !
-- `url-loader` vous permet d'insérer de façon conditionnelle un fichier en tant qu'URL encodé en base 64 si sa taille est inférieure à un seuil donné. Cela peut réduire le nombre de demandes HTTP pour les fichiers triviaux. Si la taille du fichier est supérieure au seuil, il retombe automatiquement sur file-loader.
+- `file-loader` vous laisse définir où copier et placer les ressources, et comment les nommer en utilisant des hashs de version pour un meilleur cache. En production, vous bénéficierez par défaut de la mise en cache à long terme !
+- `url-loader` vous permet d'insérer de façon conditionnelle un fichier en tant qu'URL encodée en base 64 si sa taille est inférieure à un seuil donné. Cela peut réduire le nombre de demandes HTTP pour les fichiers triviaux. Si la taille du fichier est supérieure au seuil, il retombe automatiquement sur file-loader.
 
 Pour ces deux chargeurs, la configuration par défaut est la suivante :
 
@@ -103,7 +103,7 @@ Tous les fichiers inclus seront automatiquement servis par Nuxt et accessibles v
 
 Cette option est utile pour les fichiers tels que `robots.txt`, `sitemap.xml` ou `CNAME` (Ce qui est important pour le déploiement des pages GitHub).
 
-Dans votre code, vous pouvez ensuite référencer ces fichiers relativement à la racile (`/`) :
+Dans votre code, vous pouvez ensuite référencer ces fichiers relativement à la racine (`/`) :
 
 ```html
 <!-- Image statique du répertoire `static` -->

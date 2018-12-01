@@ -27,7 +27,7 @@ Nuxt.js vous propose différentes façons d'utiliser `asyncData`. Choisissez cel
 
 <div class="Alert Alert--grey">
 
-Nous utilisons [axios](https://github.com/mzabriskie/axios) pour faire des requêtes HTTP isomorphiques, nous recommendons <strong>fortement</strong> d'utiliser notre [module axios](https://axios.nuxtjs.org/) pour vos projets Nuxt.
+Nous utilisons [axios](https://github.com/mzabriskie/axios) pour faire des requêtes HTTP isomorphiques, nous recommandons <strong>fortement</strong> d'utiliser notre [module axios](https://axios.nuxtjs.org/) pour vos projets Nuxt.
 
 </div>
 
@@ -105,7 +105,7 @@ export default {
 ```
 
 
-### Écouter les changement de query
+### Écouter les changements de query
 
 La méthode `asyncData` **n'est pas appelée** par défaut lors du changement sur la chaine de requête.
 Si vous souhaitez changer ce comportement, par exemple quand vous construisez un composant de pagination,

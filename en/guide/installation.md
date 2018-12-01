@@ -23,15 +23,15 @@ yarn create nuxt-app <my-project>
 
 Il vous sera posé quelques questions :
 
-1. Choisir entre différents frameworks intégrés côté server :
-  - Aucun (Serveur Nuxt par defaut)
+1. Choisir entre différents frameworks intégrés côté serveur :
+  - Aucun (Serveur Nuxt par défaut)
   - [Express](https://github.com/expressjs/express)
   - [Koa](https://github.com/koajs/koa)
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
-2. Choisir votre interface utilisateur préféré :
+2. Choisir votre interface utilisateur préférée :
   - Aucune (lançant la possibilité d'en ajouter une plus tard)
   - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
   - [Vuetify](https://github.com/vuetifyjs/vuetify)
@@ -40,12 +40,12 @@ Il vous sera posé quelques questions :
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
-3. Le [mode mode Nuxt désiré (`Universel` ou `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
+3. Le [mode Nuxt désiré (`Universel` ou `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
 4. Ajouter le [module axios](https://github.com/nuxt-community/axios-module) pour faire des requêtes HTTP facilement dans votre application.
 5. Ajouter [EsLint](https://eslint.org/) pour Linter votre code en sauvegardant.
 5. Ajouter [Prettier](https://prettier.io/) pour prettify votre code en sauvegardant.
 
-Une fois répondu, Il installera toutes les dépendences puis la la prochaine étapes sera de lancer le projet avec :
+Une fois répondu, il installera toutes les dépendances puis la prochaine étape sera de lancer le projet avec :
 
 ```bash
 $ npm run dev

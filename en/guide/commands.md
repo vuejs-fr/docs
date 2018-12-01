@@ -67,7 +67,7 @@ nuxt start
 ```
 
 Vous pouvez aussi définir `server.https` dans votre fichier `nuxt.config.js` avec le même ensemble d'options passé à [`https.createServer`](https://nodejs.org/api/https.html), si vous décidez de servir Nuxt.js en mode HTTPS.
-Les sockets Unix sont auissi disponiblessi vous pécifiez l'option `server.socket` dans `nuxt.config.js` (ou `-n` dans [CLI](https://nuxtjs.org/guide/commands#list-of-commands)).
+Les sockets Unix sont aussi disponibles si vous spécifiez l'option `server.socket` dans `nuxt.config.js` (ou `-n` dans [CLI](https://nuxtjs.org/guide/commands#list-of-commands)).
 Si vous utilisez les [sockets Unix](https://en.wikipedia.org/wiki/Berkeley_sockets), vérifiez de ne pas valoriser les paramètres `host` et `port` sinon le paramètre `socket` est ignoré.
 
 Le fichier `package.json` suivant est recommandé :

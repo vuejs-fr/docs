@@ -249,7 +249,7 @@ pages/
 --| index.vue
 ```
 
-traitera les requêtes comme celà :
+traitera les requêtes comme cela :
 
 Chemin | Fichier
 --- | ---

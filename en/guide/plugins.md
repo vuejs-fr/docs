@@ -135,7 +135,7 @@ export default {
 }
 ```
 
-### Injection Combinée
+### Injection combinée
 
 Si vous avez besoin de la fonction dans le `context`, les instances Vue et peut-être aussi dans le magasin Vuex, vous pouvez utiliser la fonction `inject`, qui est le second paramètre de la fonction exportée des plugins.
 

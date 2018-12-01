@@ -199,7 +199,7 @@ Vous pouvez également avoir des modules en exportant une instance de store vous
 
 Vous pouvez optionnellement scinder un fichier de module en plusieurs fichiers séparés : `state.js`, `actions.js`, `mutations.js` et `getters.js`. Si vous maintenez un fichier `index.js` avec un état, des accesseurs et des mutations alors que les actions sont dans un fichier séparé, cela va également être proprement interprété.
 
-> Note : lorsque vous utilisez des modules en fichiers séparés, vous devez vous rappeler que, d'utiliser des fonction fléchées , ```this``` n'est disponible que de façon lexicale. La portée lexicale signifie simplement que le ```this``` fait toujours référence au propriétaire de la fonction fléchée. Si la fonction fléchée n'est pas contenue, alors ```this``` sera non défini. La solution est d'utiliser une fonction "normale" qui produirta son propre portée et qui dispose donc de ```this```.
+> Note : lorsque vous utilisez des modules en fichiers séparés, vous devez vous rappeler que d'utiliser des fonctions fléchées , ```this``` n'est disponible que de façon lexicale. La portée lexicale signifie simplement que le ```this``` fait toujours référence au propriétaire de la fonction fléchée. Si la fonction fléchée n'est pas contenue, alors ```this``` sera non défini. La solution est d'utiliser une fonction "normale" qui produira sa propre portée et qui dispose donc de ```this```.
 
 ### Plugins
 

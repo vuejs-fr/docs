@@ -19,7 +19,7 @@ Le répertoire `components` contient vos composants Vue.js. Nuxt.js ne surcharge
 
 ### Le répertoire des mises en page
 
-Le répertoire `layouts` contient les mises en page de votre application. Les mise en page sont utilisées pour changer l'aspect de votre page (par exemple en incluant une barre latérale).
+Le répertoire `layouts` contient les mises en page de votre application. Les mises en page sont utilisées pour changer l'aspect de votre page (par exemple en incluant une barre latérale).
 
 [Consultez la documentation à propos de l'intégration des mises en page](/guide/views#layouts)
 
