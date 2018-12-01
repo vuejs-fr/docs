@@ -191,7 +191,7 @@ export default {
 
 <div class="Alert">
 
-Vous pouvez également avoir des modules en exportant une instance de store vous devrez les ajouter manuellement sur votre store.
+Vous pouvez également avoir des modules en exportant une instance de store, vous devrez alors les ajouter manuellement sur votre store.
 
 </div>
 
