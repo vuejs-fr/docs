@@ -5,9 +5,9 @@ description: Comment changer le HOST et le PORT avec Nuxt.js ?
 
 # Comment changer le host et le port ?
 
-Vous pouvez configurer les variables de connexion de plusieurs façon différentes, listé **de la plus haute à la plus basse priorité**.
+Vous pouvez configurer les variables de connexion de plusieurs façons différentes, listé **de la plus haute à la plus basse priorité**.
 
-> **Note :** si `port` est renseigné par la chaine de caractère `'0'` (pas `0`, qui correspond à Faux), un port aléatoire sera assignée à votre application Nuxt.
+> **Note :** si `port` est renseigné par la chaine de caractère `'0'` (pas `0`, qui correspond à Faux), un port aléatoire sera assigné à votre application Nuxt.
 
 ## Directement par les arguments
 

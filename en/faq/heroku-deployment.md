@@ -41,7 +41,7 @@ Heroku utilise un [Procfile](https://devcenter.heroku.com/articles/procfile) (no
 web: npm run start
 ```
 
-Celà indique qu'il faut lancer la commande `npm run start` et dit à heroku de lui rediriger le trafique HTTP externe.
+Cela indique qu'il faut lancer la commande `npm run start` et dit à heroku de lui rediriger le trafic HTTP externe.
 
 Pour finir, nous pouvons déployer notre application sur Heroku :
 

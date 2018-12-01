@@ -37,12 +37,12 @@ server {
 
 # Utiliser nginx avec des pages générées et un proxy de cache en solution de secours
 
-Si vous avez un site web très important avec du contenu changeant régulièrement, vous voudriez bénéficier des capacité de génération de Nuxt et de [nginx caching](https://www.nginx.com/blog/nginx-caching-guide).
+Si vous avez un site web très important avec du contenu changeant régulièrement, vous voudriez bénéficier des capacités de génération de Nuxt et de [nginx caching](https://www.nginx.com/blog/nginx-caching-guide).
 
 Vous trouverez ci-dessous un exemple de configuration. Gardez à l'esprit que :
 - le répertoire cracine doit être le même que celui définit par [la configuration du répertoire de génération](/api/configuration-generate#dir)
-- les en-tête d'expiration définis par Nuxt sont supprimés (en raison du cache)
-- Nuxt comme nginx peuvent ajouter des en-têtes supplémentaires, il est conseillé d'en choisir un (dans le doute, choisissez nginx)
+- les entêtes d'expiration définis par Nuxt sont supprimés (en raison du cache)
+- Nuxt comme nginx peuvent ajouter des entêtes supplémentaires, il est conseillé d'en choisir un (dans le doute, choisissez nginx)
 - si votre site est principalement statique, augmentez les nombres `proxy_cache_path inactive` et `proxy_cache_valid`
 
 Si vous ne générez pas vos itinéraires mais que vous souhaitez bénéficier du cache nginx :
@@ -55,14 +55,14 @@ Si vous ne générez pas vos itinéraires mais que vous souhaitez bénéficier d
 proxy_cache_path  /data/nginx/cache levels=1:2 keys_zone=nuxt-cache:25m max_size=1g inactive=60m use_temp_path=off;
 
 map $sent_http_content_type $expires {
-    "text/html"                 1h; # à définir celon vos besoins
-    "text/html; charset=utf-8"  1h; # à définir celon vos besoins
-    default                     7d; # à définir celon vos besoins
+    "text/html"                 1h; # à définir selon vos besoins
+    "text/html; charset=utf-8"  1h; # à définir selon vos besoins
+    default                     7d; # à définir selon vos besoins
 }
 
 server {
     listen          80;             # le port sur lequel nginx écoute
-    server_name     your-domain;    # à définir celon vos besoins
+    server_name     your-domain;    # à définir selon vos besoins
 
     gzip            on;
     gzip_types      text/plain application/xml text/css application/javascript;
@@ -109,8 +109,8 @@ server {
         proxy_pass                  http://127.0.0.1:3000; # configurer l'adresse de l'instance Node.js ici
         proxy_cache                 nuxt-cache;
         proxy_cache_bypass          $arg_nocache; # il est peut-être mieux de changer ceci
-        proxy_cache_valid           200 302  60m; # à définir celon vos besoins
-        proxy_cache_valid           404      1m;  # à définir celon vos besoins
+        proxy_cache_valid           200 302  60m; # à définir selon vos besoins
+        proxy_cache_valid           404      1m;  # à définir selon vos besoins
         proxy_cache_lock            on;
         proxy_cache_use_stale error timeout http_500 http_502 http_503 http_504;
         proxy_cache_key             $uri$is_args$args;
@@ -121,7 +121,7 @@ server {
 
 # Configuration nginx pour Laravel Forge
 
-Changez `YOUR_WEBSITE_FOLDER` pour le dossier de votre site web et `YOUR_WEBSITE_DOMAIN` par l'URL de celui-ci. Laravel Forge va remplir ces valeurs pour vous mais assurez vous en avec une double vérification.
+Changez `YOUR_WEBSITE_FOLDER` pour le dossier de votre site web et `YOUR_WEBSITE_DOMAIN` par l'URL de celui-ci. Laravel Forge va remplir ces valeurs pour vous, mais assurez-vous-en avec une double vérification.
 
 ```nginx
 # CONFIGURATION FORGE (NE PAS SUPPRIMER !)
@@ -178,7 +178,7 @@ include forge-conf/REPERTOIRE_DE_VOTRE_SITE_WEB/after/*;
 
 # Securisation de Laravel Forge avec TLS
 
-C'est mieux de laisser Laravel éditer le fichier `nginx.conf pour vous, en cliquant sur Sites -> DOMAINE_DE_VOTRE_SITE_WEB (NOM_DU_SERVEUR) puis cliquer sur SSL et installer un certificat de l'un des fournisseurs. Rappeler vous d'activer le certificat. Votre fichier `nginx.conf` devrait maintenant ressembler à ça :
+C'est mieux de laisser Laravel éditer le fichier `nginx.conf pour vous, en cliquant sur Sites -> DOMAINE_DE_VOTRE_SITE_WEB (NOM_DU_SERVEUR) puis cliquer sur SSL et installer un certificat de l'un des fournisseurs. Rappelez-vous d'activer le certificat. Votre fichier `nginx.conf` devrait maintenant ressembler à ça :
 
 ```nginx
 # CONFIGURATION FORGE (NE PAS SUPPRIMER !)

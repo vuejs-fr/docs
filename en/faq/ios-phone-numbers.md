@@ -16,6 +16,6 @@ Si vous incluez des numéros de téléphone dans votre page Nuxt, assurez-vous d
 
 ```
 
-Sinon, certaines versions de Safari pour téléphone mobile transformera automatiquement ces numéros en liens. Ce serait intéressant et
-utile à première vue, mais déclanchera un avertissement `NodeMismatch` car le contenu SSR ne correspond plus au contenu
+Sinon, certaines versions de Safari pour téléphone mobile transformeront automatiquement ces numéros en liens. Ce serait intéressant et
+utile à première vue, mais déclenchera un avertissement `NodeMismatch` car le contenu SSR ne correspond plus au contenu
 du site web. Cela peut rendre votre application inutilisable sur ces versions de Safari.

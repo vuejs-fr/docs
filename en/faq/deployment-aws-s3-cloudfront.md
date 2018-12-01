@@ -11,7 +11,7 @@ Cloudfront est leur CDN (content delivery network)
 
 Héberger une "application universelle" Nuxt sur AWS avec S3 et Cloudfront est puissant et pas cher.
 
-> AWS est à se tirer les cheuveux. Si nous avons oublié une étape, merci de soumettre proposition de mise à jour (PR) pour mettre à jour ce document.
+> AWS est à se tirer les cheveux. Si nous avons oublié une étape, merci de soumettre une proposition de mise à jour (PR) pour mettre à jour ce document.
 
 ## Tour rapide
 
@@ -70,7 +70,7 @@ Vous devriez avoir maintenant ces données :
   - AWS_BUCKET_NAME="example.com" 
   - AWS_CLOUDFRONT="UPPERCASE"
 
-### 3. AWS: Configurer l'accès securisé
+### 3. AWS: Configurer l'accès sécurisé
 
 Pour l'étape 3, nous devons créer un utilisateur qui peut :
   - Mettre à jour le contenu de la boite
@@ -117,13 +117,13 @@ Pour l'étape 3, nous devons créer un utilisateur qui peut :
 }
 ```
 
-puis [obtenez une clé d'accès et un code secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+Puis [obtenez une clé d'accès et un code secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
 Vous devriez maintenant avoir ces données :
   - AWS_ACCESS_KEY_ID="key" 
   - AWS_SECRET_ACCESS_KEY="secret" 
 
-### 4. Ordinateur: Configurez le script de build de votre project
+### 4. Ordinateur: Configurez le script de build de votre projet
 
 4.1) Créer un script `deploy.sh`. Voir les options [nvm (node version manager)](https://github.com/creationix/nvm).
 ``` bash
@@ -134,7 +134,7 @@ export AWS_SECRET_ACCESS_KEY="secret"
 export AWS_BUCKET_NAME="example.com" 
 export AWS_CLOUDFRONT="UPPERCASE"
 
-# charger nvm (node version manager), installer node (version in .nvmrc), et les paquet d'installation npm
+# charger nvm (node version manager), installer node (version in .nvmrc), et les paquets d'installation npm
 [ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh" && nvm use
 # installer npm si besoin
 [ ! -d "node_modules" ] && npm install
@@ -147,7 +147,7 @@ gulp deploy
 ``` bash
 chmod +x deploy.sh
 echo "
-# ne pas commiter les fichier de build
+# ne pas commiter les fichiers de build
 node_modules
 dist
 .nuxt
@@ -213,7 +213,7 @@ gulp.task('deploy', function() {
 
   // supprimer les fichiers à supprimer
   if (config.deleteOldVersions) g = g.pipe(publisher.sync());
-  // créer un fichier de cache pour accélerer les envois succéssifs
+  // créer un fichier de cache pour accélérer les envois successifs
   g = g.pipe(publisher.cache());
   // afficher l'avancement de l'envoi dans la console
   g = g.pipe(awspublish.reporter());

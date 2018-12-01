@@ -5,9 +5,9 @@ description: Comment déployer une application Nuxt.js sur Google App Engine ?
 
 # Comment déployer une application Nuxt.js sur Google App Engine ?
 
-déployer sur [Google App Engine](https://cloud.google.com/appengine/) est une solution rapide et facile pour héberger vos application universelles Nuxt sur le service de Cloud Google.
+Déployer sur [Google App Engine](https://cloud.google.com/appengine/) est une solution rapide et facile pour héberger vos applications universelles Nuxt sur le service de Cloud Google.
 
-Dans ce guide, nous construisons l'application locallement puis nous envoyons simplement l'intégralité du répertoire du projet vers Google App Engine. Après l'envoi, Google App Engine démarrera automatiquement le script `start` de votre fichier package.json et votre application sera disponible immediatement.
+Dans ce guide, nous construisons l'application localement puis nous envoyons simplement l'intégralité du répertoire du projet vers Google App Engine. Après l'envoi, Google App Engine démarrera automatiquement le script `start` de votre fichier package.json et votre application sera disponible immédiatement.
 
 ## Pour commencer
 
@@ -15,7 +15,7 @@ Vérifz que vous avez un compte Google Cloud, un projet et une application Googl
 
 ## Configurer votre application
 
-Tout ce que vous avez besoin d'ajouter à votre application universelle Nuxt pour la déployer sur le Moteur d'Application est un fichier appelé `app.yaml`. Créez un nouveau fichier avec ce nom dans votre dossier racine et ajouter le contenu suivant :
+Tout ce que vous avez besoin d'ajouter à votre application universelle Nuxt pour la déployer sur le Moteur d'Application est un fichier appelé `app.yaml`. Créez un nouveau fichier avec ce nom dans votre dossier racine et ajoutez le contenu suivant :
 
 ```yaml
 runtime: nodejs10
@@ -41,11 +41,11 @@ env_variables:
   NODE_ENV: 'production'
 ```
 
-## Construire et deployer l'application
+## Construire et déployer l'application
 
 Maintenant, construisez votre application avec `npm run build`.
 
-A cet instant, votre application est prête à être envoyée au Moteur d'Application Google. Maintenant lancer simplement la commande suivante :
+À cet instant, votre application est prête à être envoyée au Moteur d'Application Google. Maintenant lancer la commande suivante :
 
 ```
 gcloud app deploy app.yaml --project <project-id>
@@ -55,5 +55,5 @@ Voilà ! Votre application Nuxt.js est maintenant hébergée le me Moteur d'Appl
 
 ## Pour plus d'information
 
-- L'attribut `instance_class` dans votre fichier app.yaml définie la classe de instance d'application. Instance F2 n'est pas complètement libre, mais possède le minimum de mémoire nécessaire pour exécuter une application Nuxt.
+- L'attribut `instance_class` dans votre fichier app.yaml définit la classe d'instance d'application. Instance F2 n'est pas complètement libre, mais possède le minimum de mémoire nécessaire pour exécuter une application Nuxt.
 - Assurez-vous de renseigner le project-id et non pas le project-name dans la commande de déploiement. Ce sont deux choses différentes - mais facile à confondre.
