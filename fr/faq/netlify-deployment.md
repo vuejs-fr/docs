@@ -1,26 +1,25 @@
 ---
-title: Déploiement sur Netlify (EN)
+title: Déploiement sur Netlify
 description: Comment déployer une application Nuxt.js sur Netlify ?
 ---
 
-# How to deploy on Netlify?
+# Comment déployer sur Netlify?
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Deploying to [Netlify](https://www.netlify.com) is a low friction option for getting a __statically generated__ Nuxt.js site online quickly.</p>
+Le déploiement vers [Netlify](https://www.netlify.com) est rapide grâce à la **génération** de projets **statiques** par NuxtJs
 
-The core of the process leverages the `nuxt generate` command during deployment to build a static version of your Nuxt.js app into a `dist` directory. The contents of this directory are then deployed to a production URL.
+Le déploiement fonctionne avec la méthode `nuxt generate` qui permet de générer une version statique de votre projet vers le dossier `/dist`, c'est dans ce dossier que Netlify va déployer votre projet vers le web.
 
-### Getting Started
+### Débuter la configuration du déploiement
 
-Press the _"New site from Git"_ button on the Netlify dashboard. Authenticate with your repository host, select a repository to deploy, and continue. You should land on step 3: _"Build options, and deploy!"_
+Choisissez l'option _"New site from Git"_ sur le dashboard Netlify. Maintenant il vous suffit de renseigner les sources de votre repository en choisissant votre fournisseurs de dépôts (Github, Gitlab, BitBucket), sélectionnez le dépôt à déployer et continuez. Puis vous arriverez vers l'étapes: _"Build options, and deploy!"_
 
-### Configure:
+### Configuration:
 
-1. __Branch to deploy:__ `master`, or which-ever branch you prefer
-1. __Build command:__ `npm run generate`
-1. __Publish directory:__ `dist`
+1. __Branch to deploy:__ `master` (la branche qui contient votre site)
+2. __Build command:__ `npm run generate`
+3. __Publish directory:__ `dist`
+> Vous avez la possibilité de choisir des variables d'environnement grâce au bouton _"Advanced"_. Les variables d'environnements sont utiles pour ne pas dévoiler les identifiants d'une API par exemple. Netlify offre aussi la possibilité de créer des [variables par défauts](https://www.netlify.com/docs/build-settings/#build-environment-variables).
 
-> Optionally, you can add additional ENV variables via the _"Advanced"_ button. These can be helpful for swapping in alternative API credentials and so on. Netlify also provides a [default ENV variables](https://www.netlify.com/docs/build-settings/#build-environment-variables) which can be read by your Nuxt.js application at build time.
+Il ne vous reste plus qu'a cliqué sur _"Deploy site"_ pour immédiatement déployer votre site web. Votre site Netlify à une URL aléatoire qui lui est assigné.
 
-Click _"Deploy site"_ to immediately trigger a deploy. Your Netlify site will be assigned a random URL and deployed using the `nuxt generate` command.
-
-Voilà! Your Nuxt.js application is now hosted on Netlify!
+Voilà c'est tout! Votre application Nuxt.js est maintenant héberger avec Netlify!
