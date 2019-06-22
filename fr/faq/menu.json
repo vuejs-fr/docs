@@ -26,7 +26,7 @@
     "title": "Déploiement",
     "links": [
       { "name": "Déployer sur Heroku", "to": "/heroku-deployment" },
-      { "name": "Déployer avec Netlify (EN)", "to": "/netlify-deployment" },
+      { "name": "Déployer avec Netlify", "to": "/netlify-deployment" },
       { "name": "Déployer avec Now", "to": "/now-deployment" },
       { "name": "Déployer sur Dokku", "to": "/dokku-deployment" },
       { "name": "Déployer avec Surge", "to": "/surge-deployment" },
