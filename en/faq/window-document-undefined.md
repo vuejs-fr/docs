@@ -1,9 +1,9 @@
 ---
-title: window / document undefined
-description: window / document undefined avec Nuxt.js ?
+title: window ou document non défini
+description: window ou document non défini avec Nuxt.js ?
 ---
 
-# window / document undefined ?
+# window ou document non défini ?
 
 Cette erreur est due au rendu côté serveur. Si vous devez spécifier que vous souhaitez importer une ressource uniquement côté client, vous devez utiliser la variable `process.browser`.
 
