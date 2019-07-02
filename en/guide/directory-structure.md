@@ -19,11 +19,11 @@ Le répertoire `components` contient vos composants Vue.js. Nuxt.js ne surcharge
 
 ### Le répertoire des mises en page
 
-Le répertoire `layouts` contient vos mises en page.
-
-_Ce répertoire ne peut pas être renommé._
+Le répertoire `layouts` contient les mises en page de votre application. Les mises en page sont utilisées pour changer l'aspect de votre page (par exemple en incluant une barre latérale).
 
 [Consultez la documentation à propos de l'intégration des mises en page](/guide/views#layouts)
+
+_Ce répertoire ne peut pas être renommé sans configuration supplémentaire._
 
 ### Le répertoire des middlewares
 
@@ -35,7 +35,7 @@ Le répertoire `middleware` contient vos middlewares. Un middleware vous permet 
 
 Le répertoire `pages` contient vos vues et routes de l'application. Le framework lit tous vos fichiers `.vue` au sein de ce répertoire et crée automatiquement le routage de votre application.
 
-_Ce répertoire ne peut pas être renommé._
+_Ce répertoire ne peut pas être renommé sans configuration supplémentaire._
 
 [Consultez la documentation à propos de l'intégration des pages](/guide/views)
 
@@ -51,7 +51,7 @@ Le répertoire `static` contient vos fichiers statiques. Chaque fichier au sein 
 
 **Exemple :** `/static/robots.txt` est mappé à `/robots.txt`
 
-_Ce répertoire ne peut pas être renommé._
+_Ce répertoire ne peut pas être renommé sans configuration supplémentaire._
 
 [Consultez la documentation à propos de l'intégration des fichiers statiques](/guide/assets#static)
 
@@ -59,7 +59,7 @@ _Ce répertoire ne peut pas être renommé._
 
 Le répertoire `store` contient vos fichiers de [store Vuex](https://vuex.vuejs.org/fr/). Les stores Vuex sont implémentés de manière optionnelle dans le framework Nuxt.js. La création d'un fichier `index.js` dans ce répertoire active automatiquement l'option dans le framework.
 
-_Ce répertoire ne peut pas être renommé._
+_Ce répertoire ne peut pas être renommé sans configuration supplémentaire._
 
 [Consultez la documentation à propos de l'intégration des stores Vuex](/guide/vuex-store)
 
@@ -67,7 +67,7 @@ _Ce répertoire ne peut pas être renommé._
 
 Le fichier `nuxt.config.js` contient vos configurations personnalisées concernant Nuxt.js.
 
-_Ce fichier ne peut pas être renommé._
+_Ce fichier ne peut pas être renommé sans configuration supplémentaire._
 
 [Consultez la documentation à propos de l'intégration de `nuxt.config.js`](/guide/configuration)
 
@@ -86,4 +86,8 @@ _Ce fichier ne peut pas être renommé._
 
 Par défaut, `srcDir` est le même répertoire que `rootDir`.
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> à l'intérieur de vos templates `vue`, si vous avez besoin de faire référence à vos répertoires `assets` ou `static`, utilisez par ex. `~/assets/votre_image.png` et `~/static/votre_image.png`.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info :</b> à l'intérieur de vos templates `vue`, si vous avez besoin de faire référence à vos répertoires `assets` ou `static`, utilisez par ex. `~/assets/votre_image.png` et `~/static/votre_image.png`.
+
+</div>

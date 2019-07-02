@@ -9,6 +9,10 @@ code: https://github.com/ahadyekta/nuxt-auth-external-jwt
 
 Dans l'exemple auth-routes l'API et le site Nuxt se lancent ensemble et utilisent la même instance serveur Node.js. Cependant, il est parfois mieux de travailler avec une API externe avec jsonWebToken. Cela sera expliqué simplement à travers cet exemple.
 
+## Module officiel `auth-module`
+
+Si vous souhaitez implémenter un flux d'authentification complexe, par exemple OAuth2, nous suggérons d'utiliser le module officiel [`auth-module`](https://github.com/nuxt-community/auth-module)
+
 ## Structure
 
 Puisque Nuxt.js fournit à la fois le rendu client et serveur ainsi qu'un cookie différent entre le navigateur et le serveur Node.js, nous devons fournir un jeton de donnée qui puisse être accessible par les deux parties.
@@ -39,9 +43,9 @@ export default {
   middleware: 'notAuthenticated',
   methods: {
     postLogin() {
-      setTimeout(() => { // we simulate the async request with timeout.
+      setTimeout(() => { // nous simulons la requête asynchrone avec un timeout.
         const auth = {
-          accessToken: 'someStringGotFromApiServiceWithAjax'
+          accessToken: 'uneChaineObtenueDuServiceApiAVecAjax'
         }
         this.$store.commit('setAuth', auth) // muter `auth` dans le store pour le rendu client
         Cookie.set('auth', auth) // sauver le jeton dans un cookie pour le rendu serveur
@@ -81,7 +85,7 @@ const createStore = () => {
           try {
             auth = JSON.parse(parsed.auth)
           } catch (err) {
-            // No valid cookie found
+            // aucun cookie valide trouvé
           }
         }
         commit('setAuth', auth)
@@ -119,10 +123,10 @@ export default function ({ store, redirect }) {
 }
 ```
 
-> Note: use `authenticated` middleware for pages which need authentication and use `notAuthenticated` middleware inside the login/register and similar pages.
+> Note: utilisez le middleware `authenticated` pour les pages nécessitant une authentification et utilisez le middleware `notAuthenticated` pour les pages login/register et similaires.
 
-## Logging out the User
-Finally to allow the user to logout of the system, we can remove the cookie: 
+## Déconnecter l'utilisateur
+Enfin pour laisser l'utilisateur pouvoir se déconnecter du système, nous pouvons retirer le cookie : 
 
 ```javascript
 const Cookie = process.client ? require('js-cookie') : undefined
@@ -130,7 +134,7 @@ const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   methods: {
     logout() {
-      // Code will also be required to invalidate the JWT Cookie on external API
+      // Un code sera également requis pour invalider le cookie JWT sur une API externe
       Cookie.remove('auth')
       this.$store.commit('setAuth', null)
     }
@@ -138,5 +142,5 @@ export default {
 }
 ```
 
-> Note: refer to the method using @click="logout"
+> Note: se référer à la méthode en utilisant @click="logout"
 

@@ -10,14 +10,11 @@
           { "to": "#fonctionnalit-s", "name": "Fonctionnalités" },
           { "to": "#sch-ma", "name": "Schéma" },
           { "to": "#rendu-c-t-serveur-ssr-universel-", "name": "Rendu côté serveur" },
+          { "to": "#single-page-applications-spa-", "name": "Application monopage" },
           { "to": "#g-n-ration-statique-pr-rendu-", "name": "Génération statique" }
         ]
       },
       { "to": "/contribution-guide", "name": "Guide de contribution",
-        "contents": [
-          { "to": "#rapports-de-probl-me", "name": "Rapports de problème" },
-          { "to": "#propositions-de-fusion", "name": "Propositions de fusion" }
-        ] },
       { "to": "/release-notes", "name": "Notes de versions" }
     ]
   },
@@ -39,9 +36,6 @@
         ]
       },
       { "to": "/configuration", "name": "Configuration",
-        "contents": [
-          { "to": "#options", "name": "Options" }
-        ] },
       {
         "to": "/routing", "name": "Routage",
         "contents": [
@@ -90,8 +84,8 @@
         "to": "/modules", "name": "Modules",
         "contents": [
           { "to": "#introduction", "name": "Introduction" },
-          { "to": "#write-a-basic-module", "name": "Write a basic Module" },
-          { "to": "#async-modules", "name": "Async Modules" },
+          { "to": "#write-a-basic-module", "name": "Ecrire un module basique" },
+          { "to": "#async-modules", "name": "Modules Asynchrones" },
           { "to": "#common-snippets", "name": "Common Snippets" }
         ]
       },

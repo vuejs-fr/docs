@@ -15,43 +15,49 @@ Assurez-vous que [npx](https://www.npmjs.com/package/npx) est installé (`npx` e
 $ npx create-nuxt-app <project-name>
 ```
 
-Or with [yarn](https://yarnpkg.com/en/):
+ou avec [yarn](https://yarnpkg.com/en/):
 
 ```bash
 yarn create nuxt-app <my-project>
 ```
 
-It will ask you some questions:
+Il vous sera posé quelques questions :
 
-1. Choose between integrated server-side frameworks:
-  - None (Nuxt default server)
+1. Choisir entre différents frameworks intégrés côté serveur :
+  - Aucun (Serveur Nuxt par défaut)
   - [Express](https://github.com/expressjs/express)
   - [Koa](https://github.com/koajs/koa)
   - [Hapi](https://github.com/hapijs/hapi)
   - [Feathers](https://github.com/feathersjs/feathers)
   - [Micro](https://github.com/zeit/micro)
   - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
-2. Choose your favorite UI framework:
-  - None (feel free to add one later)
+2. Choisir votre interface utilisateur préférée :
+  - Aucune (lançant la possibilité d'en ajouter une plus tard)
   - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
   - [Vuetify](https://github.com/vuetifyjs/vuetify)
   - [Bulma](https://github.com/jgthms/bulma)
   - [Tailwind](https://github.com/tailwindcss/tailwindcss)
   - [Element UI](https://github.com/ElemeFE/element)
+  - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
-3. The Nuxt mode you want (`Universal` or `SPA`)
-4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
-5. Add [EsLint](https://eslint.org/) to Lint your code on save.
-5. Add [Prettier](https://prettier.io/) to prettify your code on save.
+3. Le [mode Nuxt désiré (`Universel` ou `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
+4. Ajouter le [module axios](https://github.com/nuxt-community/axios-module) pour faire des requêtes HTTP facilement dans votre application.
+5. Ajouter [EsLint](https://eslint.org/) pour Linter votre code en sauvegardant.
+5. Ajouter [Prettier](https://prettier.io/) pour prettify votre code en sauvegardant.
 
-When answered, it will install all the dependencies so the next step is to launch the project with:
+Une fois répondu, il installera toutes les dépendances puis la prochaine étape sera de lancer le projet avec :
 
 ```bash
 $ npm run dev
 ```
+
 L'application est désormais accessible à l'adresse http://localhost:3000.
 
-<p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.</p>
+<div class="Alert">
+
+Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages.
+
+</div>
 
 Pour en savoir plus sur l'organisation des répertoires dans un projet, consultez la documentation de l'[Architecture des répertoires](/guide/directory-structure).
 
@@ -64,7 +70,11 @@ $ mkdir <nom-du-projet>
 $ cd <nom-du-projet>
 ```
 
-<p class="Alert Alert--nuxt-green"><b>Info :</b> remplacez <code>&lt;nom-du-projet&gt;</nom-du-projet></code> par le nom du projet.</p>
+<div class="Alert Alert--nuxt-green">
+
+<b>Info :</b> remplacez <code>&lt;nom-du-projet&gt;</nom-du-projet></code> par le nom du projet.
+
+</div>
 
 ### Le package.json
 
@@ -80,7 +90,6 @@ Le projet a besoin d'un fichier `package.json` avec un script permettant de lanc
 ```
 
 `scripts` lancera Nuxt.js via `npm run dev`.
-
 
 ### Installation de `nuxt`
 
@@ -104,7 +113,7 @@ puis créez la première page `pages/index.vue`:
 
 ```html
 <template>
-  <h1>Hello world !</h1>
+  <h1>Bonjour le monde !</h1>
 </template>
 ```
 
@@ -116,6 +125,10 @@ $ npm run dev
 
 L'application est désormais accessible à l'adresse http://localhost:3000.
 
-<p class="Alert">Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages</p>
+<div class="Alert">
+
+Nuxt.js va surveiller les modifications faites sur les fichiers du répertoire <code>pages</code> aussi il n'y a pas besoin de redémarrer le serveur quand vous ajoutez de nouvelles pages
+
+</div>
 
 Pour en savoir plus sur la structure des dossiers du projet, consultez la documentation de l'[Architecture des répertoires](/guide/directory-structure).

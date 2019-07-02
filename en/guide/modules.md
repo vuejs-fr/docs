@@ -7,17 +7,31 @@ description: Les modules sont des extensions de Nuxt.js qui augmentent ses fonct
 
 ## Introduction
 
-Pendant la phase d'amélioration de votre application pour la production, vous allez découvrir que les fonctionnalités offertes par celui-ci ne sont pas complètes. Faire la configuration et ajouter les plugins de chaque projet est répétitif, ennuyant et prend du temps. Ajouter chaque nouvelle fonctionnalité dans Nuxt serait impossible sans rendre le framework lourd.
+Pendant la phase d'amélioration de votre application pour la production avec Nuxt, vous allez découvrir que les fonctionnalités du coeur du framework
+ne sont pas complètes. Nuxt peut être étendu avec des options de configuration et des plugins,
+mais maintenir ces paramétrages à travers de multiples projets est répétitif, ennuyant et prend du temps.
+D'un autre côté, supporter toutes les attentes des projets par défaut rendrait Nuxt très complexe et dure à utiliser.
 
-C'est pourquoi Nuxt introduit un système modulaire d'ordre supérieur pour facilement étendre ses fonctionnalités de base. Les modules sont en fait des **fonctions** qui sont appelées de manière séquentielle lors de la phase de démarrage de Nuxt. Le cœur va attendre que chacun d'entre eux soit chargé avant de continuer son travail. Ainsi vous avez la possibilité de personnaliser le moindre aspect de Nuxt. Grâce à sa conception modulaire ainsi que webpack [Tapable](https://github.com/webpack/tapable), il peut également abonner des points d'ancrage (« hooks ») pour certaines étapes comme l'initialisation de la phase de build. Les modules peuvent également remplacer les templates, configurer les chargeurs de webpack, ajouter des bibliothèques CSS et effectuer un grand nombre de tâches utiles.
+C'est pourquoi Nuxt introduit un système modulaire d'ordre supérieur pour facilement étendre ses fonctionnalités de base.
+Les modules sont en fait des **fonctions** qui sont appelées de manière séquentielle lors de la phase de démarrage de Nuxt.
+Le framework va attendre que chacun d'entre eux soit chargé avant de continuer son travail.
+De cette façon, les modules peuvent personnaliser le moindre aspect de Nuxt.
+Merci au design modulaire de Nuxt (basé sur [Tapable](https://github.com/webpack/tapable) de webpack),
+les modules peuvent facilement abonner des points d'ancrage (« hooks ») pour certaines étapes comme l'initialisation de la phase de build.
+Les modules peuvent également remplacer les templates, configurer les chargeurs de webpack, ajouter des bibliothèques CSS et effectuer un grand nombre de tâches utiles.
 
-Un autre point à propos des modules est qu'ils peuvent être refactorisés et packagés en dehors du projet de manière à être versionnés en tant que packages npm. Ainsi vous pouvez partager et utiliser des intégrations et solutions de qualité auprès de la communauté Nuxt sans effort ! Vous pourriez être intéressé par les modules si :
+Le meilleur de tout ça, les modules de Nuxt peuvent être intégrés dans des packages NPM.
+Cela les rend facilement réutilisables à travers de projets et partageables avec la communauté de Nuxt,
+aidant ainsi à créer un éco-système d'add-on Nuxt de grande qualité.
 
-- vous êtes un membre d'une **équipe agile** qui souhaite mettre en place son projet instantanément et éviter de **réinventer** la roue pour les tâches habituelles comme des mécanismes Google Analytics pour vos nouveaux projets,
-- vous êtes une **société** qui accorde de l'importance à la **qualité** et la **réutilisabilité** de ses projets,
-- Vous êtes un membre super enthousiaste de la communauté *Open Source* et que vous souhaitez *partager* avec la communauté d'une façon simple.
-- Vous êtes un développeur occupé et vous n'aimez pas vous encombrer avec des détails comme le paramétrage de chaque nouvelle bibliothèque ou intégration (quelqu'un l'aura surement déjà fait pour vous, ou vous pourriez demander à quelqu'un de la communauté de le faire).
-- Vous êtes fatigué de l'utilisation des API bas niveau et de leur changement continu et vous souhaiter **simplement des choses fonctionnelles**.
+Les modules sont bien si :
+
+- vous êtes un membre d'une **équipe agile** qui souhaite mettre en place rapidement un nouveau projet.
+- vous êtes fatigué de **réinventer** la roue pour les tâches habituelles comme des mécanismes Google Analytics.
+- Vous êtes un membre super enthousiaste de la communauté *Open Source* et que vous souhaitez *partager* votre travail avec la communauté d'une façon simple.
+- vous êtes membre d'une **société** qui accorde de l'importance à la **qualité** et la **réutilisabilité**.
+- Vous êtes souvent confronté à des échéances serrées et vous n'avez pas le temps de vous encombrer avec les détails de toutes les nouvelles librairies ou leurs intégrations.
+- Vous êtes fatigué de faire face aux changements des API bas niveau et vous souhaiter **simplement que les choses fonctionnent**.
 
 ## Écrire un module basique
 
@@ -68,7 +82,8 @@ export default {
 }
 ```
 
-Nous pouvons dire à Nuxt de charger des modules spécifiques pour un projet avec des paramètres optionnels en tant qu'options. Consultez la documentation sur la [configuration des modules](/api/configuration-modules) pour plus d'informations !
+Nous pouvons dire à Nuxt de charger des modules spécifiques pour un projet avec des paramètres optionnels en tant qu'options.
+Consultez la documentation sur la [configuration des modules](/api/configuration-modules) pour plus d'informations !
 
 ## Modules asynchrones
 
@@ -76,7 +91,11 @@ Tous les modules ne font pas tout de manière synchrone. Par exemple vous pouvez
 
 ### Utilisation de async / await
 
-<p class="Alert Alert--orange">Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.</p>
+<div class="Alert Alert--orange">
+
+Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.
+
+</div>
 
 ```js
 import fse from 'fs-extra'
@@ -120,7 +139,8 @@ export default function asyncModule(callback) {
 
 ### Options de haut niveau
 
-Parfois il est plus simple d'utiliser des options de haut niveau lors de l'abonnement de modules à `nuxt.config.js`. Donc nous pouvons combiner les options de sources multiples.
+Parfois il est plus simple d'utiliser des options de haut niveau lors de l'abonnement de modules à `nuxt.config.js`.
+Cela nous permet de combiner les options de sources multiples.
 
 **nuxt.config.js**
 
@@ -142,14 +162,18 @@ export default {
 
 ```js
 export default function (moduleOptions) {
+  // `options` contiendra option1, option2 et anotherOption
   const options = Object.assign({}, this.options.axios, moduleOptions)
+
   // ...
 }
 ```
 
 ### Fournir des plugins
 
-Il est courant que les modules fournissent un ou plusieurs plugins quand ils sont ajoutés. Par exemple le module [bootstrap-vue](https://bootstrap-vue.js.org) nécessite d'être abonné lui-même dans Vue. Pour cela, nous pouvons utiliser la fonction utilitaire `this.addPlugin`.
+Il est courant que les modules fournissent un ou plusieurs plugins quand ils sont ajoutés.
+Par exemple le module [bootstrap-vue](https://bootstrap-vue.js.org) nécessite d'être abonné lui-même dans Vue. Pour cela, nous pouvons utiliser la fonction utilitaire `this.addPlugin`.
+Dans certaines situations nous pouvons utiliser le helper `this.addPlugin`.
 
 **plugin.js**
 
@@ -223,6 +247,8 @@ export default function (moduleOptions) {
 
 ### Fournir des ressources
 
+<!-- todo: up2date? -->
+
 On peut abonner des plugins webpack pour fournir des ressources pendant la phase de build.
 
 **module.js**
@@ -271,35 +297,35 @@ export default function (moduleOptions) {
 
 ## Lancer des tâches sur des points d'ancrage spécifiques
 
-Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt. Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques. Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
+Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt.
+Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques.
+Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
+
+Voici quelques exemples basiques :
 
 ```js
 export default function () {
-  // Ajoute un point d'ancrage au module
-  this.nuxt.hook('module', moduleContainer => {
+
+  this.nuxt.hook('modules:done', moduleContainer => {
     // Ceci sera appelé quand tous les modules auront fini d'être chargés
   })
 
-  // Ajoute un point d'ancrage au moteur de rendu
-  this.nuxt.hook('module', moduleContainer => {
-    // Ceci sera appelé quand le moteur de rendu aura été créé
+  this.nuxt.hook('render:before', renderer => {
+    // Ceci sera appelé après la création du moteur de rendu
   })
 
-  // Ajoute un point d'ancrage au build
-  this.nuxt.hook('build', async builder => {
-    // Ceci sera appelé une fois le build fait
-
-    // On peut également enregistrer des points d'ancrage interne ici
-    builder.hook('compile', ({compiler}) => {
-        // Ceci sera lancé juste avant que le compilateur de webpack démarre
-    })
+  this.nuxt.hook('build:compile', async ({name, compiler }) => {
+    // Ceci sera appelé avant le lancement du compilateur (par défaut : webpack)
   })
 
-  // Ajoute un point d'ancrage à la génération
-  this.nuxt.hook('generate', async generator => {
-    // Ceci sera appelé quand la génération de Nuxt va commencer
+  this.nuxt.hook('generate:before', async generator => {
+    // Ceci sera appelé avant que Nuxt génère vos pages
   })
 }
 ```
 
-<p class="Alert">Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.</p>
+<div class="Alert">
+
+Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.
+
+</div>
