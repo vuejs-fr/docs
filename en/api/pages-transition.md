@@ -1,9 +1,9 @@
 ---
-title: "API : la propriété pageTransition"
+title: "API : la propriété pageTransition (EN)"
 description: Nuxt.js utilise le composant de `<transition>` afin de créer des transitions / animations époustouflantes entre vos pages.
 ---
 
-# La propriété pageTransition
+# La propriété pageTransition (EN)
 
 > Nuxt.js v2.7+ introduit `pageTransition` en lieu et place de `transition` pour améliorer le nommage avec les transitions de mise en page. Avec Nuxt 3, `transition` sera dérpécié.
 
@@ -117,3 +117,5 @@ Transitions appliquées à la navigation :
 - `/` vers `/posts` => `slide-left`,
 - `/posts` vers `/posts?page=3` => `slide-left`,
 - `/posts?page=3` vers `/posts?page=2` => `slide-right`.
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

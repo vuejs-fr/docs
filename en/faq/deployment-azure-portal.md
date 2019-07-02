@@ -1,9 +1,9 @@
 ---
-title: Azure Portal Deployment
+title: Azure Portal Deployment (EN)
 description: How to deploy a Nuxt.js application on Azure Portal?
 ---
 
-# How to deploy on Azure Portal
+# How to deploy on Azure Portal (EN)
 
 If you are using Azure DevOps and let the build pipeline do its work you and want to store artifacts. Files
 which are prefixed with a `.` must be moved to the artifact folder explicitly. Then you can create an Artifact Archive and 
@@ -79,3 +79,4 @@ this the logs will tell you that Vue cannot find any routes.
 </configuration>
 ```
 
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

@@ -41,7 +41,7 @@
       },
       {
 
-        "name": "Named Views (EN)",
+        "name": "Vues nommées",
         "to": "/named-views"
       },
       {
@@ -66,7 +66,7 @@
         "to": "/async-data"
       },
       {
-        "name": "Authentification de routes",
+        "name": "Authentification de routes (EN)",
         "to": "/auth-routes"
       },
       {
@@ -95,7 +95,7 @@
         "to": "/typescript"
       },
       {
-        "name": "Vuex Store",
+        "name": "Store Vuex",
         "to": "/typescript-vuex"
       }
     ]

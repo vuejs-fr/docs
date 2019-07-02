@@ -1,5 +1,5 @@
 ---
-title: "API: The serverMiddleware Property"
+title: "API: The serverMiddleware Property (EN)"
 description: Define server-side middleware.
 ---
 
@@ -8,7 +8,7 @@ description: Define server-side middleware.
 - Type: `Array`
     - Items: `String` or `Object` or `Function`
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
+Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
 so we can register our middleware to its stack and having chance
 to provide more routes like API **without need to an external server**.
 
@@ -17,7 +17,7 @@ Nuxt internally creates a [connect](https://github.com/senchalabs/connect) insta
 Because connect itself is a middleware, registered middleware will work with both `nuxt start`
 and also when used as a middleware with programmatic usages like [express-template](https://github.com/nuxt-community/express-template).
 Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
-using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)</p>
+using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)
 
 Additional to them, we introduced a `prefix` option which defaults to `true`. It will add the router base to your server middlewares.
 
@@ -88,3 +88,5 @@ serverMiddleware: [
     '~/api/logger'
 ]
 ```
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

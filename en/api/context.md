@@ -1,5 +1,5 @@
 ---
-title: "API : le contexte"
+title: "API : le contexte (EN)"
 description: L'objet `context` fournit des objets et paramètres additionnels en provenance de Nuxt qui ne sont pas traditionnellement disponibles dans les composants Vue. Le `context` est disponible dans des aires de cycle de vie spécifique à Nuxt. On y retrouve, par exemple, `asyncData`, `plugins`, 'middlewares', 'modules', et 'store/nuxtServerInit`.
 ---
 
@@ -37,3 +37,5 @@ Liste de toutes les propriétés disponibles dans `context` :
 | `error`                | `Function`                                                                         | Client & Server | Use this method to show the error page: `error(params)`. The `params` should have the properties `statusCode` and `message`.                                                                                                                                                                |
 | `nuxtState`            | `Object`                                                                           | Client          | Nuxt state, useful for plugins which uses `beforeNuxtRender` to get the nuxt state on client-side before hydration. **Available only in `universal` mode**.                                                                                                                                 |
 | `beforeNuxtRender(fn)` | `Function`                                                                         | Server          | Use this method to update `__NUXT__` variable rendered on client-side, the `fn` (can be asynchronous) is called with `{ Components, nuxtState }`, see [example](https://github.com/nuxt/nuxt.js/blob/cf6b0df45f678c5ac35535d49710c606ab34787d/test/fixtures/basic/pages/special-state.vue). |
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

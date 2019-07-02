@@ -1,9 +1,9 @@
 ---
-title: Loading audio files from assets directory
+title: Loading audio files from assets directory (EN)
 description: How to extend Webpack config to load audio files?
 ---
 
-#  How to extend Webpack config to load audio files?
+#  How to extend Webpack config to load audio files? (EN)
 
 Audio files should be processed by `file-loader`. This loader is already included in the default Webpack configuration, but it is not set up to handle audio files. You need to extend its default configuration in `nuxt.config.js`:
 
@@ -50,3 +50,5 @@ export default {
   },
 }
 ```
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

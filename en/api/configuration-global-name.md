@@ -3,7 +3,7 @@ title: "API: The globalName Property (EN)"
 description: Nuxt.js lets you customize the global ID used in the main HTML template as well as the main Vue instance name and other options.
 ---
 
-# The globalName Property
+# The globalName Property (EN)
 
 > Nuxt.js lets you customize the global ID used in the main HTML template as well as the main Vue instance name and other options.
 
@@ -40,3 +40,4 @@ It needs to be a valid JavaScript identifier.
 },
 ```
 
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

@@ -1,5 +1,5 @@
 ---
-title: "API : La propriété build"
+title: "API : La propriété build (EN)"
 description: Nuxt.js vous permet de personnaliser la configuration webpack pour générer l'application web que vous souhaitez.
 ---
 
@@ -766,3 +766,5 @@ export default {
   }
 }
 ```
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

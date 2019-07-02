@@ -1,6 +1,6 @@
 ---
 title: Hello World
-description: TypeScript Hello World example with Nuxt.js
+description: Exemple de Hello World en TypeScript avec Nuxt.js
 github: typescript
 livedemo: https://typescript.nuxtjs.org
 documentation: /guide/typescript

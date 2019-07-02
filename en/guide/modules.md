@@ -1,5 +1,5 @@
 ---
-title: Modules
+title: Modules (EN)
 description: Les modules sont des extensions de Nuxt.js qui augmentent ses fonctionnalités et permettent de l'intégration continue.
 ---
 
@@ -386,3 +386,5 @@ Once your package is installed (via NPM or Yarn), you'll be able to execute `nux
 Il existe beaucoup d'autres points d'ancrage et de possibilités pour les modules. Consultez les [mécanismes de Nuxt](/api/internals) pour en apprendre plus à propos de l'API interne de Nuxt.
 
 </div>
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

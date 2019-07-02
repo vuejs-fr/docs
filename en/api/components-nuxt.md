@@ -1,5 +1,5 @@
 ---
-title: "API : le composant <nuxt>"
+title: "API : le composant <nuxt> (EN)"
 description: Affiche un composant de page à l'intérieur d'une mise en page.
 ---
 
@@ -54,3 +54,5 @@ There are 3 ways to handle internal `key` prop of `<router-view/>`.
   - Default: `default`
 
 To see an example, take a look at the [named-views example](/examples/named-views).
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

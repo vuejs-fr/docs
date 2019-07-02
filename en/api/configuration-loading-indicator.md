@@ -1,9 +1,9 @@
 ---
-title: "API: The loading indicator Property"
+title: "API: The loading indicator Property (EN)"
 description: Show fancy loading indicator while SPA page is loading!
 ---
 
-# The loadingIndicator Property (En)
+# The loadingIndicator Property (EN)
 
 > Show fancy loading indicator while SPA page is loading!
 
@@ -43,3 +43,5 @@ Built-in indicators support `color` and `background` options.
 If you need your own special indicator, a String value or Name key can also be a path to an html template of indicator source code! All of the options are passed to the template, too.
 
 Nuxt's built-in [source code](https://github.com/nuxt/nuxt.js/tree/dev/packages/vue-app/template/views/loading) is also available if you need a base!
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

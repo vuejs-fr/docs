@@ -1,5 +1,5 @@
 ---
-title: "API : le composant <nuxt-link>"
+title: "API : le composant <nuxt-link> (EN)"
 description: Lie les pages entre elles avec `<nuxt-link>`.
 ---
 
@@ -36,3 +36,5 @@ To disable the prefetching of the linked page, you can use the `no-prefetch` pro
 You can configure globally this behaviour with [router.prefetchLinks](/api/configuration-router#prefetchlinks).
 
 The `prefetched-class` prop is also available to customize the class added when the code splitted page has been prefetched. Make sure to set up this functionality globally with [router.linkPrefetchedClass](/api/configuration-router#linkprefetchedclass).
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

@@ -1,9 +1,9 @@
 ---
-title: "API: The loading Property"
+title: "API: The loading Property (EN)"
 description: Nuxt.js uses its own component to show a progress bar between the routes. You can customize it, disable it or create your own component.
 ---
 
-# The loading Property (En)
+# The loading Property (EN)
 
 - Type: `Boolean` or `Object` or `String`
 
@@ -140,3 +140,5 @@ You can change the default behaviour by setting `continuous` to true, then after
 
 
 <img src="/api-continuous-loading.gif" alt="continuous loading"/>
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

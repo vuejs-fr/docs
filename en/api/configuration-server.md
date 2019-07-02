@@ -1,9 +1,9 @@
 ---
-title: "API: The server Property"
+title: "API: The server Property (EN)"
 description: Nuxt.js let you define the server connection variables for your application inside `nuxt.config.js`.
 ---
 
-# The server Property
+# The server Property (EN)
 
 - Type: `Object`
 
@@ -100,3 +100,5 @@ Server-Timing: midd;desc="Middleware timing description";dur=2.4
 ```
 
 Please refer to [Server-Timing MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing) for more details.
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

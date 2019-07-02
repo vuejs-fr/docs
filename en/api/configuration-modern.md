@@ -1,5 +1,5 @@
 ---
-title: "API: The modern Property"
+title: "API: The modern Property (EN)"
 description: Build and server a modern bundle
 ---
 
@@ -44,3 +44,5 @@ The two versions of bundles are:
 - Use [`build.crossorigin`](/api/configuration-build#crossorigin) to set `crossorigin` attribute in `<link>` and `<script>`
 
 > Please refer [Phillip Walton's excellent post](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) for more knowledge regarding modern builds.
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

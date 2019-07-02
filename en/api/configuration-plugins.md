@@ -1,9 +1,9 @@
 ---
-title: 'API: The plugins Property'
+title: 'API: The plugins Property (EN)'
 description: 'Use vue.js plugins with the plugins option of Nuxt.js.'
 ---
 
-# The plugins Property (En)
+# The plugins Property (EN)
 
 **Note**: Since Nuxt.js 2.4, `mode` has been introduced as option of `plugins` to specify plugin type, possible value are: `client` or `server`. `ssr: false` will be adapted to `mode: 'client'` and deprecated in next major release.
 
@@ -20,7 +20,7 @@ If the item is an object, the properties are:
 - Type: `Array`
   - Items: `String` or `Object`
 
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>If the item is an object, the properties are:</p>
+If the item is an object, the properties are:
 
   - src: `String` (path of the file)
   - ssr: `Boolean` (default to `true`) *If false, the file will be included only on the client-side.*
@@ -67,3 +67,5 @@ All the paths defined in the `plugins` property will be **imported** before init
 Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to `plugins` in `nuxt.config.js`.
 
 To learn more how to use the plugins, see the [guide documentation](/guide/plugins#vue-plugins).
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

@@ -1,9 +1,9 @@
 ---
-title: "API: The loading Property"
+title: "API: The loading Property (EN)"
 description: The `loading` property gives you the option to disable the default loading progress bar on a specific page.
 ---
 
-# The loading Property
+# The loading Property (EN)
 
 > The loading property gives you the option to disable the default loading progress bar on a specific page.
 
@@ -26,3 +26,5 @@ export default {
 ```
 
 You can find an official example using this property [here](/examples/custom-page-loading).
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

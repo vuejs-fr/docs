@@ -82,14 +82,14 @@
         ]
       },
       {
-        "to": "/modules", "name": "Modules",
+        "to": "/modules", "name": "Modules (EN)",
         "contents": [
           { "to": "#introduction", "name": "Introduction" },
-          { "to": "#list-of-nuxt-js-modules", "name": "List of Nuxt.js modules (EN)" },
-          { "to": "#write-a-basic-module", "name": "Ecrire un module basique" },
-          { "to": "#async-modules", "name": "Modules Asynchrones" },
-          { "to": "#common-snippets", "name": "Common Snippets (EN)" },
-          { "to": "#run-tasks-on-specific-hooks", "name": "Run Tasks on Specific hooks (EN)" },
+          { "to": "#list-des-modules-nuxt-js", "name": "Liste des modules Nuxt.js" },
+          { "to": "#-crire-un-module-basique", "name": "Écrire un module basique" },
+          { "to": "#modules-asynchrones", "name": "Modules asynchrones" },
+          { "to": "#exemples-courants", "name": "Exemples courants" },
+          { "to": "#lancer-des-t-ches-sur-des-points-d-39-ancrage-sp-cifiques", "name": "Lancer des tâches sur des points d'ancrage spécifiques" },
           { "to": "#module-package-commands", "name": "Module package commands (EN)" }
         ]
       },

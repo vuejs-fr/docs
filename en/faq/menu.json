@@ -35,7 +35,7 @@
       { "name": "Deployer sur Google App Engine", "to": "/appengine-deployment" },
       { "name": "Déployer sur Heroku", "to": "/heroku-deployment" },
       { "name": "Déployer sur Netlify", "to": "/netlify-deployment" },
-      { "name": "Déployer sur Now", "to": "/now-deployment" },
+      { "name": "Déployer sur Now (EN)", "to": "/now-deployment" },
       { "name": "Déployer sur Surge", "to": "/surge-deployment" },
       { "name": "Utiliser nginx en tant que proxy", "to": "/nginx-proxy" }
     ]
