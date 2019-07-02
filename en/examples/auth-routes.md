@@ -10,7 +10,11 @@ liveedit: https://gomix.com/#!/project/nuxt-auth-routes
 
 > Nuxt.js peut être utilisé pour créer facilement des routes authentifiées.
 
-## Module officiel `auth-module`
+## Module officiel `auth-module` (EN)
+
+If you want to implement complex authentication flows, for example OAuth2, we suggest using the official [`auth-module`](https://github.com/nuxt-community/auth-module)
+
+## Avec Express et Sessions
 
 Si vous souhaitez implémenter un flux d'authentification complexe, par exemple OAuth2, nous suggérons d'utiliser le module officiel [`auth-module`](https://github.com/nuxt-community/auth-module)
 

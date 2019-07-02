@@ -5,7 +5,7 @@ description: Comment utiliser JSX avec Nuxt.js ?
 
 # Comment utiliser JSX ?
 
-Nuxt.js utilise [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app), qui est basé sur le module officiel [@vue/babel-preset-app](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/babel-preset-app) pour la configuration de babel par défaut, donc vous pouvez utiliser JSX dans vos composants.
+Nuxt.js uses [@nuxt/babel-preset-app](https://github.com/nuxt/nuxt.js/tree/dev/packages/babel-preset-app), which is based on the official [@vue/babel-preset-app](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/babel-preset-app) for babel default configuration, so you can use JSX in your components.
 
 Vous pouvez maintenant utiliser JSX dans la méthode `render` de vos composants :
 

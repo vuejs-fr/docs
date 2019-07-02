@@ -3,7 +3,11 @@ title: Host et Port
 description: Comment changer le HOST et le PORT avec Nuxt.js ?
 ---
 
-# Comment changer le host et le port ?
+# Comment changer le host et le port ? (EN)
+
+By default, Nuxt development server host is `localhost` (only accessible from within the host machine).
+
+Host `0.0.0.0` is designated to tell Nuxt to resolve a host address, which is accessible to connections _outside_ of the host machine (e.g. LAN).
 
 Vous pouvez configurer les variables de connexion de plusieurs façons différentes, listé **de la plus haute à la plus basse priorité**.
 

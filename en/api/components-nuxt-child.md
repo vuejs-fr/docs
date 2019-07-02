@@ -46,6 +46,40 @@ Pour afficher le composant `child.vue`, nous avons dû insérer `<nuxt-child/>` 
 </template>
 ```
 
+`<nuxt-child/>` accepts `keep-alive` and `keep-alive-props`:
+
+```html
+<template>
+  <div>
+    <nuxt-child keep-alive :keep-alive-props="{ exclude: ['modal'] }" />
+  </div>
+</template>
+
+<!-- will be converted into something like this -->
+<div>
+  <keep-alive :exclude="['modal']">
+    <router-view />
+  </keep-alive>
+</div>
+```
+
 > Child components can also receive properties like a regular Vue component.
 
 Pour voir un exemple, consultez l'[exemple de routes imbriquées](/examples/nested-routes).
+
+## Named View (EN)
+
+> Introduced with Nuxt v2.4.0
+
+`<nuxt-child/>` accepts `name` prop to render named-view:
+
+```html
+<template>
+  <div>
+    <nuxt-child name="top" />
+    <nuxt-child />
+  </div>
+</template>
+```
+
+To see an example, take a look at the [named-views example](/examples/named-views).

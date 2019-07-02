@@ -15,7 +15,7 @@ Il est important de savoir que, dans le [cycle de vie d'une instance de Vue](htt
 
 Nous souhaitons utiliser des packages / modules externes dans notre application, un excellent exemple est [axios](https://github.com/mzabriskie/axios) pour les requêtes HTTP depuis le serveur et le client.
 
-Nous l'installons via npm :
+Tout d'abord, nous l'installons via npm :
 
 ```bash
 npm install --save axios
@@ -62,6 +62,19 @@ export default {
 ```
 
 Pour en savoir plus sur l'attribut `plugins`, consultez [La propriété `plugins`](/api/configuration-plugins) de l'API.
+
+### ES6 plugins (EN)
+
+If the plugin is located in `node_modules` and exports an ES6 module, you may need to add it to the `transpile` build option:
+
+```js
+module.exports = {
+  build: {
+    transpile: ['vue-notifications']
+  }
+}
+```
+You can refer to the [configuration build](/api/configuration-build/#transpile) docs for more build options.
 
 ## Injection dans $root et le contexte
 
@@ -197,10 +210,9 @@ export const actions = {
 ```
 
 
-
 ## Côté client uniquement
 
-Certains plugins fonctionnent **uniquement dans un navigateur**.
+Certains plugins fonctionnent **uniquement dans un navigateur** due à un manque de support SSR.
 Vous pouvez utiliser l'option `ssr: false` dans `plugins` pour exécuter le fichier uniquement côté client.
 
 Exemple :
@@ -229,3 +241,37 @@ Dans le cas où vous devez importer certaines bibliothèques uniquement *côté 
 Si vous avez besoin également de savoir si vous êtes dans une application générée (via `nuxt generate`), vous pouvez vérifier la propriété `process.static` est à `true`. C'est le cas seulement pendant la génération et après.
 
 Vous pouvez aussi combiner les deux options pour connaitre si une page qui est en train d'être rendue par le serveur avec `nuxt generate` avant d'être sauvée (`process.static && process.server`).
+
+**Note**: Depuis Nuxt.js 2.4+, `mode` a été introduit comme option de `plugins` pour spécifier le type de plugin, les valeurs possibles sont : `client` ou `server`. `ssr: false` sera adapté pour `mode: 'client'` et déprécié dans le futur livrable majeur.
+
+Exemple:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    { src: '~/plugins/both-sides.js' },
+    { src: '~/plugins/client-only.js', mode: 'client' },
+    { src: '~/plugins/server-only.js', mode: 'server' }
+  ]
+}
+```
+
+### Name conventional plugin (EN)
+
+If plugin is assumed to be run only in client or server side, `.client.js` or `.server.js` can be applied as extension of plugin file, the file will be automatically included in corresponding side.
+
+Example:
+
+`nuxt.config.js`:
+
+```js
+export default {
+  plugins: [
+    '~/plugins/foo.client.js', // only in client side
+    '~/plugins/bar.server.js', // only in server side
+    '~/plugins/baz.js' // both client & server
+  ]
+}
+```

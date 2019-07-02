@@ -33,6 +33,16 @@ Les modules sont bien si :
 - Vous êtes souvent confronté à des échéances serrées et vous n'avez pas le temps de vous encombrer avec les détails de toutes les nouvelles librairies ou leurs intégrations.
 - Vous êtes fatigué de faire face aux changements des API bas niveau et vous souhaiter **simplement que les choses fonctionnent**.
 
+## Liste des modules Nuxt.js
+
+L'équipe Nuxt.js offre des modules **officielles** :
+- [@nuxt/http](https://http.nuxtjs.org): Manière minimaliste et universelle de faire des requêtes HTTP, basé sur [ky-universal](https://github.com/sindresorhus/ky-universal)
+- [@nuxtjs/axios](https://axios.nuxtjs.org): Manière simple et sécurisé d'intégrer Axios avec Nuxt.js pour faire des requêtes HTTP
+- [@nuxtjs/pwa](https://pwa.nuxtjs.org): Améliore Nuxt avec des tests solides, mis à jour et une solution PWA stable
+- [@nuxtjs/auth](https://auth.nuxtjs.org): Module d'authentication pour Nuxt.js, offrant différents schémas et stratégies
+
+Une liste de modules pour Nuxt.js réalisés par la communauté est disponible sur https://github.com/topics/nuxt-module
+
 ## Écrire un module basique
 
 Comme précédemment mentionnés, les modules sont juste de simples fonctions. Ils peuvent être packagés en tant que modules npm ou directement inclus dans le code source du projet.
@@ -44,7 +54,7 @@ export default function SimpleModule (moduleOptions) {
   // Écrivez votre code ici
 }
 
-// Requis en cas de publication en tant que package npm
+// REQUIS en cas de publication en tant que package npm
 // module.exports.meta = require('./package.json')
 ```
 
@@ -62,7 +72,7 @@ C'est une référence à l'instance courante de Nuxt. Consultez la documentation
 
 **`this`**
 
-Le contexte des modules. Consultez la documentation sur la [Classe ModuleContainer](/api/internals-module-container) pour obtenir les méthodes disponibles.
+Le contexte des modules. Consultez la documentation sur la classe [ModuleContainer](/api/internals-module-container) pour obtenir les méthodes disponibles.
 
 **`module.exports.meta`**
 
@@ -76,7 +86,7 @@ export default {
     // Utilisation simple
     '~/modules/simple'
 
-    // Passage des options
+    // Passage des options directement
     ['~/modules/simple', { token: '123' }]
   ]
 }
@@ -93,7 +103,7 @@ Tous les modules ne font pas tout de manière synchrone. Par exemple vous pouvez
 
 <div class="Alert Alert--orange">
 
-Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un paqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.
+Faites attention avec `async` et `await`, ils sont supportés uniquement depuis Node.js 7.2+. Donc si vous êtes un développeur de modules, n'oubliez pas d'avertir vos utilisateurs si vous les utilisez. Pour des modules asynchrones plus stables ou avec un support des versions antérieures vous pouvez utiliser un empaqueteur pour les transformer en de vieille version de compatibilité Node.js ou utilisant des méthodes de promesse.
 
 </div>
 
@@ -134,7 +144,6 @@ export default function asyncModule(callback) {
 }
 ```
 
-
 ## Exemples courants
 
 ### Options de haut niveau
@@ -147,7 +156,7 @@ Cela nous permet de combiner les options de sources multiples.
 ```js
 export default {
   modules: [
-    '@nuxtjs/axios'
+    ['@nuxtjs/axios', { anotherOption: true }]
   ],
 
   // Le module axios est informé de cela via `this.options.axios`
@@ -172,7 +181,7 @@ export default function (moduleOptions) {
 ### Fournir des plugins
 
 Il est courant que les modules fournissent un ou plusieurs plugins quand ils sont ajoutés.
-Par exemple le module [bootstrap-vue](https://bootstrap-vue.js.org) nécessite d'être abonné lui-même dans Vue. Pour cela, nous pouvons utiliser la fonction utilitaire `this.addPlugin`.
+Par exemple le module [bootstrap-vue](https://bootstrap-vue.js.org) nécessite d'être abonné lui-même dans Vue.
 Dans certaines situations nous pouvons utiliser le helper `this.addPlugin`.
 
 **plugin.js**
@@ -289,7 +298,7 @@ export default function (moduleOptions) {
 
       // Personnalisation des loaders existants
       // Consultez le code source des mécanismes de Nuxt :
-      // https://github.com/nuxt/nuxt.js/blob/dev/lib/builder/webpack/base.js
+      // https://github.com/nuxt/nuxt.js/tree/dev/packages/builder/src/webpack/base.js
       const barLoader = config.module.rules.find(rule => rule.loader === 'bar-loader')
   })
 }
@@ -298,16 +307,16 @@ export default function (moduleOptions) {
 ## Lancer des tâches sur des points d'ancrage spécifiques
 
 Votre module peut avoir besoin de choses seulement sous certaines conditions et pas seulement lors de l'initialisation de Nuxt.
-Nous utilisons le puissant système de plugin [Tapable](https://github.com/webpack/tapable) pour réaliser des tâches sur des évènements spécifiques.
+Nous utilisons le puissant système de plugin [Hookable](https://github.com/nuxt/nuxt.js/blob/dev/packages/core/src/hookable.js) pour réaliser des tâches sur des évènements spécifiques.
 Nuxt va les attendre si les points d'ancrage retournent une promesse ou sont définis comme `async`.
 
 Voici quelques exemples basiques :
 
 ```js
-export default function () {
+export default function myModule() {
 
   this.nuxt.hook('modules:done', moduleContainer => {
-    // Ceci sera appelé quand tous les modules auront fini d'être chargés
+   // Ceci sera appelé quand tous les modules auront fini d'être chargés
   })
 
   this.nuxt.hook('render:before', renderer => {
@@ -315,7 +324,7 @@ export default function () {
   })
 
   this.nuxt.hook('build:compile', async ({name, compiler }) => {
-    // Ceci sera appelé avant le lancement du compilateur (par défaut : webpack)
+   // Ceci sera appelé avant le lancement du compilateur (par défaut : webpack)
   })
 
   this.nuxt.hook('generate:before', async generator => {
@@ -323,6 +332,54 @@ export default function () {
   })
 }
 ```
+
+## Module package commands (EN)
+
+**Experimental**
+
+Starting in `v2.4.0`, you can add custom nuxt commands through a Nuxt module's package. To do so, you must follow the `NuxtCommand` API when defining your command. A simple example hypothetically placed in `my-module/bin/command.js` looks like this:
+
+```js
+#!/usr/bin/env node
+
+const consola = require('consola')
+const { NuxtCommand } = require('@nuxt/cli')
+
+NuxtCommand.run({
+  name: 'command',
+  description: 'My Module Command',
+  usage: 'command <foobar>',
+  options: {
+    foobar: {
+      alias: 'fb',
+      type: 'string',
+      description: 'Simple test string'
+    }
+  },
+  run(cmd) {
+    consola.info(cmd.argv)
+  }
+})
+```
+
+A few things of note here. First, notice the call to `/usr/bin/env` to retrieve the Node executable. Also notice that ES module syntax can't be used for commands unless you manually incorporate [`esm`](https://github.com/standard-things/esm) into your code.
+
+Next, you'll notice how `NuxtCommand.run()` is used to specify the settings and behavior of the command. Options are defined in `options`, which get parsed via [`minimist`](https://github.com/substack/minimist).
+Once arguments are parsed, `run()` is automatically called with the `NuxtCommand` instance as first parameter.
+
+In the example above, `cmd.argv` is used to retrieve parsed command-line arguments. There are more methods and properties in `NuxtCommand` -- documentation on them will be provided as this feature is further tested and improved.
+
+To make your command recognizable by the Nuxt CLI, list it under the `bin` section of your package.json, using the `nuxt-module` convention, where `module` relates to your package's name. With this central binary, you can use `argv` to further parse more `subcommands` for your command if you desire.
+
+```js
+{
+  "bin": {
+    "nuxt-foobar": "./bin/command.js"
+  }
+}
+```
+
+Once your package is installed (via NPM or Yarn), you'll be able to execute `nuxt foobar ...` on the command-line.
 
 <div class="Alert">
 

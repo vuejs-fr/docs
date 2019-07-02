@@ -5,7 +5,9 @@ description: Comment utiliser des plugins PostCSS ?
 
 # Comment utiliser des plugins PostCSS ?
 
-Dans votre fichier `nuxt.config.js` :
+### Recommended Method (EN)
+
+If present, rename or delete the `postcss.config.js` in your project directory. Then, in your `nuxt.config.js` file add the following:
 
 ```js
 export default {
@@ -28,5 +30,20 @@ export default {
       }
     }
   }
+}
+```
+
+### Legacy Method (EN)
+
+** Attention: This is deprecated **
+
+Use `postcss.config.js`, for example:
+
+```
+const join = require('path').join
+const tailwindJS = join(__dirname, 'tailwind.js')
+
+module.exports = {
+  plugins: [require('tailwindcss')(tailwindJS), require('autoprefixer')]
 }
 ```

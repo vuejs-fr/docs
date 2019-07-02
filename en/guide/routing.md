@@ -59,6 +59,14 @@ router: {
 
 Pour définir une route dynamique à l'aide d'un paramètre, vous devez définir un fichier `.vue` OU un répertoire **préfixé par un souligné (`_`)**.
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-dynamic-routes?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Visionner un cours gratuit sur les <strong>routes dynamiques</strong> sur Vue School 
+    </p>
+  </a>
+</div>
+
 Cette arborescence :
 
 ```bash
@@ -233,7 +241,7 @@ router: {
 }
 ```
 
-### Itinéraire dynamique inconnu
+### Itinéraire dynamique inconnu imbriqué
 
 Si vous ne connaissez pas la profondeur de la structure de vos URL, vous pouvez utiliser `_.vue` pour correspondre dynamiquement au chemin demandé.
 Ceci gérera les requêtes qui ne correpondent pas à une requête _plus spécifique_ .
@@ -262,6 +270,32 @@ Chemin | Fichier
 
 __Note :__ traiter les pages 404 est maintenant inclu dans la logique de la page `_.vue`. [Vous trouverez ici plus d'information sur les redirections 404](/guide/async-data#handling-errors).
 
+### Named Views (EN)
+
+To render named views you can use `<nuxt name="top"/>` or `<nuxt-child name="top"/>` components in your layout/page. To specify named view of page we need to extend router config in `nuxt.config.js` file:
+  
+``` js
+export default {
+  router: {
+    extendRoutes(routes, resolve) {
+      let index = routes.findIndex(route => route.name === 'main')
+      routes[index] = {
+        ...routes[index],
+        components: {
+          default: routes[index].component,
+          top: resolve(__dirname, 'components/mainTop.vue')
+        },
+        chunkNames: {
+          top: 'components/mainTop'
+        }
+      }
+    }
+  }
+}
+```
+It require to extend interested route with 2 properties `components` and `chunkNames`. Named view in this config example has name `top`.
+
+To see an example, take a look at the [named-views example](/examples/named-views).
 
 ### Alternative pour application monopage
 
@@ -272,8 +306,13 @@ Nous pouvons activer cela dans notre fichier `nuxt.config.js` :
 ``` js
 export default {
   generate: {
+<<<<<<< HEAD
     fallback: true, // si vous souhaitez utiliser un fichier '404.html'
     fallback: 'my-fallback/file.html' // si votre hébergement nécessite une localisation personnalisée
+=======
+    fallback: true, // if you want to use '404.html' instead of the default '200.html'
+    fallback: 'my-fallback/file.html' // if your hosting needs a custom location
+>>>>>>> upstream/master
   }
 }
 ```
@@ -334,12 +373,12 @@ Notre CSS global dans `assets/main.css` :
 }
 ```
 
-Nous ajoutons son chemin dans notre fichier de configuration `nuxt.config.js` :
+Nous ajoutons son chemin dans le tableau des `css` de notre fichier de configuration `nuxt.config.js` :
 
 ```js
 export default {
   css: [
-    'assets/main.css'
+    '~/assets/main.css'
   ]
 }
 ```
@@ -361,7 +400,7 @@ Nous ajoutons une nouvelle classe dans notre CSS global `assets/main.css` :
 }
 ```
 
-puis, nous utilisons la propriété transition pour définir le nom de la classe à utiliser pour cette transition de page :
+Puis, nous utilisons la propriété transition pour définir le nom de la classe à utiliser pour cette transition de page :
 
 ```js
 export default {
@@ -381,14 +420,14 @@ Un middleware reçoit [le contexte](/api#context) comme premier argument :
 
 ```js
 export default function (context) {
-  context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
-Les middlewares seront appelés une seule fois côté serveur (à la première requête à l'application Nuxt ou sur le rechargement de la page) et côté client lors de la navigation vers une autre route. 
+En mode universel, les middlewares seront appelés une seule fois côté serveur (à la première requête à l'application Nuxt ou sur le rechargement de la page) et côté client lors de la navigation vers une autre route. En mode SPA, les middlewares seront appelés côté client sur la première requête et à chaque navigation à travers les routes.
 
 Le middleware sera exécuté en série dans l'ordre suivant :
 
-1. `nuxt.config.js`
+1. `nuxt.config.js` (dans l'ordre interne du fichier)
 2. Mises en page correspondantes
 3. Pages correspondantes
 
@@ -406,7 +445,7 @@ export default function ({ route }) {
 }
 ```
 
-Puis, dans `nuxt.config.js`, utilisez le mot-clé `middleware` :
+Puis, dans `nuxt.config.js`, utilisez la clé `router.middleware` :
 
 `nuxt.config.js`
 
@@ -421,7 +460,6 @@ export default {
 Maintenant le middleware `stats` sera appelé à chaque changement de routes.
 
 Vous pouvez ajouter votre middleware à une mise en page spécifique ou à une page comme ceci :
-
 
 `pages/index.vue` or `layouts/default.vue`
 

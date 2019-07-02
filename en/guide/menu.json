@@ -14,7 +14,7 @@
           { "to": "#g-n-ration-statique-pr-rendu-", "name": "Génération statique" }
         ]
       },
-      { "to": "/contribution-guide", "name": "Guide de contribution",
+      { "to": "/contribution-guide", "name": "Guide de contribution" },
       { "to": "/release-notes", "name": "Notes de versions" }
     ]
   },
@@ -35,7 +35,7 @@
           { "to": "#alias", "name": "Alias" }
         ]
       },
-      { "to": "/configuration", "name": "Configuration",
+      { "to": "/configuration", "name": "Configuration" },
       {
         "to": "/routing", "name": "Routage",
         "contents": [
@@ -43,6 +43,7 @@
           { "to": "#routes-dynamiques", "name": "Routes dynamiques" },
           { "to": "#routes-imbriqu-es", "name": "Routes imbriquées" },
           { "to": "#routes-dynamiques-imbriqu-es", "name": "Routes dynamiques imbriquées" },
+          { "to": "#named-views", "name": "Named Views (EN)" },
           { "to": "#transitions", "name": "Transitions" },
           { "to": "#middleware", "name": "Middleware" }
         ]
@@ -84,19 +85,30 @@
         "to": "/modules", "name": "Modules",
         "contents": [
           { "to": "#introduction", "name": "Introduction" },
+          { "to": "#list-of-nuxt-js-modules", "name": "List of Nuxt.js modules (EN)" },
           { "to": "#write-a-basic-module", "name": "Ecrire un module basique" },
           { "to": "#async-modules", "name": "Modules Asynchrones" },
-          { "to": "#common-snippets", "name": "Common Snippets" }
+          { "to": "#common-snippets", "name": "Common Snippets (EN)" },
+          { "to": "#run-tasks-on-specific-hooks", "name": "Run Tasks on Specific hooks (EN)" },
+          { "to": "#module-package-commands", "name": "Module package commands (EN)" }
         ]
       },
       {
         "to": "/vuex-store", "name": "Store Vuex",
         "contents": [
           { "to": "#activer-le-store", "name": "Activer le store" },
-          { "to": "#mode-classique", "name": "Mode classique" },
           { "to": "#mode-modules", "name": "Mode modules" },
           { "to": "#la-m-thode-fetch", "name": "La méthode fetch" },
-          { "to": "#l-39-action-nuxtserverinit", "name": "L'action nuxtServerInit" }
+          { "to": "#l-39-action-nuxtserverinit", "name": "L'action nuxtServerInit" },
+          { "to": "#mode-classique", "name": "Mode classique" }
+        ]
+      },
+      {
+        "to": "/typescript", "name": "TypeScript Support (EN)",
+        "contents": [
+          { "to": "#get-started", "name": "Get started (EN)" },
+          { "to": "#from-javascript-to-typescript", "name": "From JavaScript to TypeScript (EN)" },
+          { "to": "#linting-with-eslint", "name": "Linting with ESLint (EN)" }
         ]
       },
       {

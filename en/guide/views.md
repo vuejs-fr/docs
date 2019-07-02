@@ -5,7 +5,7 @@ description: La section des vues décrit tout ce dont vous avez besoin pour conf
 
 > La section des vues décrit tout ce dont vous avez besoin pour configurer les données et les vues pour une route spécifique dans votre application Nuxt.js (document, mises en page, pages et entête HTML).
 
-![nuxt-views-schema](/nuxt-views-schema.png)
+![nuxt-views-schema](/nuxt-views-schema.svg)
 
 ## modèle de l'application
 
@@ -13,12 +13,12 @@ description: La section des vues décrit tout ce dont vous avez besoin pour conf
 
 Pour étendre le modèle, créez un fichier `app.html` à la racine de votre projet.
 
-Le modèle par défaut est le suivant :
+Le modèle par défaut utilisé par Nuxt.js est le suivant :
 
 ```html
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -33,7 +33,7 @@ Un cas usuel d'utilisation d'un modèle personnalisé d'application est d'ajoute
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="fr-FR" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html {{ HTML_ATTRS }}><!--<![endif]-->
-  <head>
+  <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
@@ -43,7 +43,6 @@ Un cas usuel d'utilisation d'un modèle personnalisé d'application est d'ajoute
 ```
 
 <!-- TODO: Load polyfills here? -->
-
 ## Mises en page
 
 Les mises en pages sont une aide apréciable quand vous voulez changer l'aspect de votre application Nuxt§.js.
@@ -143,6 +142,14 @@ export default {
 
 Chaque composant de page est un composant Vue, mais Nuxt.js ajoute des clés spéciales pour rendre le développement de votre application universelle le plus simple possible.
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/nuxtjs-page-components?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+      Visonner un cours gratuit sur les <strong>composants de page Nuxt.js</strong> sur Vue School (EN)
+    </p>
+  </a>
+</div>
+
 ```html
 <template>
   <h1 class="red">Bonjour {{ name }} !</h1>
@@ -190,9 +197,13 @@ Pour plus d'informations à propos de l'utilisation des attributs de pages, cons
 
 ## Entête HTML
 
+<div class="Alert Alert--teal">
+
 Nuxt.js utilise [vue-meta](https://github.com/declandewet/vue-meta) pour mettre à jour les `headers` et les `html attributes` de votre application.
 
 `vue-meta` utilisé par Nuxt.js peut être trouvé [sur GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/index.js#L29-L35)
+
+</div>
 
 <div class="Alert Alert--teal">
 
@@ -219,10 +230,8 @@ head: {
 }
 ```
 
-Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un œil à la [documentation vue-meta](https://github.com/declandewet/vue-meta#recognized-metainfo-properties).
-
-More information about the `head` method: [API Configuration `head`](/api/configuration-head).
+Pour connaitre la liste des options que vous pouvez donner à `head`, jeter un œil à la [documentation vue-meta](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
 ### Balises meta personnalisées pour une page
 
-Plus d'informations à propos de la méthode `head` dans [la partie Configuration de l'API sur `head`](/api/pages-head).
+Plus d'informations à propos de la méthode `head` dans [la partie Configuration de l'API sur `head`](/api/configuration-head).

@@ -42,7 +42,7 @@ export default axios.create({
 
 Puis, dans vos pages, vous pouvez importer axios ainsi : `import axios from '~/plugins/axios'`
 
-## Automatic injection of environment variables (En)
+## Automatic injection of environment variables (EN)
 
 If you define environment variables starting with `NUXT_ENV_` in the build phase (f.ex. `NUXT_ENV_COOL_WORD=freezing nuxt build`, they'll be automatically injected into the process environment. Be aware that they'll potentially take precedence over defined variables in your `nuxt.config.js` with the same name.
 
@@ -54,12 +54,12 @@ Cela signifie que `console.log(process.env)` affichera `{}` mais `console.log(pr
 
 avant
 
-```
+```js
 if (process.env.test == 'testing123')
 ```
 
 après
 
-```
+```js
 if ('testing123' == 'testing123')
 ```

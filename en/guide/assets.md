@@ -3,7 +3,7 @@ title: Ressources
 description: Nuxt utilise vue-loader, file-loader et url-loader avec webpack par défaut pour servir les fichiers statiques mais vous pouvez également utiliser un répertoire `static` pour les fichiers statiques.
 ---
 
-> Nuxt utilise vue-loader, file-loader et url-loader avec webpack par défaut pour servir les fichiers statiques mais vous pouvez également utiliser un répertoire `static` pour les fichiers statiques.
+> Par défaut, Nuxt utilise vue-loader, file-loader et url-loader avec webpack pour servir les fichiers statiques. Vous pouvez également utiliser un répertoire `static` pour les fichiers statiques.
 
 ## Avec webpack
 
@@ -19,11 +19,11 @@ Imaginons par exemple cette arborescence :
 ----| index.vue
 ```
 
-Dans votre CSS, si vous utilisez `url('~assets/image.png')`, ce sera transformé en `require('~/assets/image.png')`.
+Dans votre CSS, si vous utilisez `url('~assets/image.png')`, cela sera *transformé* en `require('~/assets/image.png')`.
 
 <div class="Alert Alert--orange">
 
-**Attention:** À partir de Nuxt 2.0,
+**Attention:** À partir de Nuxt 2.0 l'alias `~/` n'est plus résoud correctement dans vos fichiers CSS.
 Vous devez utiliser `~assets` (sans le slash) ou l'alias `@` dans la référence CSS `url`, par exemple `background: url("~assets/banner.svg")`
 
 </div>
@@ -53,7 +53,7 @@ Les avantages de ces chargeurs sont :
 Pour ces deux chargeurs, la configuration par défaut est la suivante :
 
 ```js
-// https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/webpack/base.js#L204-L229
+// https://github.com/nuxt/nuxt.js/blob/dev/packages/webpack/src/config/base.js#L297-L316
 [
   {
     test: /\.(png|jpe?g|gif|svg|webp)$/,

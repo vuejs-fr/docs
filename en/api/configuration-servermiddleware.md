@@ -3,7 +3,7 @@ title: "API: The serverMiddleware Property"
 description: Define server-side middleware.
 ---
 
-# The serverMiddleware Property (En)
+# The serverMiddleware Property (EN)
 
 - Type: `Array`
     - Items: `String` or `Object` or `Function`
@@ -11,15 +11,27 @@ description: Define server-side middleware.
 <p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p><p>Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance,
 so we can register our middleware to its stack and having chance
 to provide more routes like API **without need to an external server**.
+
+Nuxt internally creates a [connect](https://github.com/senchalabs/connect) instance that we can add our own custom middleware to. This allows us to register additional routes (typically `/api` routes) **without need for an external server**.
+
 Because connect itself is a middleware, registered middleware will work with both `nuxt start`
 and also when used as a middleware with programmatic usages like [express-template](https://github.com/nuxt-community/express-template).
 Nuxt [Modules](/guide/modules) can also provide `serverMiddleware`
 using [this.addServerMiddleware()](/api/internals-module-container#addservermiddleware-middleware-)</p>
 
+Additional to them, we introduced a `prefix` option which defaults to `true`. It will add the router base to your server middlewares.
+
+**Example:**
+
+* Server middleware path: `/api`
+* Router base: `/admin`
+* With `prefix: true` (default): `/admin/api`
+* With `prefix: false`: `/api`
+
 ## serverMiddleware vs middleware!
-Don't confuse it with [routes middleware](/guide/routing#middleware) which are being called before each route by Vue in Client Side or SSR.
-`serverMiddleware` are just running in server side **before** vue-server-renderer and can be used for server specific tasks
-like handling API requests or serving assets.
+
+Don't confuse it with [routes middleware](/guide/routing#middleware) which are called before each route by Vue in Client Side or SSR.
+Middleware listed in the `serverMiddleware` property runs server-side **before** `vue-server-renderer` and can be used for server specific tasks like handling API requests or serving assets.
 
 ## Usage
 
@@ -52,7 +64,7 @@ export default {
 
 ## Custom Server Middleware
 
-It is also possible writing custom middleware. For more information See [Connect Docs](https://github.com/senchalabs/connect#appusefn).
+It is also possible to write custom middleware. For more information See [Connect Docs](https://github.com/senchalabs/connect#appusefn).
 
 Middleware (`api/logger.js`):
 

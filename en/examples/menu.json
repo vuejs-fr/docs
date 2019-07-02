@@ -40,6 +40,11 @@
         "to": "/middleware"
       },
       {
+
+        "name": "Named Views (EN)",
+        "to": "/named-views"
+      },
+      {
         "name": "Routes imbriquées",
         "to": "/nested-routes"
       },
@@ -79,6 +84,19 @@
       {
         "name": "Tests",
         "to": "/testing"
+      }
+    ]
+  },
+  {
+    "title": "TypeScript",
+    "links": [
+      {
+        "name": "Hello World",
+        "to": "/typescript"
+      },
+      {
+        "name": "Vuex Store",
+        "to": "/typescript-vuex"
       }
     ]
   }

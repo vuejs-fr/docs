@@ -18,7 +18,7 @@ validate({ params, query, store }) {
 
 ```js
 async validate({ params, query, store }) {
-  // await operations
+  // await operations (EN)
   return true // if the params are valid
   return false // will stop Nuxt.js to render the route and display the error page
 }
@@ -56,7 +56,7 @@ export default {
 }
 ```
 
-You can also throw expected or unexpected errors during validate function executation (En):
+You can also throw expected or unexpected errors during validate function execution (EN):
 
 ```js
 export default {

@@ -30,8 +30,8 @@ ou un [Rapport de bogue](https://bug.nuxtjs.org/).
 
 > Si vous ajoutez une dépendance, merci d'utiliser `yarn add`. Le fichier `yarn.lock` est le point de départ de toutes les dépendances de Nuxt.
 
-### Configuration
- Avant de lancer le moindre test, assurez-vous que toutes les dépendances sont présentes et construisez tous les packages :
+### Setup
+ Before running any tests, make sure all dependencies are met and build all packages:
  ```sh
 yarn
 yarn build
@@ -83,7 +83,7 @@ yarn nuxt examples/your-app
 yarn nuxt test/fixtures/your-fixture-app
 ```
 
-> `npm link` pourrait aussi (et dans une certaine mesure) fonctionner pour cela, mais il est connu pour présenter certains problèmes. C'est pourquoi nous recommandons d'appeler directement `bin/nuxt` pour exécuter les exemples.
+> `npm link` pourrait aussi (et dans une certaine mesure) fonctionner pour cela, mais il est connu pour présenter certains problèmes. C'est pourquoi nous recommandons d'appeler directement `yarn nuxt` pour exécuter les exemples.
 
 ### Exemples
 

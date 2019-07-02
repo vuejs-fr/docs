@@ -11,7 +11,7 @@ Dans ce guide, nous construisons l'application localement puis nous envoyons sim
 
 ## Pour commencer
 
-Vérifz que vous avez un compte Google Cloud, un projet et une application Google App Engine vierge définie sur [Google App Engine](https://cloud.google.com/appengine/). De plus, assurez-vous de télécharger et d'installer Cloud SDK (CLI) depuis Google comme expliqué [ici](https://cloud.google.com/sdk/) et connectez-vous à vote compte Google Cloud.
+Vérifiez que vous avez un compte Google Cloud, un projet et une application Google App Engine vierge définie sur [Google App Engine](https://cloud.google.com/appengine/). De plus, assurez-vous de télécharger et d'installer Cloud SDK (CLI) depuis Google comme expliqué [ici](https://cloud.google.com/sdk/) et connectez-vous à vote compte Google Cloud.
 
 ## Configurer votre application
 
@@ -41,6 +41,13 @@ env_variables:
   NODE_ENV: 'production'
 ```
 
+ou pour un environnement plus flexible la configuration minimale est :
+
+```yaml
+runtime: nodejs
+env: flex
+```
+
 ## Construire et déployer l'application
 
 Maintenant, construisez votre application avec `npm run build`.
@@ -48,7 +55,7 @@ Maintenant, construisez votre application avec `npm run build`.
 À cet instant, votre application est prête à être envoyée au Moteur d'Application Google. Maintenant lancer la commande suivante :
 
 ```
-gcloud app deploy app.yaml --project <project-id>
+gcloud app deploy app.yaml --project [project-id]
 ```
 
 Voilà ! Votre application Nuxt.js est maintenant hébergée le me Moteur d'Application Google !
@@ -56,4 +63,5 @@ Voilà ! Votre application Nuxt.js est maintenant hébergée le me Moteur d'Appl
 ## Pour plus d'information
 
 - L'attribut `instance_class` dans votre fichier app.yaml définit la classe d'instance d'application. Instance F2 n'est pas complètement libre, mais possède le minimum de mémoire nécessaire pour exécuter une application Nuxt.
-- Assurez-vous de renseigner le project-id et non pas le project-name dans la commande de déploiement. Ce sont deux choses différentes - mais facile à confondre.
+
+Assurez-vous de renseigner le `project-id` et non pas le `project-name` dans la commande de déploiement. Ce sont deux choses différentes - mais facile à confondre.

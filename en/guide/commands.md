@@ -10,7 +10,7 @@ description: Nuxt.js est livré avec un ensemble de commandes utiles, tant pour 
 | Commande      | Description                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------------|
 | nuxt          | Lancer un serveur de développement sur localhost:3000 avec du rechargement à chaud.                               |
-| nuxt build    | Créez votre application avec webpack et minifiez les JS & CSS (pour la production).                        |
+| nuxt build    | Créez votre application avec webpack et minifiez les JS & CSS (pour la production).                               |
 | nuxt start    | Démarrez le serveur en mode production (après avoir exécuté `nuxt build`).                                        |
 | nuxt generate | Créez l'application et générez toutes les routes en tant que fichiers HTML (utilisé pour l'hébergement statique). |
 
@@ -88,7 +88,7 @@ Le fichier `package.json` suivant est recommandé :
 
 Note : nous recommandons d'ajouter `.nuxt` dans `.npmignore` ou `.gitignore`.
 
-### Déploiement pour une génération statique
+### Déploiement pour une génération statique (pré-rendue)
 
 Nuxt.js vous offre la possibilité d'héberger votre application web sur tout hébergement statique.
 

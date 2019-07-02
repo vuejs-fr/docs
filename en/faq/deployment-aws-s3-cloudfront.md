@@ -9,7 +9,7 @@ AWS est un service web d'Amazon.
 S3 est leur stockage statique qui peut être configuré pour de l'hébergement de site statique.
 Cloudfront est leur CDN (content delivery network)
 
-Héberger une "application universelle" Nuxt sur AWS avec S3 et Cloudfront est puissant et pas cher.
+Héberger une **générération statique** Nuxt sur AWS avec S3 et Cloudfront est puissant et pas cher.
 
 > AWS est à se tirer les cheveux. Si nous avons oublié une étape, merci de soumettre une proposition de mise à jour (PR) pour mettre à jour ce document.
 
@@ -78,7 +78,7 @@ Pour l'étape 3, nous devons créer un utilisateur qui peut :
 
 [Créer un utilisateur avec cette stratégie](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) :
 
-> NOTE: remplacer ci-dessous les deux `example.com` avec le nom de votre boite S3. Cette stratégie permet de pousser les boites spécifiques, et invalider toutes les distributions cloudfront.
+> NOTE: remplacer ci-dessous les deux `example.com` avec le nom de votre boite S3. Cette stratégie permet de pousser les boites spécifiques, et invalider toutes les distributions CloudFront.
 
 ``` json
 {
@@ -126,6 +126,7 @@ Vous devriez maintenant avoir ces données :
 ### 4. Ordinateur: Configurez le script de build de votre projet
 
 4.1) Créer un script `deploy.sh`. Voir les options [nvm (node version manager)](https://github.com/creationix/nvm).
+
 ``` bash
 #!/bin/bash
 
@@ -175,13 +176,18 @@ var parallelize = require('concurrent-transform');
 var config = {
 
   // Obligatoire
-  params: { Bucket: process.env.AWS_BUCKET_NAME },
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  params: { 
+    Bucket: process.env.AWS_BUCKET_NAME
+  },
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    signatureVersion: 'v3'
+  },
 
   // Facultatif
   deleteOldVersions: false,                 // NOT FOR PRODUCTION
-  distribution: process.env.AWS_CLOUDFRONT, // Cloudfront distribution ID
+  distribution: process.env.AWS_CLOUDFRONT, // CloudFront distribution ID
   region: process.env.AWS_DEFAULT_REGION,
   headers: { /*'Cache-Control': 'max-age=315360000, no-transform, public',*/ },
 
@@ -196,7 +202,7 @@ var config = {
 gulp.task('deploy', function() {
   // créer un nouveau publieur en utilisant les options de S3
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
-  var publisher = awspublish.create(config, config);
+  var publisher = awspublish.create(config);
 
   var g = gulp.src('./' + config.distDir + '/**');
     // le publieur ajoutera Content-Length, Content-Type les les entêtes spécifiées ci-dessous
@@ -205,10 +211,10 @@ gulp.task('deploy', function() {
 
   // Invalide le CDN
   if (config.distribution) {
-    console.log('Configured with Cloudfront distribution');
+    console.log('Configured with CloudFront distribution');
     g = g.pipe(cloudfront(config));
   } else {
-    console.log('No Cloudfront distribution configured - skipping CDN invalidation');
+    console.log('No CloudFront distribution configured - skipping CDN invalidation');
   }
 
   // supprimer les fichiers à supprimer
@@ -291,7 +297,7 @@ server-bundle.json  306 kB          [emitted]
   nuxt:generate Generate done +0ms
 [21:25:27] Using gulpfile ~/scm/example.com/www/gulpfile.js
 [21:25:27] Starting 'deploy'...
-Configured with Cloudfront distribution
+Configured with CloudFront distribution
 [21:25:27] [cache]  README.md
 [21:25:27] [cache]  android-chrome-192x192.png
 [21:25:27] [cache]  android-chrome-512x512.png
@@ -324,8 +330,8 @@ Configured with Cloudfront distribution
 [21:25:38] [update] how/index.html
 [21:25:43] [create] videos/flag.webm
 [21:25:43] [update] index.html
-[21:25:43] Cloudfront invalidation created: I16NXXXXX4JDOA
+[21:25:43] CloudFront invalidation created: I16NXXXXX4JDOA
 [21:26:09] Finished 'deploy' after 42 s
 ```
 
-Notez que `Cloudfront invalidation created: XXXX` est la seule sortie du package npm d'invalidation de cloudfront. Si vous ne voyez pas ceci, ça ne fonctionnera pas.
+Notez que `Cloudfront invalidation created: XXXX` est la seule sortie du package npm d'invalidation de CloudFront. Si vous ne voyez pas ceci, ça ne fonctionnera pas.

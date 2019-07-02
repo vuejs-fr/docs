@@ -22,13 +22,8 @@ Puis ajouter un script de test à notre `package.json` et configurer AVA pour co
   "test": "ava",
 },
 "ava": {
-  "require": [
-    "babel-register"
-  ]
-},
-"babel": {
-  "presets": [
-    "env"
+  "files": [
+    "test/**/*"
   ]
 }
 ```
@@ -132,7 +127,7 @@ npm install --save-dev babel-eslint eslint eslint-config-prettier eslint-loader 
 
 Puis, configurez ESLint via un fichier `.eslintrc.js` à la racine de votre projet :
 ```js
-export default {
+module.exports = {
   root: true,
   env: {
     browser: true,
@@ -187,7 +182,7 @@ ESLint va linter tous vos fichiers JavaScript et Vue sauf ceux ignorés par `.gi
 
 Il est également recommandé d'activer ESLint en mode rechargement à chaud via webpack. De cette manière ESLint va s'exécuter au moment de la sauvegarde pendant le `npm run dev`. Ajoutez simplement le code suivant à votre `nuxt.config.js` :
 
-```
+```js
 ...
   /*
    ** Configuration de build

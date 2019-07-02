@@ -5,11 +5,11 @@ description: Balises meta dupliquées avec Nuxt.js ?
 
 # Balises meta dupliquées ?
 
-Il s'agit d'une « fonctionnalité » de [vue-meta](https://github.com/declandewet/vue-meta), merci de lire la [documentation des éléments d'entête](/guide/views#html-head).
+Il s'agit d'une « fonctionnalité » de [vue-meta](https://github.com/nuxt/vue-meta), merci de lire la [documentation des éléments d'entête](/guide/views#html-head).
 
 <div class="Alert">
 
-Afin d'éviter toute duplication lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de la clé `hid`. [En savoir plus](https://github.com/declandewet/vue-meta#lists-of-tags).
+Afin d'éviter toute duplication lors de l'utilisation d'un composant enfant, donnez un identifiant unique à l'aide de la clé <code>hid</code>. [En savoir plus](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
 
 </div>
 

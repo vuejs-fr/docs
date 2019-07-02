@@ -5,6 +5,17 @@ description: Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a bes
 
 > Débuter avec Nuxt.js est vraiment facile. Un projet simple n'a besoin que d'une dépendance à `nuxt`.
 
+<div>
+  <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
+    <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Fondamentaux de Nuxt par vueschool"/>
+    <div class="Promote__Content">
+      <h4 class="Promote__Content__Title">Fondamentaux de Nuxt.js</h4>
+      <p class="Promote__Content__Description">Apprendre comment démarrer rapidement avec Nuxt.js en vidéos.</p>
+      <p class="Promote__Content__Signature">Cours en vidéo réalisés par VueSchool pour aider au développement de Nuxt.js.</p>
+    </div>
+  </a>
+</div>
+
 ## Utiliser `create-nuxt-app`
 
 Afin de démarrer rapidement, l'équipe Nuxt.js a créé un outil de démarrage [create-nuxt-app](https://github.com/nuxt/create-nuxt-app).
@@ -18,7 +29,7 @@ $ npx create-nuxt-app <project-name>
 ou avec [yarn](https://yarnpkg.com/en/):
 
 ```bash
-yarn create nuxt-app <my-project>
+$ yarn create nuxt-app <project-name>
 ```
 
 Il vous sera posé quelques questions :
@@ -40,14 +51,19 @@ Il vous sera posé quelques questions :
   - [Element UI](https://github.com/ElemeFE/element)
   - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
   - [Buefy](https://buefy.github.io)
-3. Le [mode Nuxt désiré (`Universel` ou `SPA`)](https://nuxtjs.org/guide/release-notes#better-spa-experience)
-4. Ajouter le [module axios](https://github.com/nuxt-community/axios-module) pour faire des requêtes HTTP facilement dans votre application.
-5. Ajouter [EsLint](https://eslint.org/) pour Linter votre code en sauvegardant.
-5. Ajouter [Prettier](https://prettier.io/) pour prettify votre code en sauvegardant.
+3. Choisissez votre framework de test préféré :
+  - Aucun (sentez-vous libre d'en ajouter un plus tard)
+  - [Jest](https://github.com/facebook/jest)
+  - [AVA](https://github.com/avajs/ava)
+4. Le [mode Nuxt désiré (`Universel` ou `SPA`)](https://nuxtjs.org/guide#single-page-applications-spa-)
+5. Ajouter le [module axios](https://github.com/nuxt-community/axios-module) pour faire des requêtes HTTP facilement dans votre application.
+6. Ajouter [EsLint](https://eslint.org/) pour Linter votre code en sauvegardant.
+7. Ajouter [Prettier](https://prettier.io/) pour prettifier votre code en sauvegardant.
 
-Une fois répondu, il installera toutes les dépendances puis la prochaine étape sera de lancer le projet avec :
+Après réponses, les dépendences s'installerons et la prochaine étape sera de naviguer dans le dossier du projet pour le lancer avec :
 
 ```bash
+$ cd <project-name>
 $ npm run dev
 ```
 
@@ -96,7 +112,7 @@ Le projet a besoin d'un fichier `package.json` avec un script permettant de lanc
 Une fois que le `package.json` est créé, ajoutez `nuxt` au projet via npm :
 
 ```bash
-npm install --save nuxt
+$ npm install --save nuxt
 ```
 
 ### Le dossier `pages`

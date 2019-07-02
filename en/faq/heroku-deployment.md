@@ -7,6 +7,14 @@ description: Comment déployer Nuxt.js sur Heroku ?
 
 Nous vous recommandons de lire la [documentation Heroku pour Node.js](https://devcenter.heroku.com/articles/nodejs-support).
 
+<div class="Promo__Video">
+  <a href="https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-heroku?friend=nuxt" target="_blank">
+    <p class="Promo__Video__Icon">
+     Visionner un cours gratuit sur <strong>Comment déployer Nuxt.js sur Heroku</strong> avec Vue School (EN)
+    </p>
+  </a>
+</div>
+
 Premièrement, nous devons demander à Heroku d'installer les `devDependencies` du projet (afin de pouvoir exécuter `npm run build`) :
 
 ```bash
@@ -41,15 +49,15 @@ Heroku utilise un [Procfile](https://devcenter.heroku.com/articles/procfile) (no
 web: npm run start
 ```
 
-Cela indique qu'il faut lancer la commande `npm run start` et dit à heroku de lui rediriger le trafic HTTP externe.
+Cela indique qu'il faut lancer la commande `nuxt start` et dit à heroku de lui rediriger le trafic HTTP externe.
 
-Pour finir, nous pouvons déployer notre application sur Heroku :
+Pour finir, nous pouvons déployer notre application sur Heroku avec :
 
 ```bash
 git push heroku master
 ```
 
-Pour déployer une branche non "master" sur Heroku, utiliser :
+Pour déployer une branche non master sur Heroku, utilisez :
 ```bash
 git push heroku develop:master
 ```
