@@ -1,5 +1,5 @@
 ---
-title: "API: The watchQuery Property"
+title: "API: The watchQuery Property (EN)"
 description: Watch query strings and execute component methods on change (asyncData, fetch, validate, layout, ...)
 ---
 
@@ -17,3 +17,5 @@ export default {
   watchQuery: ['page']
 }
 ```
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>

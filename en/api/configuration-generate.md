@@ -11,12 +11,31 @@ description: Configure la génération de votre application web universelle vers
 
 Quand vous lancez `nuxt generate` ou appelez `nuxt.generate()`, Nuxt.js utilisera la configuration définie dans la propriété `generate`.
 
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    ...
+  }
+}
+```
+
 ## dir
 
 - Type : `String`
 - Par défaut : `'dist'`
 
 Nom du répertoire créé par `nuxt generate`.
+
+## devtools
+
+- Type: `boolean`
+- Default: `false`
+
+Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection.
+
+If you already activated through nuxt.config.js or otherwise, devtools enable regardless of the flag.
+
 
 ## fallback
 
@@ -191,6 +210,15 @@ Exemple :
 ```
 
 Quand il est mis à `false`, les fichier HTML seront générés en accord avec les chemins de routes :
+
+nuxt.config.js 
+```js
+export default {
+  generate: {
+    subFolders: false
+  }
+}
+```
 
 ```bash
 -| dist/

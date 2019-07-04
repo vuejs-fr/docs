@@ -1,9 +1,9 @@
 ---
-title: "API : la méthode validate"
+title: "API : la méthode validate (EN)"
 description: Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
 ---
 
-# La méthode validate
+# La méthode validate (EN)
 
 > Nuxt.js vous permet de définir une méthode de validation dans votre composant de route dynamique.
 
@@ -18,13 +18,13 @@ validate({ params, query, store }) {
 
 ```js
 async validate({ params, query, store }) {
-  // await operations
+  // await operations (EN)
   return true // if the params are valid
   return false // will stop Nuxt.js to render the route and display the error page
 }
 ```
 
-You can also return promises (En):
+You can also return promises (EN):
 
 ```js
 validate({ params, query, store }) {
@@ -56,7 +56,7 @@ export default {
 }
 ```
 
-You can also throw expected or unexpected errors during validate function executation (En):
+You can also throw expected or unexpected errors during validate function execution (EN):
 
 ```js
 export default {
@@ -66,3 +66,6 @@ export default {
   }
 }
 ```
+
+<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
+

@@ -11,12 +11,12 @@ Exemple d'une `pages/index.vue` utilisant [Pug](https://github.com/pugjs/pug), [
 
 ```html
 <template lang="pug">
-  h1.red Hello {{ name }}!
+  h1.red Bonjour {{ name }}!
 </template>
 
 <script lang="coffee">
 export default data: ->
-  { name: 'World' }
+  { name: 'le Monde' }
 </script>
 
 <style lang="sass">
