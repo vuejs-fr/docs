@@ -1,9 +1,9 @@
 ---
-title: "API : la méthode fetch (EN)"
+title: "API : la méthode fetch"
 description: La méthode `fetch` est utilisée pour remplir le store avant de faire le rendu de la page. C'est comme la méthode `asyncData` sauf qu'elle ne définit pas les données du composant.
 ---
 
-# La méthode fetch (EN)
+# La méthode fetch
 
 > La méthode `fetch` est utilisée pour remplir le store avant de rendre la page. C'est comme la méthode `asyncData` sauf qu'elle ne définit pas les données du composant.
 
@@ -16,7 +16,7 @@ La méthode `fetch` reçoit l'objet [`context`](/api/context) comme premier argu
 
 <div class="Alert Alert--orange">
 
-**Warning**: You **don't** have access of the component instance through `this` inside `fetch` because it is called **before initiating** the component.
+**Attention**: Vous **N**'avez **PAS** accès à l'instance du composant via `this` au sein de `fetch` parce que la fonction est appelée **avant d'initialiser** le composant.
 
 </div>
 
@@ -86,5 +86,3 @@ export const actions = {
 ### Écouter les changement de query
 
 La méthode `fetch` **n'est pas appelée** sur la chaine de caractère de query par défaut. Si vous souhaitez changer ce comportement, par exemple quand vous construisez un composant de pagination, vous pouvez initialiser les paramètres qui devraient être écoutés avec la propriété `watchQuery` de votre page de composant. Consultez la page [de l'API `watchQuery`](/api/pages-watchquery) pour en savoir plus.
-
-<p style="width: 294px;position: fixed; top : 64px; right: 4px;" class="Alert Alert--orange"><strong>⚠Cette page est actuellement en cours de traduction française. Vous pouvez repasser plus tard ou <a href="https://github.com/vuejs-fr/nuxt" target="_blank">participer à la traduction</a> de celle-ci dès maintenant !</strong></p>
