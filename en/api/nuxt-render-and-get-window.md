@@ -17,7 +17,7 @@ description: Obtient la `window` depuis un URL donné d'une application Nuxt.js.
 
 <div class="Alert Alert--orange">
 
-Cette méthode est faite pour les [tests](guide/development-tools#tests-de-bout-en-bout).
+Cette méthode est faite pour les [tests](/guide/development-tools#tests-de-bout-en-bout).
 
 </div>
 
